@@ -33,7 +33,15 @@ Before acting, determine the stack components using the **Comparison Tables** be
 | **Storage**  | S3, EBS, EFS                         | GCS, Persistent Disk          | Blob Storage, Files               | Storage Bucket               |
 | **Database** | RDS, DynamoDB, Aurora                | Cloud SQL, Firestore, Spanner | SQL Database, CosmosDB            | Postgres (Supabase)          |
 
-### 2. IaC Tool Selection
+### 2. Codebase Normalization Tools
+
+| Feature      | Husky + Lint-staged     | Lefthook             | Biome                | ESLint + Prettier      |
+| :----------- | :---------------------- | :------------------- | :------------------- | :--------------------- |
+| **Type**     | Git Hooks (Node.js)     | Git Hooks (Go)       | All-in-one Toolchain | Linter + Formatter     |
+| **Speed**    | Standard                | Fast                 | Extremely Fast       | Standard               |
+| **Best For** | Standard JS/TS Projects | Monorepos / Polyglot | Greenfields / Speed  | Legacy / Complex Rules |
+
+### 3. IaC Tool Selection
 
 | Feature      | Terraform                                   | Pulumi                          | Ansible                       | CDK (AWS/TF)              |
 | :----------- | :------------------------------------------ | :------------------------------ | :---------------------------- | :------------------------ |
@@ -41,7 +49,7 @@ Before acting, determine the stack components using the **Comparison Tables** be
 | **State**    | Remote state file (S3/GCS)                  | Pulumi Service / S3             | No state (Idempotent scripts) | CloudFormation / TF State |
 | **Use Case** | Industry Standard, Multi-cloud provisioning | Dev-friendly, Logic-heavy infra | Config Mgmt, Mutable infra    | AWS-centric, Type-safety  |
 
-### 3. CI/CD Platform Selection
+### 4. CI/CD Platform Selection
 
 | Feature         | GitHub Actions               | GitLab CI               | Jenkins                           | CircleCI                      |
 | :-------------- | :--------------------------- | :---------------------- | :-------------------------------- | :---------------------------- |
@@ -58,6 +66,7 @@ Before acting, determine the stack components using the **Comparison Tables** be
 - **CI/CD Pipelines** (GHA/GitLab): [Load `ci-cd-pipelines.md`](references/ci-cd-pipelines.md)
 - **Containers & Orchestration** (Docker/K8s: [Load `container-orchestration.md`](references/container-orchestration.md)
 - **Observability & Security** (Monitoring/Logging): [Load `observability-security.md`](references/observability-security.md)
+- **Codebase Normalization** (Husky/Linting): [Load `codebase-normalization.md`](references/codebase-normalization.md)
 
 > [!TIP]
 > **Long-tail Tools**: If a user asks for a tool NOT listed above (e.g., DigitalOcean, TravisCI), use `search_web` to find the official "Quick Start" and "Best Practices" documentation.
@@ -65,10 +74,11 @@ Before acting, determine the stack components using the **Comparison Tables** be
 ## 🛠️ Universal Workflow
 
 1.  **Plan**: Analyze requirements -> Select Stack (Matrix) -> Design Architecture.
-2.  **Provision (IaC)**: Write Terraform/Pulumi code -> Plan -> Apply.
-3.  **Configure**: Setup Secrets (GH Secrets/Vault) -> Env Vars.
-4.  **Pipeline**: Create CI/CD workflow (Lint -> Test -> Build -> Deploy).
-5.  **Verify**: Check Logs/Metrics -> Smoke Test -> Rollback strategy.
+2.  **Setup**: Initialize Repo -> Configure Code Quality Tools (Husky/Lint-staged/Biom).
+3.  **Provision (IaC)**: Write Terraform/Pulumi code -> Plan -> Apply.
+4.  **Configure**: Setup Secrets (GH Secrets/Vault) -> Env Vars.
+5.  **Pipeline**: Create CI/CD workflow (Lint -> Test -> Build -> Deploy).
+6.  **Verify**: Check Logs/Metrics -> Smoke Test -> Rollback strategy.
 
 ## 🛡️ Security & Compliance Standards
 

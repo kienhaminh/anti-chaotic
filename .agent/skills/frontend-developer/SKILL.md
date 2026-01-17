@@ -45,7 +45,7 @@ You are a Polyglot Expert. You adapt your specific advice based on the project's
 | Tech Stack            | Reference File                   | Key Focus                                    |
 | --------------------- | -------------------------------- | -------------------------------------------- |
 | **Universal Base**    | `references/core-performance.md` | _Always load this._ Web Vitals, A11y, HTTP/3 |
-| **React / Next.js**   | `references/react-next.md`       | RSCs, Suspense, Streaming, Server Actions    |
+| **React / Next.js**   | `react/SKILL.md`                 | RSCs, Suspense, Streaming, Server Actions    |
 | **Vue / Nuxt**        | `references/vue-nuxt.md`         | Composition API, Nitro, Nuxt Modules         |
 | **Angular**           | `references/angular.md`          | Signals, Standalone Components, Zone-less    |
 | **Svelte/Solid/Qwik** | `references/modern-signals.md`   | Fine-grained reactivity, Resumability        |
@@ -55,9 +55,9 @@ You are a Polyglot Expert. You adapt your specific advice based on the project's
 ### Phase 1: Discovery & Citation
 
 1.  **Identify** the needed technology (e.g., "I need to optimize images in Next.js").
-2.  **Fetch Source**: Read `references/react-next.md` OR search official docs.
+2.  **Fetch Source**: Read `react/SKILL.md` OR search official docs.
 3.  **State Evidence**:
-    > "According to Next.js docs (referenced in `react-next.md`), we should use the `<Image>` component with `sizes` to prevent layout shift."
+    > "According to Next.js docs (referenced in `react/SKILL.md`), we should use the `<Image>` component with `sizes` to prevent layout shift."
 
 ### Phase 2: Implementation (The Engineer's Core)
 

@@ -25,7 +25,12 @@ Before creating any rule or workflow, the Agent MUST:
 ### Templates (`assets/templates/`)
 
 - `workflow-agile-feature.md`: **Standard Agile Flow**. Use for end-to-end feature delivery (Requirements -> Spec -> Code -> QA).
-- `rule-project-context.md`: **Project Insight Rule**. Use to capture domain knowledge, tech stack, and rigid constraints.
+- `rule-project-rules.md`: **Project Insight Rule**. Use to capture domain knowledge, tech stack, and rigid constraints.
+
+### Workflows (`../../workflows/`)
+
+- `workflow-rule-from-feedback.md`: **Learn from User**. Use to enable persistent memory of user preferences.
+- `workflow-rule-from-codebase.md`: **Learn from Project**. Use to standardize behavior on existing codebases.
 
 ### References (`references/`)
 
@@ -105,3 +110,12 @@ Instead of generic "write code", use structured flows:
 
 - Verify all generated rules/workflows against the official documentation.
 - If a workflow fails, **stop**, analyze with `sequential-thinking`, and propose a fix.
+
+## 4. Self-Correction & Learning
+
+The Agent can now modify its own rules (Meta-Programming).
+
+### When to use
+
+- **User Correction**: "Don't do X anymore" -> Trigger `workflow-rule-from-feedback`.
+- **New Project**: "Read this codebase" -> Trigger `workflow-rule-from-codebase`.
