@@ -170,13 +170,12 @@ When a user requests to create or upgrade a skill, the agent **MUST** gather req
 **Workflow:**
 
 1. **Analyze the request** - Identify the skill domain and user's goal
-2. **Generate custom questionnaire** - Create a `requirements.md` file with:
-   - Base questions from each phase (below)
-   - **Domain-specific questions** tailored to the use case
-   - Examples and hints relevant to that domain
-3. **Ask user to review/fill** - User fills in the questionnaire
-4. **Clarify if needed** - Follow up on unclear or incomplete answers
-5. **Proceed with implementation**
+2. **Generate custom questionnaire** - Create an **Artifact** named `requirements_questionnaire.md` using `write_to_file`.
+   - **MUST** customize questions for the specific domain/task.
+   - Use the template as a base but rewrite questions to be specific.
+3. **Notify User** - Use `notify_user` with `PathsToReview` pointing to the artifact.
+4. **Wait for Input** - User will edit the artifact directly.
+5. **Read & Proceed** - Read the filled artifact and start implementation.
 
 **Example - Designer Skill Upgrade:**
 
