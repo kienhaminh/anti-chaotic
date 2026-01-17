@@ -48,6 +48,14 @@ docs/
 │       ├── DB-Entity-User.md
 │       └── DB-Entity-Order.md
 │
+├── 035-QA/                             # Quality Assurance & Testing
+│   ├── QA-MOC.md
+│   ├── Test-Cases/                     # Detailed test steps
+│   │   └── TC-Login-001.md
+│   ├── Test-Tracking/                  # Execution runs and bug reports
+│   │   └── Run-2026-01-Regression.md
+│   └── Performance/                    # Load/Stress testing results
+│
 ├── 040-Design/                         # UI/UX & Frontend
 │   ├── Design-MOC.md
 │   ├── Wireframes/
@@ -92,6 +100,7 @@ We use the Dewey Decimal-style numbering system (`000`, `010`, `020`) to force s
 | `020`  | Requirements | "What". High-level Business needs (BRD, Use Cases). |
 | `022`  | User Stories | "Units". Agile Stories, Epics, Sprint Backlog.      |
 | `030`  | Specs        | "How". Technical implementation details.            |
+| `035`  | QA           | "Verify". Test cases, tracking, bug reports.        |
 | `040`  | Design       | "Look & Feel". Visuals and UX flows.                |
 | `050`  | Research     | Background info, raw data, analysis.                |
 | `060`  | Manuals      | Customer-facing instructions.                       |
@@ -129,8 +138,8 @@ This file acts as the "Table of Contents" for that folder.
 
 ## Frontmatter Standard
 
-```yaml
 ---
+
 id: SPEC-001
 type: specification
 status: draft
@@ -138,5 +147,25 @@ owner: @backend-team
 tags: [auth, security, v2.0]
 linked-to: [[Epic-Authentication]]
 created: 2026-01-17
+
 ---
+
+## Project Folder Structure
+
+This project follows a flexible structure for source code but enforces strict standards for **Agents** and **Documentation**.
+
+```text
+/
+├── .agent/                 # [FIXED] Agent configuration, skills, and templates
+│   ├── skills/             # Agent skills
+│   └── templates/          # Centralized templates (including this file)
+├── docs/                   # [FIXED] The Knowledge Graph (see above)
+├── src/                    # [FLEXIBLE] Source code (React, Python, Go, etc.)
+├── tests/                  # [FLEXIBLE] Test suite
+└── ...
 ```
+
+### Key Directories
+
+- **`.agent/`**: The brain. Contains `skills/` (roles) and `templates/` (artifacts).
+- **`docs/`**: The memory. All knowledge must be committed here using the Dewey Decimal system defined above.

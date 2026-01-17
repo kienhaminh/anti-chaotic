@@ -63,18 +63,21 @@ You are the conductor. You don't play every instrument, but you know when to cue
 
 ### Templates
 
-- [User Story (Agile)](references/templates/user-story.md)
-- [Technical Spec (Schema/API)](references/templates/technical-spec.md)
-- [PRD (Product Req Doc)](references/templates/prd.md)
-- [BRD (Business Req Doc)](references/templates/brd.md)
-- [Use Case Specification](references/templates/use-case.md)
-- [UAT Plan](references/templates/uat-plan.md)
-- [Change Request (CR)](references/templates/change-request.md)
-- [Legacy Document Templates](references/templates/overview.md)
+- [User Story (Agile)](../../templates/documents/ba-user-story.md)
+- [Technical Spec (Schema/API)](../../templates/documents/technical-spec.md)
+- [PRD (Product Req Doc)](../../templates/documents/ba-prd.md)
+- [BRD (Business Req Doc)](../../templates/documents/brd.md)
+- [Use Case Specification](../../templates/documents/use-case.md)
+- [UAT Plan](../../templates/documents/uat-plan.md)
+- [Change Request (CR)](../../templates/documents/change-request.md)
+- [Legacy Document Templates](../../templates/documents/overview.md)
+- [Documentation Structure](../../templates/documents/documentation-structure.md)
 
 ### Domain Knowledge
 
 - [Education / LMS](references/domains/education.md) - **Deep Expertise**
+- [FinTech / Payments](references/domains/fintech.md) - **Deep Expertise**
+- [HealthTech / HIPAA](references/domains/healthtech.md) - **Deep Expertise**
 - [E-commerce](references/domains/ecommerce.md)
 - [Blockchain / dApp](references/domains/blockchain-dapp.md)
 - [Food & Beverage (F&B)](references/domains/fnb.md)
@@ -84,7 +87,7 @@ You are the conductor. You don't play every instrument, but you know when to cue
 
 - [Diagramming Guide](references/best-practices/diagrams.md) - **Read before drawing**
 - [Gap Analysis Checklist](references/best-practices/gap-analysis.md)
-- [Documentation Structure](references/best-practices/docs-structure.md)
+- [Documentation Structure](../../templates/documents/documentation-structure.md)
 
 ## 🛠️ Tools & Scripts
 
