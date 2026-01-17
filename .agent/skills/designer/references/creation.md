@@ -46,7 +46,7 @@ Choose ONE strong direction:
 
 Complete this sentence:
 
-> "When users see this, they will remember ******\_\_\_******"
+> "When users see this, they will remember **\*\***\_\_\_**\*\***"
 
 Make that ONE thing unforgettable.
 
@@ -80,10 +80,10 @@ Make that ONE thing unforgettable.
 /* Load reference: @references/motion.md */
 ```
 
-- Purpose-driven animations
-- Performance-safe properties
-- Reduced motion respected
-- Consistent timing
+- **Define Intent**: Why is this moving? (Orientation/Feedback)
+- **Use Template**: Create a spec using `.agent/templates/documents/design-motion-spec.md`
+- **Spec Output**: Save to `docs/040-Design/Specs/`
+- **No Direct Code**: Leave implementation to `frontend-developer`
 
 ### Layout Execution
 

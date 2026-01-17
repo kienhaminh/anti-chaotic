@@ -50,10 +50,14 @@ docs/
 │
 ├── 035-QA/                             # Quality Assurance & Testing
 │   ├── QA-MOC.md
-│   ├── Test-Cases/                     # Detailed test steps
+│   ├── Test-Plans/                     # High-level strategies & Master Test Plans
+│   │   └── MTP-Global-Launch.md
+│   ├── Test-Cases/                     # Detailed test steps & Scripts
 │   │   └── TC-Login-001.md
-│   ├── Test-Tracking/                  # Execution runs and bug reports
-│   │   └── Run-2026-01-Regression.md
+│   ├── Automation/                     # Automation documentation & Architecture
+│   │   └── Playwright-Framework-Guide.md
+│   ├── Reports/                        # Execution reports & Bug summaries
+│   │   └── Report-2026-01-Regression.md
 │   └── Performance/                    # Load/Stress testing results
 │
 ├── 040-Design/                         # UI/UX & Frontend
@@ -63,6 +67,8 @@ docs/
 │   ├── Design-System/
 │   │   ├── Typography.md
 │   │   └── Color-Palette.md
+│   ├── Specs/                          # Detailed Design Specifications
+│   │   └── Motion-Hero-Animation.md
 │   └── Assets/
 │
 ├── 050-Research/                       # Discovery & Analysis

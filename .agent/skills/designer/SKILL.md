@@ -78,6 +78,9 @@ High-quality design = high-quality code:
 
 Works with `frontend-developer` skill for implementation handoff:
 
-- Design decisions → Token definitions
-- Component specs → Implementation
-- Review findings → Fixes
+- **Designer Role**: Creates visual designs, tokens, and **Motion Specs**.
+- **Frontend Role**: Writes the actual CSS/JS code based on these specs.
+- **Handoff Artifacts**:
+  - Design System Tokens (`docs/040-Design/Design-System/`)
+  - Animation Specs (`docs/040-Design/Specs/`)
+  - Review Findings (`file:line` reports)

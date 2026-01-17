@@ -1,235 +1,92 @@
-# Motion & Animation
+# Motion & Animation Design
 
-Expert guidelines for purposeful, performant motion design.
+Expert guidelines for specifying purposeful, meaningful, and performant motion.
 
-## Animation Principles
+**ROLE:** As a designer, your job is to **choreograph and specify** motion, not implement it. Use the provided templates to communicate your intent to the Frontend Developer.
 
-### The 12 Principles (Adapted for UI)
+## I. Motion Design Strategy
 
-| Principle        | UI Application                         |
-| ---------------- | -------------------------------------- |
-| Timing           | Duration based on distance/importance  |
-| Spacing          | Easing curves for natural feel         |
-| Staging          | Draw attention to what matters         |
-| Anticipation     | Prepare user for action (hover states) |
-| Follow-through   | Settle after motion (slight bounce)    |
-| Secondary action | Supporting animations                  |
-| Exaggeration     | Subtle emphasis, not cartoon           |
-| Solid drawing    | Consistent 3D space (shadows)          |
+Before animating, define the **purpose** of the motion.
 
-## Easing Curves
+### 1. Orientation (The "Where")
 
-### Standard Curves
+Use motion to help users build a mental model of the interface.
 
-```css
-/* Enter: Start slow, end fast */
---ease-out: cubic-bezier(0, 0, 0.2, 1);
+- **entering**: Elements should appear from where they were triggered.
+- **exiting**: Elements should return to their source or exit in the direction of intended flow.
+- **transitional**: Shared element transitions connect screens seamlessly.
 
-/* Exit: Start fast, end slow */
---ease-in: cubic-bezier(0.4, 0, 1, 1);
+### 2. Feedback (The "What Happened")
 
-/* Move: Slow start and end */
---ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+Use motion to acknowledge user interaction immediately.
 
-/* Emphasized: More dramatic */
---ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
-```
+- **hover**: Subtle scale or lift (e.g., scale 1.0 -> 1.02).
+- **active/press**: Scale down (e.g., scale 1.0 -> 0.98).
+- **confetti/burst**: For high-value success states only.
 
-### When to Use
+### 3. Focus (The "Look Here")
 
-| Action             | Curve       | Reason                       |
-| ------------------ | ----------- | ---------------------------- |
-| Element entering   | ease-out    | Arrives with energy, settles |
-| Element leaving    | ease-in     | Accelerates away             |
-| State change       | ease-in-out | Smooth transition            |
-| Important entrance | emphasized  | Demands attention            |
+Use motion to direct attention.
 
-## Duration Guidelines
+- **shimmer**: Suggest loading or high-value content.
+- **pulse**: Gentle attention grab for notifications.
 
-### By Distance
+## II. Functionality Specification
 
-| Distance           | Duration  |
-| ------------------ | --------- |
-| Small (< 100px)    | 100-150ms |
-| Medium (100-400px) | 150-250ms |
-| Large (400px+)     | 250-400ms |
-| Complex/Full-page  | 300-500ms |
+To specify an animation, you must define **Trigger**, **Properties**, and **Timing**.
 
-### By Element
+**Template Location**: `.agent/templates/documents/design-motion-spec.md`
+**Output Location**: `docs/040-Design/Specs/`
 
-| Element          | Duration          |
-| ---------------- | ----------------- |
-| Hover effects    | 100-150ms         |
-| Buttons, toggles | 150-200ms         |
-| Modals, drawers  | 250-300ms         |
-| Page transitions | 300-500ms         |
-| Loading states   | Variable/infinite |
+### 1. Triggers
 
-## Micro-Interactions
+- **Load**: When the component mounts/appears.
+- **Hover**: Cursor interaction.
+- **Click/Tap**: Active interaction.
+- **Scroll**: Viewport entry or scroll-linked.
+- **State Change**: Success, Error, Loading.
 
-### Feedback Patterns
+### 2. Properties (What changes?)
 
-```css
-/* Button press */
-.button:active {
-  transform: scale(0.98);
-  transition: transform 100ms ease-out;
-}
+Describe the specific visual change.
 
-/* Toggle switch */
-.toggle {
-  transition: background-color 200ms ease-in-out;
-}
-.toggle-thumb {
-  transition: transform 200ms ease-emphasized;
-}
+- **Opacity**: 0% to 100%.
+- **Scale**: 0.9 to 1.0.
+- **Position**: Y+20px to Y-0px.
+- **Rotation**: 0deg to 180deg.
 
-/* Form validation */
-.input-error {
-  animation: shake 300ms ease-in-out;
-}
+### 3. Timing & Easing (The "Feel")
 
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-4px);
-  }
-  75% {
-    transform: translateX(4px);
-  }
-}
-```
+Use standard easing names to communicate the feel.
 
-### Skeleton Loaders
+| Easing Name    | Description          | Use Case                                         |
+| :------------- | :------------------- | :----------------------------------------------- |
+| **Decelerate** | Start fast, end slow | **Entrances**. Natural feel for appearing items. |
+| **Accelerate** | Start slow, end fast | **Exits**. Items leaving the screen.             |
+| **Standard**   | Fast-Slow-Fast       | **Movement**. Moving from point A to B.          |
+| **Spring**     | Overshoot and settle | **Playful/High-Focus**. Attention grabbing.      |
 
-```css
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--color-surface) 0%,
-    var(--color-surface-elevated) 50%,
-    var(--color-surface) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
+| Duration   | Scale                                     |
+| :--------- | :---------------------------------------- |
+| **Short**  | 100-200ms (Micro-interactions, Hover)     |
+| **Medium** | 250-350ms (Dialogs, Toasts, List Items)   |
+| **Long**   | 400-600ms (Page Transitions, Full Screen) |
 
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-```
+## III. Choreography Rules
 
-## Performance Best Practices
+Specify how multiple elements move together.
 
-### Only Animate These Properties
+- **Stagger**: "Items should appear one after another with a 50ms delay."
+- **Sequence**: "Container expands FIRST (300ms), THEN content fades in (200ms)."
+- **Group**: "Avatar and Name move as a single unit."
 
-```css
-/* GPU-accelerated, no layout recalc */
-transform: translate(), scale(), rotate()
-opacity: 0-1
-filter: blur(), brightness()
-```
+## IV. Design Handoff
 
-### Avoid Animating
+When a user asks for animation, **DO NOT write CSS**. Instead:
 
-```css
-/* Trigger layout recalculation */
-width, height, padding, margin
-top, left, right, bottom
-font-size, line-height
-```
+1.  **Analyze** the interaction.
+2.  **Select** the appropriate parameters (Trigger, Easing, Duration).
+3.  **Generate a Motion Spec** using the template at `.agent/templates/documents/design-motion-spec.md`.
+4.  **Save** it to `docs/040-Design/Specs/Motion-[FeatureName].md`.
 
-### Force GPU Acceleration
-
-```css
-.animated-element {
-  will-change: transform, opacity;
-  transform: translateZ(0); /* Fallback */
-}
-```
-
-## Accessibility: Reduced Motion
-
-```css
-/* Always respect user preference */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Or provide alternatives */
-@media (prefers-reduced-motion: no-preference) {
-  .fancy-animation {
-    animation: bounce 300ms ease-out;
-  }
-}
-```
-
-## View Transitions API (Modern)
-
-```css
-/* Define transition behavior */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 300ms;
-}
-
-/* Named transitions */
-.card {
-  view-transition-name: card;
-}
-
-::view-transition-group(card) {
-  animation-timing-function: ease-emphasized;
-}
-```
-
-```javascript
-document.startViewTransition(() => {
-  // Update DOM here
-});
-```
-
-## Common Patterns
-
-### Staggered List
-
-```css
-.list-item {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 300ms ease-out forwards;
-}
-
-.list-item:nth-child(1) {
-  animation-delay: 0ms;
-}
-.list-item:nth-child(2) {
-  animation-delay: 50ms;
-}
-.list-item:nth-child(3) {
-  animation-delay: 100ms;
-}
-/* ... */
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-```
+This spec is the deliverable for the Frontend Developer.
