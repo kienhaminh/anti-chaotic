@@ -1,268 +1,312 @@
 ---
 name: skill-creator
-description: Guide for creating effective skills, adding skill references, skill scripts or optimizing existing skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Antigravity's capabilities with specialized knowledge, workflows, frameworks, libraries or plugins usage, or API and tool integrations.
+description: Guide for creating Agent Skills that extend Antigravity's capabilities. Use when creating new skills, updating existing skills, or packaging skills for distribution. Supports workspace skills (.agent/skills/) and global skills (~/.gemini/skills/).
 ---
 
 # Skill Creator
 
-This skill provides guidance for creating effective skills.
+Create and manage Agent Skills for Antigravity/Gemini CLI.
 
-## About Skills
+## About Agent Skills
 
-Skills are modular, self-contained packages that extend Antigravity's capabilities by providing
-specialized knowledge, workflows, and tools. Think of them as "onboarding guides" for specific
-domains or tasks—they transform Antigravity from a general-purpose agent into a specialized agent
-equipped with procedural knowledge that no model can fully possess.
+Skills are modular packages that extend Antigravity with specialized expertise and workflows. They follow the open [Agent Skills specification](https://agentskills.io/specification).
 
-**IMPORTANT:**
+**Skill Locations:**
 
-- Skills are not documentation, they are practical instructions for Antigravity to use the tools, packages, plugins or APIs to achieve the tasks.
-- Each skill teaches Antigravity how to perform a specific development task, not what a tool does.
-- Antigravity can activate multiple skills automatically to achieve the user's request.
+- **Workspace skills**: `.agent/skills/` - project-specific, committed to version control
+- **Global skills**: `~/.gemini/skills/` - personal skills across all workspaces
 
-### What Skills Provide
-
-1. Specialized workflows - Multi-step procedures for specific domains
-2. Tool integrations - Instructions for working with specific file formats or APIs
-3. Domain expertise - Company-specific knowledge, schemas, business logic
-4. Bundled resources - Scripts, references, and assets for complex and repetitive tasks
-
-### Anatomy of a Skill
-
-Every skill consists of a required SKILL.md file and optional bundled resources:
+## Skill Structure
 
 ```
-.agent/skills/
-└── skill-name/
-    ├── SKILL.md (required)
-    │   ├── YAML frontmatter metadata (required)
-    │   │   ├── name: (required)
-    │   │   ├── description: (required)
-    │   │   ├── license: (optional)
-    │   │   └── version: (optional)
-    │   └── Markdown instructions (required)
-    └── Bundled Resources (optional)
-        ├── scripts/          - Executable code (Python/Bash/etc.)
-        ├── references/       - Documentation intended to be loaded into context as needed
-        └── assets/           - Files used in output (templates, icons, fonts, etc.)
+skill-name/
+├── SKILL.md          # Required - instructions and metadata
+├── scripts/          # Optional - executable scripts
+├── references/       # Optional - documentation to load as needed
+└── assets/           # Optional - templates, images, data files
 ```
 
-#### Requirements (**IMPORTANT**)
+## SKILL.md Format
 
-- Skill should be combined into specific topics, for example: `cloudflare`, `cloudflare-r2`, `cloudflare-workers`, `docker`, `gcloud` should be combined into `devops`
-- `SKILL.md` should be **less than 100 lines** and include the references of related markdown files and scripts.
-- Each script or referenced markdown file should be also **less than 100 lines**, remember that you can always split them into multiple files (**progressive disclosure** principle).
-- Descriptions in metadata of `SKILL.md` files should be both concise and still contains enough usecases of the references and scripts, this will help skills can be activated automatically during the implementation process of Antigravity.
-- **Referenced markdowns**:
-  - Sacrifice grammar for the sake of concision when writing these files.
-  - Can reference other markdown files or scripts as well.
-- **Referenced scripts**:
-  - Prefer nodejs or python scripts instead of bash script, because bash scripts are not well-supported on Windows.
-  - If you're going to write python scripts, make sure you have `requirements.txt`
-  - Make sure scripts respect `.env` file follow this order: `process.env` > `.agent/skills/${SKILL}/.env` > `.agent/skills/.env` > `.agent/.env`
-  - Create `.env.example` files to show the required environment variables.
-  - Always write tests for these scripts.
+### Frontmatter (required)
 
-**IMPORTANT:**
+```yaml
+---
+name: skill-name # Required: 1-64 chars, lowercase, hyphens only
+description: What skill does # Required: 1-1024 chars, include trigger keywords
+license: MIT # Optional: license identifier
+compatibility: Requires git # Optional: 1-500 chars, environment requirements
+metadata: # Optional: custom key-value pairs
+  author: example-org
+  version: "1.0"
+allowed-tools: Bash(git:*) Read # Experimental: pre-approved tools
+---
+```
 
-- Always keep in mind that `SKILL.md` and reference files should be token consumption efficient, so that **progressive disclosure** can be leveraged at best.
-- `SKILL.md` should be **less than 100 lines**
-- Referenced markdown files should be also **less than 100 lines**, remember that you can always split them into multiple files (**progressive disclosure** principle).
-- Referenced scripts: no limit on length, just make sure it works, no compile issues, no runtime issues, no dependencies issues, no environment issues, no platform issues.
+**Name rules:**
 
-**Why?**
-Better **context engineering**: leverage **progressive disclosure** technique of Agent Skills, when agent skills are activated, Antigravity will consider to load only relevant files into the context, instead of reading all long `SKILL.md` as before.
+- Lowercase alphanumeric and hyphens only (`a-z`, `0-9`, `-`)
+- No starting/ending hyphens, no consecutive hyphens (`--`)
+- Must match parent directory name
 
-#### SKILL.md (required)
+**Description tips:**
 
-**File name:** `SKILL.md` (uppercase)
-**File size:** Under 100 lines, if you need more, plit it to multiple files in `references` folder.
-`SKILL.md` is always short and concise, straight to the point, treat it as a quick reference guide.
+- Include WHEN to use: specific scenarios, file types, or tasks
+- Add keywords that help agents identify relevant tasks
 
-**Metadata Quality:** The `name` and `description` in YAML frontmatter determine when Antigravity will use the skill. Be specific about what the skill does and when to use it. Use the third-person (e.g. "This skill should be used when..." instead of "Use this skill when...").
+### Body Content
 
-#### Bundled Resources (optional)
+Markdown instructions for the agent. Keep under **5000 tokens** for optimal context usage.
 
-##### Scripts (`scripts/`)
+Include:
 
-Executable code (Python/Bash/etc.) for tasks that require deterministic reliability or are repeatedly rewritten.
+- Step-by-step workflows
+- Code examples
+- Edge cases and troubleshooting
 
-- **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed
-- **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks
-- **Benefits**: Token efficient, deterministic, may be executed without loading into context
-- **Note**: Scripts may still need to be read by Antigravity for patching or environment-specific adjustments
+## Progressive Disclosure
 
-**IMPORTANT:**
+Skills use three-level loading to manage context efficiently:
 
-- Write tests for scripts.
-- Run tests and make sure it works, if tests fail, fix them and run tests again, repeat until tests pass.
-- Run scripts manually with some usecases to make sure it works.
-- Make sure scripts respect `.env` file follow this order: `process.env` > `.agent/skills/docs-seeker/.env` > `.agent/skills/.env` > `.agent/.env`
+1. **Metadata** (~100 tokens): `name` + `description` loaded at startup
+2. **Instructions** (<5000 tokens): Full SKILL.md body when skill activates
+3. **Resources** (as needed): scripts/, references/, assets/ loaded on demand
 
-##### References (`references/`)
+## Creating a Skill
 
-Documentation and reference material intended to be loaded as needed into context to inform Antigravity's process and thinking.
+### Step 1: Clarify Scope (Required)
 
-- **When to include**: For documentation that Antigravity should reference while working
-- **Examples**: `references/finance.md` for financial schemas, `references/mnda.md` for company NDA template, `references/policies.md` for company policies, `references/api_docs.md` for API specifications
-- **Use cases**: Database schemas, API documentation, domain knowledge, company policies, detailed workflow guides
-- **Benefits**: Keeps SKILL.md lean, loaded only when Antigravity determines it's needed
-- **Best practice**: If files are large (>100 lines), include grep search patterns in SKILL.md
-- **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
+**Always ask the user** to clarify the skill's scope before proceeding:
 
-**IMPORTANT:**
+- What specific tasks should this skill handle?
+- What tools, APIs, or frameworks does it involve?
+- What are the expected inputs and outputs?
+- Are there any existing workflows or patterns to follow?
 
-- Referenced markdown files should be also **less than 100 lines**, remember that you can always split them into multiple files (**progressive disclosure** principle).
-- Referenced markdown files are practical instructions for Antigravity to use the tools, packages, plugins or APIs to achieve the tasks.
-- Each skill teaches Antigravity how to perform a specific development task, not what a tool does.
+### Step 2: Research & Analysis
 
-##### Assets (`assets/`)
+Use available tools to understand the full picture:
 
-Files not intended to be loaded into context, but rather used within the output Antigravity produces.
+1. **Search tools**: Use `search_web`, `read_url_content` to research official documentation
+2. **MCP servers**: Query relevant MCP servers (e.g., `context7` for library docs) if available
+3. **Codebase analysis**: Use `grep_search`, `find_by_name` to understand existing patterns
 
-- **When to include**: When the skill needs files that will be used in the final output
-- **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography
-- **Use cases**: Templates, images, icons, boilerplate code, fonts, sample documents that get copied or modified
-- **Benefits**: Separates output resources from documentation, enables Antigravity to use files without loading them into context
+**Use MCP Sequential Thinking for complex analysis:**
 
-### Progressive Disclosure Design Principle
+For complex problems, use `mcp_sequential-thinking_sequentialthinking` to:
 
-Skills use a three-level loading system to manage context efficiently:
+- Break down problems into reasoning steps
+- Consider multiple angles, revise if needed
+- Generate hypotheses and verify step-by-step
+- Ensure no edge cases are missed
 
-1. **Metadata (name + description)** - Always in context (~100 words)
-2. **SKILL.md body** - When skill triggers (<5k words)
-3. **Bundled resources** - As needed by Antigravity (Unlimited\*)
+```
+Thought 1: Identify core requirements
+Thought 2: Analyze dependencies
+Thought 3: Consider edge cases
+...
+Final: Synthesize conclusions
+```
 
-\*Unlimited because scripts can be executed without reading into context window.
+**Analyze step-by-step:**
 
-## Skill Creation Process
+- What are the core capabilities needed?
+- What are common use cases and edge cases?
+- What scripts or references would be reusable?
 
-To create a skill, follow the "Skill Creation Process" in order, skipping steps only if there is a clear reason why they are not applicable.
-
-### Step 1: Understanding the Skill with Concrete Examples
-
-Skip this step only when the skill's usage patterns are already clearly understood. It remains valuable even when working with an existing skill.
-
-To create an effective skill, clearly understand concrete examples of how the skill will be used. This understanding can come from either direct user examples or generated examples that are validated with user feedback.
-
-For example, when building an image-editor skill, relevant questions include:
-
-- "What functionality should the image-editor skill support? Editing, rotating, anything else?"
-- "Can you give some examples of how this skill would be used?"
-- "I can imagine users asking for things like 'Remove the red-eye from this image' or 'Rotate this image'. Are there other ways you imagine this skill being used?"
-- "What would a user say that should trigger this skill?"
-
-To avoid overwhelming users, avoid asking too many questions in a single message. Start with the most important questions and follow up as needed for better effectiveness.
-
-Conclude this step when there is a clear sense of the functionality the skill should support.
-
-### Step 2: Planning the Reusable Skill Contents
-
-To turn concrete examples into an effective skill, analyze each example by:
-
-1. Considering how to execute on the example from scratch
-2. Identifying what scripts, references, and assets would be helpful when executing these workflows repeatedly
-
-Example: When building a `pdf-editor` skill to handle queries like "Help me rotate this PDF," the analysis shows:
-
-1. Rotating a PDF requires re-writing the same code each time
-2. A `scripts/rotate_pdf.py` script would be helpful to store in the skill
-
-Example: When designing a `frontend-webapp-builder` skill for queries like "Build me a todo app" or "Build me a dashboard to track my steps," the analysis shows:
-
-1. Writing a frontend webapp requires the same boilerplate HTML/React each time
-2. An `assets/hello-world/` template containing the boilerplate HTML/React project files would be helpful to store in the skill
-
-Example: When building a `big-query` skill to handle queries like "How many users have logged in today?" the analysis shows:
-
-1. Querying BigQuery requires re-discovering the table schemas and relationships each time
-2. A `references/schema.md` file documenting the table schemas would be helpful to store in the skill
-
-To establish the skill's contents, analyze each concrete example to create a list of the reusable resources to include: scripts, references, and assets.
-
-- Make sure scripts respect `.env` file follow this order: `process.env` > `.agent/skills/docs-seeker/.env` > `.agent/skills/.env` > `.agent/.env`
-- Make sure scripts have tests.
-
-### Step 3: Initializing the Skill
-
-At this point, it is time to actually create the skill.
-
-Skip this step only if the skill being developed already exists, and iteration or packaging is needed. In this case, continue to the next step.
-
-When creating a new skill from scratch, always run the `init_skill.py` script. The script conveniently generates a new template skill directory that automatically includes everything a skill requires, making the skill creation process much more efficient and reliable.
-
-Usage:
+### Step 3: Initialize
 
 ```bash
-scripts/init_skill.py <skill-name> --path <output-directory>
+python scripts/init_skill.py <skill-name> --path .agent/skills
 ```
 
-The script:
+### Step 4: Edit SKILL.md
 
-- Creates the skill directory at the specified path
-- Generates a SKILL.md template with proper frontmatter and TODO placeholders
-- Creates example resource directories: `scripts/`, `references/`, and `assets/`
-- Adds example files in each directory that can be customized or deleted
+1. Complete the frontmatter metadata with accurate description
+2. Write clear, actionable instructions based on research
+3. Add scripts/references/assets as identified in analysis
 
-After initialization, customize or remove the generated SKILL.md and example files as needed.
-
-### Step 4: Edit the Skill
-
-When editing the (newly-generated or existing) skill, remember that the skill is being created for another instance of Antigravity to use. Focus on including information that would be beneficial and non-obvious to Antigravity. Consider what procedural knowledge, domain-specific details, or reusable assets would help another Antigravity instance execute these tasks more effectively.
-
-#### Start with Reusable Skill Contents
-
-To begin implementation, start with the reusable resources identified above: `scripts/`, `references/`, and `assets/` files. Note that this step may require user input. For example, when implementing a `brand-guidelines` skill, the user may need to provide brand assets or templates to store in `assets/`, or documentation to store in `references/`.
-
-Also, delete any example files and directories not needed for the skill. The initialization script creates example files in `scripts/`, `references/`, and `assets/` to demonstrate structure, but most skills won't need all of them.
-
-#### Update SKILL.md
-
-**Writing Style:** Write the entire skill using **imperative/infinitive form** (verb-first instructions), not second person. Use objective, instructional language (e.g., "To accomplish X, do Y" rather than "You should do X" or "If you need to do X"). This maintains consistency and clarity for AI consumption.
-
-To complete SKILL.md, answer the following questions:
-
-1. What is the purpose of the skill, in a few sentences?
-2. When should the skill be used?
-3. In practice, how should Antigravity use the skill? All reusable skill contents developed above should be referenced so that Antigravity knows how to use them.
-
-### Step 5: Packaging a Skill
-
-Once the skill is ready, it should be packaged into a distributable zip file that gets shared with the user. The packaging process automatically validates the skill first to ensure it meets all requirements:
+### Step 5: Validate
 
 ```bash
-scripts/package_skill.py <path/to/skill-folder>
+python scripts/quick_validate.py .agent/skills/<skill-name>
 ```
 
-Optional output directory specification:
+## Resource Directories
+
+### scripts/
+
+Executable code (Python/Node/Bash) for automation tasks.
+
+- Include error handling and helpful messages
+- Document dependencies in requirements.txt
+
+### references/
+
+Documentation loaded into context when needed.
+
+- API references, schemas, detailed guides
+- Keep files focused (<5000 tokens each)
+
+### assets/
+
+Files used in output, not loaded into context.
+
+- Templates, images, fonts, boilerplate code
+
+---
+
+## Expert Questioning Framework
+
+When a user requests to create or upgrade a skill, the agent **MUST** gather requirements through 5 phases.
+
+> [!IMPORTANT]
+> **Do NOT just provide a generic questionnaire.** You must generate **domain-specific questions** based on:
+>
+> - The skill's domain (frontend, backend, AI, etc.)
+> - The user's specific request
+> - Your expert knowledge in that domain
+
+**Workflow:**
+
+1. **Analyze the request** - Identify the skill domain and user's goal
+2. **Generate custom questionnaire** - Create a `requirements.md` file with:
+   - Base questions from each phase (below)
+   - **Domain-specific questions** tailored to the use case
+   - Examples and hints relevant to that domain
+3. **Ask user to review/fill** - User fills in the questionnaire
+4. **Clarify if needed** - Follow up on unclear or incomplete answers
+5. **Proceed with implementation**
+
+**Example - Designer Skill Upgrade:**
+
+Instead of generic "What constraints?", ask specific questions like:
+
+- "Should the skill focus on Web, Mobile, or both?"
+- "Which design systems to reference? (Material, Ant, custom)"
+- "Accessibility standards: WCAG 2.1 AA or AAA?"
+- "Dark mode support required?"
+
+### Phase 1: Discovery (Understand WHY & WHO)
+
+- What specific problem needs to be solved?
+- Who will use this skill? (agent, human, or both)
+- What triggers the need to create/upgrade this skill?
+
+### Phase 2: Context (Understand WHAT & WHERE)
+
+- What is the specific domain? (frontend, backend, devops, AI, etc.)
+- What tech stack or frameworks are involved?
+- What constraints must be followed? (time, resources, team size)
+
+### Phase 3: Scope (Define Boundaries)
+
+> [!CAUTION]
+> **⚠️ NEVER decide scope on your own** - always ask user for confirmation
+
+- What is IN scope? What is OUT of scope?
+- Minor update or Major upgrade?
+- Dependencies with other skills/tools?
+
+### Phase 4: Quality (Define Quality Standards)
+
+- What level of expertise to embody? (junior, senior, expert 20+ years)
+- Which best practices must be followed?
+- What edge cases need to be handled?
+
+### Phase 5: Validation (Define Success)
+
+- What are the acceptance criteria?
+- How do we know the skill works correctly?
+- What metrics measure improvement?
+
+**Key Principles:**
+
+- 🔍 **Research before asking** - use tools to understand context
+- 🎯 **Purpose-driven questions** - each question leads to a specific decision
+- 📝 **Document answers** - record for reference during implementation
+
+---
+
+## Upgrading Existing Skills
+
+### Step 1: Clarify User Intent
+
+Apply the **Expert Questioning Framework** above. Position yourself as an expert in the skill's domain to ask guiding questions.
+
+### Step 2: Analyze Current Skill
 
 ```bash
-scripts/package_skill.py <path/to/skill-folder> ./dist
+# Backup current skill
+cp -r .agent/skills/<skill-name> .agent/skills/<skill-name>.backup
+
+# View structure
+ls -la .agent/skills/<skill-name>/
 ```
 
-The packaging script will:
+Analyze:
 
-1. **Validate** the skill automatically, checking:
-   - YAML frontmatter format and required fields
-   - Skill naming conventions and directory structure
-   - Description completeness and quality
-   - File organization and resource references
+- Read SKILL.md: frontmatter, body, sections
+- Check scripts/, references/, assets/
+- Count tokens, sections, capabilities
 
-2. **Package** the skill if validation passes, creating a zip file named after the skill (e.g., `my-skill.zip`) that includes all files and maintains the proper directory structure for distribution.
+### Step 3: Gap Analysis
 
-If validation fails, the script will report the errors and exit without creating a package. Fix any validation errors and run the packaging command again.
+Compare **current state** vs **new requirements**:
 
-### Step 6: Iterate
+| Requirement | Current State | Gap                          |
+| ----------- | ------------- | ---------------------------- |
+| ...         | Yes/No        | Need to add/Exists/Duplicate |
 
-After testing the skill, users may request improvements. Often this happens right after using the skill, with fresh context of how the skill performed.
+**If duplicate**: Notify user and ask if they want to enhance further
 
-**Iteration workflow:**
+### Step 4: Propose Changes
 
-1. Use the skill on real tasks
-2. Notice struggles or inefficiencies
-3. Identify how SKILL.md or bundled resources should be updated
-4. Implement changes and test again
+Present proposal and **ask user for confirmation**:
 
-## References
+- Minor Update: Add notes, small fixes in SKILL.md
+- Major Upgrade: Restructure, add scripts/references
+- Restructure: Change architecture
 
-- [Agent Skills Spec](.agent/skills/agent_skills_spec.md)
+### Step 5: Implement & Report
+
+After implementation, run:
+
+```bash
+python scripts/compare_skill.py .agent/skills/<skill-name>.backup .agent/skills/<skill-name>
+```
+
+---
+
+## Change Report Template
+
+After upgrading a skill, report using this format:
+
+```markdown
+## Skill Upgrade Report: [skill-name]
+
+### Summary
+
+- **Type**: Minor Update / Major Upgrade / Restructure
+- **Date**: YYYY-MM-DD
+
+### Changes Made
+
+| File           | Action   | Description            |
+| -------------- | -------- | ---------------------- |
+| SKILL.md       | Modified | Added X, Y, Z sections |
+| scripts/new.py | Added    | Script for ...         |
+
+### Before vs After
+
+| Metric   | Before | After | Change |
+| -------- | ------ | ----- | ------ |
+| Tokens   | X      | Y     | +Z%    |
+| Sections | X      | Y     | +Z     |
+
+### Validation
+
+- [ ] `quick_validate.py` passed
+- [ ] Structure verified
+- [ ] User reviewed
+```
