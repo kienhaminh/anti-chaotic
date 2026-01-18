@@ -45,40 +45,6 @@
 
 ---
 
-## 📁 Directory Structure
-
-```
-anti-chaotic/
-├── .agent/
-│   ├── skills/           # 12 AI skills with detailed instructions
-│   │   ├── product-manager/
-│   │   ├── business-analysis/
-│   │   ├── lead-architect/
-│   │   ├── designer/
-│   │   ├── frontend-developer/
-│   │   ├── backend-developer/
-│   │   ├── devops-engineer/
-│   │   ├── qa-tester/
-│   │   ├── ai-engineer/
-│   │   ├── blockchain-engineer/
-│   │   ├── rules-workflows/
-│   │   └── skill-creator/
-│   ├── workflows/        # Automated workflows
-│   │   ├── requirement-analysis.md
-│   │   ├── generate-docs-from-codebase.md
-│   │   ├── ui-ux-design-from-doc.md
-│   │   ├── workflow-rule-from-codebase.md
-│   │   └── workflow-rule-from-feedback.md
-│   └── rules/            # Project & documentation rules
-│       ├── documentation.md
-│       └── clean-code.md
-├── bin/                  # CLI utilities
-├── docs/                 # Generated documentation
-└── README.md
-```
-
----
-
 ## 🚀 Quick Start
 
 ### 1. Clone Repository
@@ -136,41 +102,6 @@ Please run the requirement-analysis workflow to analyze requirements for an e-co
 
 ```
 Read and execute the workflow at .agent/workflows/requirement-analysis.md
-```
-
-### Special Annotations
-
-| Annotation     | Meaning                                  |
-| -------------- | ---------------------------------------- |
-| `// turbo`     | Auto-run this step without user approval |
-| `// turbo-all` | Auto-run ALL steps in the workflow       |
-
----
-
-## 🔗 Workflow Chaining
-
-Workflows can be chained together to create a complete process:
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│                    🔄 FULL PROJECT LIFECYCLE                 │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  1. /requirement-analysis                                    │
-│     │                                                        │
-│     ▼                                                        │
-│  2. /ui-ux-design-from-doc (with the generated PRD)          │
-│     │                                                        │
-│     ▼                                                        │
-│  3. [Development Phase - implement code]                     │
-│     │                                                        │
-│     ▼                                                        │
-│  4. /generate-docs-from-codebase                             │
-│     │                                                        │
-│     ▼                                                        │
-│  5. /workflow-rule-from-feedback (if needed)                 │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
