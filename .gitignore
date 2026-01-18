@@ -1,6 +1,6 @@
 node_modules
 __pycache__
 .obsidian
-.trashag-test/
-test_output/
-test_tiged.js
+.DS_Store
+docs/
+prototype/
