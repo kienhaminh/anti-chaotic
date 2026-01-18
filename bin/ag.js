@@ -5,8 +5,6 @@ const fs = require("fs-extra");
 const path = require("path");
 const chalk = require("chalk");
 
-const tiged = require("tiged");
-
 program.version("0.0.1").description("Anti-Chaotic Agent Kit CLI");
 
 const REPO_URI = "kienhaminh/anti-chaotic/.agent";
@@ -22,13 +20,12 @@ program
       console.log(chalk.blue("Initializing Anti-Chaotic Agent Kit..."));
       console.log(chalk.yellow(`Fetching from GitHub: ${REPO_URI}...`));
 
-      const emitter = tiged(REPO_URI, {
-        disableCache: true,
+      const { downloadTemplate } = await import("giget");
+      await downloadTemplate(`github:${REPO_URI}`, {
+        dir: targetAgentDir,
         force: true,
-        mode: "git",
       });
 
-      await emitter.clone(targetAgentDir);
       console.log(
         chalk.green("✔ Successfully installed Anti-Chaotic Agent Kit."),
       );
@@ -50,13 +47,11 @@ program
         chalk.blue(`Updating Anti-Chaotic Agent Kit from ${REPO_URI}...`),
       );
 
-      const emitter = tiged(REPO_URI, {
-        disableCache: true,
+      const { downloadTemplate } = await import("giget");
+      await downloadTemplate(`github:${REPO_URI}`, {
+        dir: targetAgentDir,
         force: true,
-        mode: "git",
       });
-
-      await emitter.clone(targetAgentDir);
 
       console.log(chalk.green("✔ Successfully updated .agent from GitHub."));
       console.log(chalk.dim(`  Location: ${targetAgentDir}`));
