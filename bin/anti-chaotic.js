@@ -26,6 +26,22 @@ program
         force: true,
       });
 
+      // Cleanup deprecated files
+      const deprecatedFiles = [
+        "rules/documentation.md",
+        "workflows/docs-from-codebase.md",
+        "workflows/requirement-analysis.md",
+        "workflows/setup-codebase.md",
+      ];
+
+      for (const file of deprecatedFiles) {
+        const filePath = path.join(targetAgentDir, file);
+        if (await fs.pathExists(filePath)) {
+          await fs.remove(filePath);
+          console.log(chalk.dim(`  Removed legacy file: ${file}`));
+        }
+      }
+
       console.log(
         chalk.green("✔ Successfully installed Anti-Chaotic Agent Kit."),
       );
@@ -69,6 +85,22 @@ program
         dir: targetAgentDir,
         force: true,
       });
+
+      // Cleanup deprecated files
+      const deprecatedFiles = [
+        "rules/documentation.md",
+        "workflows/docs-from-codebase.md",
+        "workflows/requirement-analysis.md",
+        "workflows/setup-codebase.md",
+      ];
+
+      for (const file of deprecatedFiles) {
+        const filePath = path.join(targetAgentDir, file);
+        if (await fs.pathExists(filePath)) {
+          await fs.remove(filePath);
+          console.log(chalk.dim(`  Removed legacy file: ${file}`));
+        }
+      }
 
       console.log(chalk.green("✔ Successfully updated .agent from GitHub."));
       console.log(chalk.dim(`  Location: ${targetAgentDir}`));
