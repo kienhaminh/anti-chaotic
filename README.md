@@ -47,20 +47,19 @@
 
 ## 🚀 Quick Start
 
-### 1. Clone Repository
+### 1. Initialize in your project
+
+Run the following command in your project root to install the Agent Kit:
 
 ```bash
-git clone https://github.com/kienhaminh/anti-chaotic.git
-cd anti-chaotic
+npx @kienha/anti-chaotic init
 ```
 
-### 2. Install Dependencies
+This will download the `.agent` folder containing all skills, rules, and workflows into your project.
 
-```bash
-npm install
-```
+### 2. Using the Agent Kit
 
-### 3. Using the Framework
+Once initialized, start a new chat with your AI IDE (Cursor, Windsurf, etc.) and reference the installed rules/workflows.
 
 #### Start a new project with AI:
 
@@ -78,6 +77,14 @@ npm install
 
 ```
 /ui-ux-design-from-doc docs/020-Requirements/PRD-YourProject.md
+```
+
+### 3. Updating the Kit
+
+To update your Agent Kit to the latest version:
+
+```bash
+npx @kienha/anti-chaotic update
 ```
 
 ---
