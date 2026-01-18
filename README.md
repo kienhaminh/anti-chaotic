@@ -141,15 +141,6 @@ We welcome all contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for detaile
 
 ---
 
-## 📚 Additional Resources
-
-- **Documentation Rules**: `.agent/rules/documentation.md`
-- **Available Skills**: `.agent/skills/`
-- **Project Rules**: `.agent/rules/project-rules.md` (if exists)
-- **Agent Skills Specification**: [agentskills.io/specification](https://agentskills.io/specification)
-
----
-
 ## 📄 License
 
 This project is released under the [MIT License](LICENSE).
