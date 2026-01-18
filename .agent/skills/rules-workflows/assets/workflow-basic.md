@@ -7,7 +7,7 @@ description: [End-to-end feature implementation workflow]
 Orchestrates feature implementation from specification to deployment.
 
 > [!IMPORTANT]
-> **MANDATORY**: Read `.agent/rules/documentation.md` before creating any document.
+> **MANDATORY**: Read `.agent/rules/documents.md` before creating any document.
 
 ---
 

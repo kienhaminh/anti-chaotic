@@ -9,12 +9,25 @@
 
 ## 🎯 Introduction
 
-**Anti-Chaotic** is a comprehensive **Agent Kit** for Antigravity, designed to standardize and optimize your software development workflow. It serves as a versatile toolkit rather than a rigid framework:
+**Anti-Chaotic** is a comprehensive **Agent Kit** for Antigravity, designed to standardize and optimize your software development workflow.
 
-- 🧠 **12+ Multi-domain AI Skills** - From Product Manager, Business Analyst to Lead Architect, DevOps Engineer
-- 🔄 **5 Automated Workflows** - Pre-defined, reusable work processes
-- 📜 **Rules Engine** - A rule system that ensures AI Agents follow project standards
-- 📚 **References Library** - Documentation references for various technologies and frameworks
+### 🎯 Core Philosophy
+
+> **Process over Speed**: This kit is designed for **development teams** and **collaborative environments**. It prioritizes robust processes, structure, and long-term maintainability over "fast shipping" or quick hacks. It aims to bring standard engineering practices to AI-assisted coding.
+
+### 🧩 Concepts
+
+- **Skills = Knowledge**: What the agent knows (Best practices, languages, patterns).
+- **Rules & Workflows = Process**: How the agent executes (Steps, restrictions, output formats).
+
+_We encourage teams to customize these skills and define their own rules & workflows to align with their specific enterprise standards._
+
+### 📦 Components
+
+- 🧠 **12+ Multi-domain AI Skills** - From Product Manager, Business Analyst to Lead Architect.
+- 🔄 **6 Automated Workflows** - Pre-defined, reusable work processes.
+- 📜 **Rules Engine** - A rule system that ensures AI Agents follow project standards.
+- 📚 **References Library** - Documentation references for various technologies.
 
 ---
 
@@ -43,11 +56,20 @@
 - **Clean Code Rules**: Coding standards and best practices
 - **Project Rules**: Project-specific conventions
 
+> **ℹ️ Documentation & Tools**: The default generated documentation is optimized for **Obsidian**. If your team uses **Jira**, **GitHub**, or other tools, simply connect the relevant **MCP Server** and customize the `documents.md` rule to align the output format.
+
 ---
 
 ## 🚀 Quick Start
 
-### 1. Initialize in your project
+### 1. Recommended Setup (MCP Servers)
+
+To achieve the best results, we highly recommend installing the following MCP (Model Context Protocol) servers:
+
+- **[sequence-thinking](https://github.com/axiom-team/mcp-server-sequence-thinking)**: AI model for advanced problem breakdown and step-by-step reasoning.
+- **[context7](https://github.com/axiom-team/mcp-server-context7)**: For managing and retrieving broad project context.
+
+### 2. Initialize in your project
 
 Run the following command in your project root to install the Agent Kit:
 
@@ -57,29 +79,29 @@ npx @kienha/anti-chaotic init
 
 This will download the `.agent` folder containing all skills, rules, and workflows into your project.
 
-### 2. Using the Agent Kit
+### 3. Using the Agent Kit
 
 Once initialized, start a new chat with your AI IDE (Cursor, Windsurf, etc.) and reference the installed rules/workflows.
 
 #### Start a new project with AI:
 
 ```
-/requirement-analysis Create a sales management application for a fashion store
+/brainstorm Create a sales management application for a fashion store
 ```
 
 #### Generate docs for an existing project:
 
 ```
-/generate-docs-from-codebase
+/documentation
 ```
 
 #### Design UI from requirements:
 
 ```
-/ui-ux-design-from-doc docs/020-Requirements/PRD-YourProject.md
+/ui-ux-design docs/020-Requirements/PRD-YourProject.md
 ```
 
-### 3. Updating the Kit
+### 4. Updating the Kit
 
 To update your Agent Kit to the latest version:
 
@@ -96,19 +118,19 @@ npx @kienha/anti-chaotic update
 **Method 1: Slash Command**
 
 ```
-/requirement-analysis [Your project description]
+/brainstorm [Your project description]
 ```
 
 **Method 2: Direct Request**
 
 ```
-Please run the requirement-analysis workflow to analyze requirements for an e-commerce project
+Please run the brainstorm workflow to analyze requirements for an e-commerce project
 ```
 
 **Method 3: File Reference**
 
 ```
-Read and execute the workflow at .agent/workflows/requirement-analysis.md
+Read and execute the workflow at .agent/workflows/brainstorm.md
 ```
 
 ---
@@ -117,13 +139,14 @@ Read and execute the workflow at .agent/workflows/requirement-analysis.md
 
 ## 🔄 Automated Workflows
 
-| Workflow                           | Description                                                                                                   | Use Case                                                                        |
-| :--------------------------------- | :------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------ |
-| **`/requirement-analysis`**        | Analyzes raw requirements and generates detailed documentation (Roadmap, PRD, SDD, Epics, User Stories).      | Start of a new project or feature when you only have a rough idea.              |
-| **`/generate-docs-from-codebase`** | Scans the current codebase and generates comprehensive documentation (Architecture, API, Schema).             | Onboarding to a legacy project or updating docs after development.              |
-| **`/ui-ux-design-from-doc`**       | Transforms PRD/requirements documents into UI/UX design specifications, design systems, and visual artifacts. | After requirements are finalized, before coding.                                |
-| **`/workflow-rule-from-codebase`** | Analyzes the codebase to identify patterns and conventions, creating a project-specific rules file.           | Establishing coding standards for a new or existing team.                       |
-| **`/workflow-rule-from-feedback`** | Updates or creates rules based on user feedback to prevent recurring AI errors.                               | When the Agent makes repeated mistakes or you want to enforce a new preference. |
+| Workflow                 | Description                                                                                                | Use Case                                                            |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------ |
+| **`/bootstrap`**         | Sets up project structure, installs dependencies, and configures environment based on architectural specs. | Start of Implementation Phase.                                      |
+| **`/brainstorm`**        | Analyze ideas with the user and create preliminary high-level documents (Roadmap, PRD).                    | Start of a new project or feature when you only have a rough idea.  |
+| **`/custom-behavior`**   | Safely customize Agent rules and workflows with impact analysis and user confirmation.                     | As needed to adjust Agent behavior or fix recurring mistakes.       |
+| **`/documentation`**     | Generate comprehensive documentation (Architecture, API, Specs) from either Codebase or Requirements.      | Onboarding to a legacy project OR creating detailed specs from PRD. |
+| **`/implement-feature`** | Orchestrates feature implementation from specification to deployment.                                      | After design and specs are ready, for actual coding and deployment. |
+| **`/ui-ux-design`**      | Transform requirements into comprehensive UI/UX design deliverables.                                       | After requirements are finalized, before coding.                    |
 
 ---
 
@@ -150,5 +173,3 @@ This project is released under the [MIT License](LICENSE).
 <p align="center">
   <b>Made with ❤️ for the AI-Driven Development Community</b>
 </p>
-
-> 💡 **Tip**: You can create new workflows by adding `.md` files in the `.agent/workflows/` directory following the same structure as existing workflows.

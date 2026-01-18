@@ -1,13 +1,11 @@
 ---
-description: Transform requirement into UI/UX design (System → Components → Prototypes)
+description: Transform requirements into comprehensive UI/UX design deliverables.
 ---
 
 # UI/UX Design Workflow
 
-Transform requirements into comprehensive UI/UX design deliverables.
-
 > [!IMPORTANT]
-> **MANDATORY**: Apply `.agent/rules/documentation.md` for all documentation structure.
+> **MANDATORY**: Apply `.agent/rules/documents.md` for all documentation structure.
 
 ---
 

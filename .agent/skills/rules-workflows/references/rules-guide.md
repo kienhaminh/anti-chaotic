@@ -1,60 +1,118 @@
-# Rules Creation Guide
+# High-Performance Rule Governance
 
-## Overview
+> "Rules are the automated guardrails that ensure consistency without micromanagement."
 
-Workspace rules live in the `.agent/rules` folder of your workspace or git root. Rules are persistent instructions that guide _how_ the Agent thinks and acts.
+This guide establishes the framework for defining, enforcing, and managing Agent behavior standards across the organization.
 
-## Creating Rules via UI
+## 1. The Core Philosophy
 
-1. Open **Customizations** panel via "..." dropdown in agent panel
-2. Navigate to **Rules** panel
-3. Select **+ Global** (cross-workspace) or **+ Workspace** (project-specific)
+In a high-functioning AI-driven organization, Rules serve two critical functions:
 
+1.  **Context Injection**: Instantly downloading "Senior Engineer" context into the Agent's specific session.
+2.  **Operational Guardrails**: Preventing known anti-patterns (e.g., "Never commit secrets", "Always use strict TS").
+
+| Level                 | Purpose                                | Example                    |
+| :-------------------- | :------------------------------------- | :------------------------- |
+| **L1: Critical**      | Security & Compliance (Non-negotiable) | `security-policy.md`       |
+| **L2: Architectural** | Tech Stack Standards                   | `nextjs-best-practices.md` |
+| **L3: Stylistic**     | Team preferences                       | `naming-conventions.md`    |
+
+## 2. Activation Strategy (Context Management)
+
+The key to a responsive Agent is _Selective Activation_. Loading 100 rules confuses the context. Use activation types strategically.
+
+### A. The "Always On" (Global Constitution)
+
+**Use sparingly.** Only for rules that apply to _every_ single keystroke.
+
+- **Triggers**: `always_on`
+- **Use Case**: Safety checks, Tone of Voice, Core Documentation links.
+- **Cost**: Consumes context window on every turn.
+
+### B. The "Just-in-Time" (Context-Aware)
+
+**The Gold Standard.** Rules that activate only when relevant.
+
+- **Triggers**: `model_decision` (based on description) or `glob` (based on files).
+- **Use Case**:
+  - If user asks about "Auth" -> Load `auth-guidelines.md`.
+  - If editing `.tsx` files -> Load `react-component-standards.md`.
+
+### C. The "Surgical" (Manual Override)
+
+**For heavy-duty tasks.**
+
+- **Triggers**: `manual`
+- **Use Case**: "Refactor this legacy code." -> User explicitly calls `@refactoring-rules`.
+
+## 3. Designing Effective Rules
+
+A rule is a **Directive**, not a suggestion.
+
+### ❌ Weak Rule
+
+> "Try to write good variable names and maybe use TypeScript if you can."
+
+### ✅ Strong Rule
+
+> **Constraint**: All variables MUST follow `camelCase`.
+> **Requirement**: TypeScript `strict` mode is MANDATORY. `any` type is strictly FORBIDDEN.
+
+## 4. Governance & Lifecycle
+
+Avoid "Rule Bloat" (Bureaucracy).
+
+1.  **Consolidate**: Don't have `button-rules.md` and `input-rules.md`. Have `ui-components.md`.
+2.  **Review**: If the Agent frequently ignores a rule, it is likely too vague or conflicting. Clarify or Delete it.
+3.  **Hierarchy**: Workspace Rules override Global Rules. Specific Rules override General Rules.
+
+## 5. Standard Rule Template
+
+Use this structure to create enforceable, high-clarity rules.
+
+```markdown
+---
+description:
+  [When should this apply? e.g., "Applied when editing Database Schema"]
+globs: ["prisma/schema.prisma"]
 ---
 
-## Rule Activation Types
+# [Rule Name, e.g., Database Schema Standards]
 
-At the rule level, you can define **how** a rule should be activated:
+## 1. Executive Summary
 
-| Type               | Description                                                                                                                     |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Manual**         | The rule is manually activated via `@mention` in Agent's input box                                                              |
-| **Always On**      | The rule is always applied to every interaction                                                                                 |
-| **Model Decision** | Based on a natural language description of the rule, the model decides whether to apply the rule                                |
-| **Glob**           | Based on the glob pattern you define (e.g., `.js`, `src/**/*.ts`), the rule will be applied to all files that match the pattern |
+All database changes must preserve backward compatibility and follow 3NF normalization.
 
-### When to Use Each Type
+## 2. Critical Constraints (The "Musts")
 
-- **Manual**: For intensive operations like deep code reviews, refactoring strategies, or specialized analysis that shouldn't run automatically
-- **Always On**: For critical project constraints, coding standards, and domain knowledge that must be enforced on every interaction
-- **Model Decision**: For context-aware rules that should only apply when relevant (e.g., security guidelines only when working with auth)
-- **Glob**: For file-type-specific standards (e.g., React component standards for `.tsx` files)
+- 🔴 **NEVER** delete columns in a migration. Mark as `@deprecated` instead.
+- 🔴 **NEVER** use `autoincrement()` for publicly exposed IDs. Use `uuid()`.
 
----
+## 3. Code Patterns (The "How")
 
-## Rule File Templates
+### Naming
 
-Templates are available in the `../assets/` directory:
+- Tables: `snake_case` (plural), e.g., `users`, `order_items`.
+- Foreign Keys: `noun_id`, e.g., `user_id`.
 
-- **Always-On Rule**: `../assets/rule-always-on.md`
-- **Model-Decision Rule**: `../assets/rule-model-decision.md`
-- **Glob-Pattern Rule**: `../assets/rule-glob.md`
-- **Manual Rule**: `../assets/rule-manual.md`
+### Example
 
-Use these templates as a starting point for creating new rules.
+✅ **Good**:
+model User {
+id String @id @default(uuid())
+}
 
-## Best Practices
+❌ **Bad**:
+model User {
+id Int @id @default(autoincrement())
+}
+```
 
-1. **Keep rules focused** - One concern per rule file
-2. **Use descriptive names** - Rule filename becomes its identifier
-3. **Leverage glob patterns** - Auto-apply rules to relevant files
-4. **Reference external files** - Use `@filename` to include context
-5. **Stay under 12,000 chars** - Split into multiple files if needed
+## 6. Advanced Context Injection
 
-## @ Mentions Syntax
+You can "hydrate" rules with dynamic context using `@` references.
 
-Reference files in rules:
+- **`@/docs/api-spec.md`**: "Enforce the API contract defined in this file."
+- **`@../shared/types.ts`**: "Use these exact types."
 
-- `@schema.prisma` - Relative to rules file
-- `@/docs/api.md` - Absolute from workspace root
-- `@../shared/types.ts` - Relative path traversal
+This allows the rule to remain static (the _policy_) while referencing dynamic content (the _data_).

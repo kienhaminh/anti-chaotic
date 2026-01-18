@@ -1,13 +1,11 @@
 ---
-description: End-to-end feature implementation workflow (Spec → Design → Code → Test → Deploy)
+description: Orchestrates feature implementation from specification to deployment.
 ---
 
 # Feature Implementation Workflow
 
-Orchestrates feature implementation from specification to deployment.
-
 > [!IMPORTANT]
-> **MANDATORY**: Read `.agent/rules/documentation.md` before creating any document.
+> **MANDATORY**: Read `.agent/rules/documents.md` before creating any document.
 
 ---
 
