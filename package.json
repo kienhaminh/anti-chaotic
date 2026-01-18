@@ -26,8 +26,8 @@
   "license": "ISC",
   "type": "commonjs",
   "bin": {
-    "ag": "bin/ag.js",
-    "anti-chaotic": "bin/ag.js"
+    "ac": "bin/anti-chaotic.js",
+    "anti-chaotic": "bin/anti-chaotic.js"
   },
   "files": [
     ".agent",
