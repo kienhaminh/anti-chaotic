@@ -25,7 +25,7 @@ _We encourage teams to customize these skills and define their own rules & workf
 ### 📦 Components
 
 - 🧠 **12+ Multi-domain AI Skills** - From Product Manager, Business Analyst to Lead Architect.
-- 🔄 **6 Automated Workflows** - Pre-defined, reusable work processes.
+- 🔄 **11 Automated Workflows** - Pre-defined, reusable work processes.
 - 📜 **Rules Engine** - A rule system that ensures AI Agents follow project standards.
 - 📚 **References Library** - Documentation references for various technologies.
 
@@ -139,14 +139,19 @@ Read and execute the workflow at .agent/workflows/brainstorm.md
 
 ## 🔄 Automated Workflows
 
-| Workflow                 | Description                                                                                                | Use Case                                                            |
-| :----------------------- | :--------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------ |
-| **`/bootstrap`**         | Sets up project structure, installs dependencies, and configures environment based on architectural specs. | Start of Implementation Phase.                                      |
-| **`/brainstorm`**        | Analyze ideas with the user and create preliminary high-level documents (Roadmap, PRD).                    | Start of a new project or feature when you only have a rough idea.  |
-| **`/custom-behavior`**   | Safely customize Agent rules and workflows with impact analysis and user confirmation.                     | As needed to adjust Agent behavior or fix recurring mistakes.       |
-| **`/documentation`**     | Generate comprehensive documentation (Architecture, API, Specs) from either Codebase or Requirements.      | Onboarding to a legacy project OR creating detailed specs from PRD. |
-| **`/implement-feature`** | Orchestrates feature implementation from specification to deployment.                                      | After design and specs are ready, for actual coding and deployment. |
-| **`/ui-ux-design`**      | Transform requirements into comprehensive UI/UX design deliverables.                                       | After requirements are finalized, before coding.                    |
+| Workflow                 | Description                                                                                                | Use Case                                                           |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| **`/bootstrap`**         | Sets up project structure, installs dependencies, and configures environment based on architectural specs. | Start of Implementation Phase.                                     |
+| **`/brainstorm`**        | Analyze ideas with the user and create preliminary high-level documents (Roadmap, PRD).                    | Start of a new project or feature when you only have a rough idea. |
+| **`/break-tasks`**       | Orchestrates breaking down requirements into actionable tasks for implementation.                          | When you have a PRD and need a task list.                          |
+| **`/custom-behavior`**   | Safely customize Agent rules and workflows with impact analysis and user confirmation.                     | Adjust Agent behavior or fix recurring mistakes.                   |
+| **`/debug`**             | Scientific debugging workflow: Hypothesize, Instrument, Reproduce, Analyze, Fix.                           | When facing complex bugs that need systematic analysis.            |
+| **`/development`**       | General coding workflow for implementing changes, bug fixes, or minor features.                            | Day-to-day coding tasks.                                           |
+| **`/documentation`**     | Generate comprehensive documentation (Architecture, API, Specs) from either Codebase or Requirements.      | Onboarding or creating detailed specs.                             |
+| **`/gen-tests`**         | Generate unit, E2E, security, and performance tests using the qa-tester skill.                             | Improving test coverage for new or existing code.                  |
+| **`/implement-feature`** | Orchestrates feature implementation from specification to deployment.                                      | End-to-end feature development.                                    |
+| **`/qa`**                | Create comprehensive test case documents and test plans based on project requirements.                     | Planning testing strategy for a feature.                           |
+| **`/ui-ux-design`**      | Transform requirements into comprehensive UI/UX design deliverables.                                       | After requirements are finalized, before coding.                   |
 
 ---
 
