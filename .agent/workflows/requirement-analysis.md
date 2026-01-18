@@ -1,40 +1,36 @@
 ---
-description: Requirement Analysis Workflow (PM -> BA -> Architect)
+description: Requirement Analysis Workflow (PM → BA → Architect)
 ---
 
 # Requirement Analysis Workflow
 
-This workflow orchestrates the **Product Manager**, **Business Analyst**, and **Lead Architect** skills to transform a raw user request into a comprehensive, validated implementation plan.
+Transforms a raw user request into comprehensive, validated implementation plan.
 
 > [!IMPORTANT]
-> **MANDATORY**: Before creating any document, read and apply `.agent/rules/documentation.md`.
+> **MANDATORY**: Read `.agent/rules/documentation.md` before creating any document.
 
 ---
 
-## Artifact Usage Guidelines
+## MCP Usage Guidelines
 
-> [!TIP]
-> **Use artifacts proactively** for user review and commenting:
->
-> - **Clarification questions** → Create artifact so user can review/comment before answering
-> - **Document drafts** → Create artifact first for user review, then save to `docs/` after approval
-> - **Tables and checklists** → Use artifacts for easy inline commenting
-> - **Tooling** → You MUST use the `write_to_file` tool to create these artifacts.
+| MCP Tool                                     | When to Use                                            | Example                           |
+| -------------------------------------------- | ------------------------------------------------------ | --------------------------------- |
+| `mcp_sequential-thinking_sequentialthinking` | Analyze requirements, feature dependencies, trade-offs | Break down ambiguous requests     |
+| `mcp_context7_resolve-library-id`            | Find library ID before querying                        | "mermaid js"                      |
+| `mcp_context7_query-docs`                    | Research tech stack options, diagram syntax            | "Mermaid sequence diagram syntax" |
 
 ---
 
 ## Document Priority Order
 
-Documents are created from **high-level overview** to **detailed specifics**:
-
 ```
-Priority 0: Roadmap                                  ← Project Planning & Timeline
-Priority 1: PRD (Product Requirements Document)     ← Strategic Overview
-Priority 2: SDD (System Design Document)            ← Technical Overview
-Priority 3: Epics                                   ← Feature Breakdown
-Priority 4: Use Cases                               ← Functional Details
-Priority 5: User Stories                            ← Implementation Units
-Priority 6: ADRs (if needed)                        ← Technical Decisions
+Priority 0: Roadmap       ← Project Planning & Timeline
+Priority 1: PRD           ← Strategic Overview
+Priority 2: SDD           ← Technical Overview
+Priority 3: Epics         ← Feature Breakdown
+Priority 4: Use Cases     ← Functional Details
+Priority 5: User Stories  ← Implementation Units
+Priority 6: ADRs          ← Technical Decisions (if needed)
 ```
 
 ---
@@ -46,291 +42,159 @@ Priority 6: ADRs (if needed)                        ← Technical Decisions
 > [!NOTE]
 > This step is **MANDATORY**. Do NOT proceed without user confirmation.
 
-1.  **Summarize Understanding**: Paraphrase the user's request in your own words.
-2.  **Create Clarification Artifact**: Present questions in an artifact for easy review:
+> 💡 **MCP**: Use `sequential-thinking` to analyze ambiguous or complex requests
 
-    **→ Execute `write_to_file` to create artifact: `clarification-questions.md`**
-
-    ```markdown
-    # Project Clarification Questions
-
-    ## Understanding Summary
-
-    - **Project**: {ProjectName}
-    - **Goal**: {one-line summary}
-    - **Target Users**: {who}
-
-    ## Key Features Identified
-
-    - [ ] {feature1}
-    - [ ] {feature2}
-    - [ ] {feature3}
-
-    ## Questions for Clarification
-
-    | #   | Question                                            | Your Answer |
-    | --- | --------------------------------------------------- | ----------- |
-    | 1   | What is the primary problem you're trying to solve? |             |
-    | 2   | Who is the target user/audience?                    |             |
-    | 3   | What does success look like?                        |             |
-    | 4   | Any constraints (time, budget, tech stack)?         |             |
-    | 5   | Any existing systems to integrate with?             |             |
-
-    ## Confirmation
-
-    - [ ] Understanding is correct
-    - [ ] Ready to proceed
-    ```
-
-3.  **WAIT** for user to review artifact and confirm.
+1. **Invoke `[product-manager]` skill** to:
+   - Summarize understanding
+   - Create clarification questions
+2. Create `clarification-questions.md` artifact
+3. **WAIT** for user to review and confirm
 
 ---
 
-## Step 1: Create Roadmap (Project Planning)
+## Step 1: Create Roadmap
 
-**Role: Product Manager**
 // turbo
 
-> After completing, **ASK user** before proceeding to Step 2.
+> 💡 **MCP**: Use `sequential-thinking` for phased planning and risk assessment
 
-1.  **Draft Roadmap**: Define "When" and project phases
-    - Project timeline and milestones
-    - Phase breakdown (MVP, v1.0, v2.0, etc.)
-    - Key deliverables per phase
-    - Dependencies and risks
-2.  **Create Draft Artifact**:
-    - **→ Execute `write_to_file` to create artifact: `draft-roadmap.md`** for user review
-3.  **After User Approval**:
-    - **Save to**: `docs/010-Planning/Roadmap-{ProjectName}.md`
-4.  **Present to User**:
-
-    ```
-    ✅ ROADMAP CREATED
-    ──────────────────
-    📝 Draft: artifact `draft-roadmap.md` (review & comment)
-    📄 Final: docs/010-Planning/Roadmap-{ProjectName}.md
-
-    👉 Review the draft. When ready:
-       [Approve & Continue / Request Changes / Stop Here]
-    ```
-
-5.  **WAIT** for user response.
+1. **Invoke `[product-manager]` skill** to draft:
+   - Project timeline and milestones
+   - Phase breakdown (MVP, v1.0, v2.0)
+   - Key deliverables per phase
+2. Create `draft-roadmap.md` artifact
+3. After approval → Save to `docs/010-Planning/Roadmap-{ProjectName}.md`
+4. **WAIT** for user response
 
 ---
 
-## Step 2: Create PRD (Strategic Overview)
+## Step 2: Create PRD
 
-**Role: Product Manager**
 // turbo
 
-> After completing, **ASK user** before proceeding to Step 3.
-
-1.  **Draft PRD**: Define the "Why" and "What"
-    - Business objectives and success metrics
-    - Target audience/user personas
-    - Feature prioritization (MoSCoW)
-2.  **Create Draft Artifact**:
-    - **→ Execute `write_to_file` to create artifact: `draft-prd.md`** for user review
-3.  **After User Approval**:
-    - **Save to**: `docs/020-Requirements/PRD-{ProjectName}.md`
-4.  **Present to User**:
-
-    ```
-    ✅ PRD DRAFTED
-    ──────────────
-    📝 Draft: artifact `draft-prd.md` (review & comment)
-    📄 Final: docs/020-Requirements/PRD-{ProjectName}.md
-
-    👉 Review the draft. When ready:
-       [Approve & Continue / Request Changes / Stop Here]
-    ```
-
-5.  **WAIT** for user response.
+1. **Invoke `[product-manager]` skill** to draft:
+   - Business objectives and success metrics
+   - Target audience/user personas
+   - Feature prioritization (MoSCoW)
+2. Create `draft-prd.md` artifact
+3. After approval → Save to `docs/020-Requirements/PRD-{ProjectName}.md`
+4. **WAIT** for user response
 
 ---
 
-## Step 3: Create SDD (Technical Overview)
+## Step 3: Create SDD
 
-**Role: Lead Architect**
 // turbo
 
-> After completing, **ASK user** before proceeding to Step 4.
+> 💡 **MCP**:
+>
+> - **MUST** use `sequential-thinking` for architectural decisions
+> - Use `context7` with `/vercel/next.js`, `/supabase/supabase` for tech stack research
 
-1.  **Draft SDD**: Define the "Technical How"
-    - High-level system architecture
-    - Technology stack decisions
-    - Component diagram
-    - Data flow overview
-2.  **Create Draft Artifact**:
-    - **→ Execute `write_to_file` to create artifact: `draft-sdd.md`** for user review
-3.  **After User Approval**:
-    - **Save to**: `docs/030-Specs/Architecture/SDD-{ProjectName}.md`
-4.  **Present to User**:
-
-    ```
-    ✅ SDD DRAFTED
-    ──────────────
-    📝 Draft: artifact `draft-sdd.md` (review & comment)
-    📄 Final: docs/030-Specs/Architecture/SDD-{ProjectName}.md
-
-    👉 Review the draft. When ready:
-       [Approve & Continue / Request Changes / Stop Here]
-    ```
-
-5.  **WAIT** for user response.
+1. **Invoke `[lead-architect]` skill** to draft:
+   - High-level system architecture
+   - Technology stack decisions
+   - Component diagram
+   - Data flow overview
+2. Create `draft-sdd.md` artifact
+3. After approval → Save to `docs/030-Specs/Architecture/SDD-{ProjectName}.md`
+4. **WAIT** for user response
 
 ---
 
-## Step 4: Create Epics (Feature Breakdown)
+## Step 4: Create Epics
 
-**Role: Business Analyst**
 // turbo
 
-> After completing, **ASK user** before proceeding to Step 5.
+> 💡 **MCP**: Use `sequential-thinking` to analyze feature dependencies
 
-1.  **Draft Epics**: Break PRD features into Epics
-    - One Epic per major feature/module
-    - Include high-level acceptance criteria
-2.  **Create Draft Artifacts**:
-    - **→ Execute `write_to_file` to create artifact: `draft-epics.md`** containing all Epics for user review
-3.  **After User Approval**:
-    - **Save to**: `docs/022-User-Stories/Epics/Epic-{FeatureName}.md` (one file per Epic)
-4.  **Present to User**:
-
-    ```
-    ✅ EPICS DRAFTED
-    ────────────────
-    📝 Draft: artifact `draft-epics.md` (review & comment)
-    📄 Final: {N} files in docs/022-User-Stories/Epics/
-
-    👉 Review the draft. When ready:
-       [Approve & Continue / Request Changes / Stop Here]
-    ```
-
-5.  **WAIT** for user response.
+1. **Invoke `[business-analysis]` skill** to:
+   - Break PRD features into Epics
+   - Define high-level acceptance criteria
+2. Create `draft-epics.md` artifact
+3. After approval → Save to `docs/022-User-Stories/Epics/Epic-{FeatureName}.md`
+4. **WAIT** for user response
 
 ---
 
-## Step 5: Create Use Cases (Functional Details)
+## Step 5: Create Use Cases
 
-**Role: Business Analyst**
 // turbo
 
-> After completing, **ASK user** before proceeding to Step 6.
+> 💡 **MCP**:
+>
+> - Use `sequential-thinking` for complex flow analysis
+> - Use `context7` with `/mermaid-js/mermaid` for diagram syntax
 
-1.  **Draft Use Cases**: Detail each Epic's functionality
-    - Happy path flow
-    - Alternative flows
-    - Edge cases and error handling
-    - Include Mermaid diagrams where helpful
-2.  **Create Draft Artifacts**:
-    - **→ Execute `write_to_file` to create artifact: `draft-use-cases.md`** for user review
-3.  **After User Approval**:
-    - **Save to**: `docs/020-Requirements/Use-Cases/UC-{NN}-{Name}.md`
-4.  **Present to User**:
-
-    ```
-    ✅ USE CASES DRAFTED
-    ────────────────────
-    📝 Draft: artifact `draft-use-cases.md` (review & comment)
-    📄 Final: {N} files in docs/020-Requirements/Use-Cases/
-
-    👉 Review the draft. When ready:
-       [Approve & Continue / Request Changes / Stop Here]
-    ```
-
-5.  **WAIT** for user response.
+1. **Invoke `[business-analysis]` skill** to detail:
+   - Happy path flow
+   - Alternative flows
+   - Edge cases and error handling
+   - Mermaid diagrams where helpful
+2. Create `draft-use-cases.md` artifact
+3. After approval → Save to `docs/020-Requirements/Use-Cases/UC-{NN}-{Name}.md`
+4. **WAIT** for user response
 
 ---
 
-## Step 6: Create User Stories (Implementation Units)
+## Step 6: Create User Stories
 
-**Role: Business Analyst**
 // turbo
 
-> After completing, **ASK user** if ADRs are needed.
+> 💡 **MCP**: Use `sequential-thinking` to derive acceptance criteria
 
-1.  **Draft User Stories**: Break Use Cases into dev-ready stories
-    - Follow format: "As a [role], I want [action], so that [value]"
-    - Include clear Acceptance Criteria
-    - Estimate complexity (S/M/L)
-2.  **Create Draft Artifacts**:
-    - **→ Execute `write_to_file` to create artifact: `draft-user-stories.md`** for user review
-3.  **After User Approval**:
-    - **Save to**: `docs/022-User-Stories/Backlog/Story-{Name}.md`
-4.  **Present to User**:
-
-    ```
-    ✅ USER STORIES DRAFTED
-    ───────────────────────
-    📝 Draft: artifact `draft-user-stories.md` (review & comment)
-    📄 Final: {N} files in docs/022-User-Stories/Backlog/
-
-    👉 Review the draft. When ready:
-       [Approve & Continue / Request Changes / Stop Here]
-
-    💡 Any technical decisions that need ADRs?
-       (e.g., database choice, auth strategy, API design)
-    ```
-
-5.  **WAIT** for user response.
+1. **Invoke `[business-analysis]` skill** to create:
+   - Stories in format: "As a [role], I want [action], so that [value]"
+   - Clear Acceptance Criteria
+   - Complexity estimates (S/M/L)
+2. Create `draft-user-stories.md` artifact
+3. After approval → Save to `docs/022-User-Stories/Backlog/Story-{Name}.md`
+4. **WAIT** for user response - Ask if ADRs needed
 
 ---
 
-## Step 7: Create ADRs (Technical Decisions) - Optional
+## Step 7: Create ADRs (Optional)
 
-**Role: Lead Architect**
 // turbo
 
-> Only if user requested ADRs in Step 6.
+**Skip if**: User did not request ADRs in Step 6.
 
-1.  **Identify Decisions**: List technical decisions that need documentation
-2.  **Create ADRs**: For each decision:
-    - Context
-    - Options considered
-    - Decision made
-    - Consequences
-3.  **Output**:
-    - **Files**: `docs/030-Specs/Architecture/ADR-{NNN}-{Decision}.md`
+> 💡 **MCP**:
+>
+> - Use `sequential-thinking` to evaluate trade-offs
+> - Use `context7` to research technology options
+
+1. **Invoke `[lead-architect]` skill** to document:
+   - Context
+   - Options considered
+   - Decision made
+   - Consequences
+2. Save to `docs/030-Specs/Architecture/ADR-{NNN}-{Decision}.md`
 
 ---
 
 ## Step 8: Finalize & Summary
 
-**Role: Product Manager**
 // turbo
 
-1.  **Update MOC Files**: Ensure all MOCs reference new documents
-2.  **Update Index**: Add project section to `docs/000-Index.md`
-3.  **Present Final Summary**:
-
-    ```
-    ✅ REQUIREMENT ANALYSIS COMPLETE
-    ════════════════════════════════
-
-    📁 Documents Created:
-    ├── Roadmap: docs/010-Planning/Roadmap-{ProjectName}.md
-    ├── PRD: docs/020-Requirements/PRD-{ProjectName}.md
-    ├── SDD: docs/030-Specs/Architecture/SDD-{ProjectName}.md
-    ├── Epics: {N} files in docs/022-User-Stories/Epics/
-    ├── Use Cases: {N} files in docs/020-Requirements/Use-Cases/
-    ├── Stories: {N} files in docs/022-User-Stories/Backlog/
-    └── ADRs: {N} files in docs/030-Specs/Architecture/ (if any)
-
-    📋 Updated MOCs:
-    ├── docs/010-Planning/Planning-MOC.md
-    ├── docs/020-Requirements/Requirements-MOC.md
-    ├── docs/022-User-Stories/Stories-MOC.md
-    └── docs/030-Specs/Specs-MOC.md
-
-    🚀 Next Steps:
-    1. Review documents for accuracy
-    2. Run /ui-ux-design-from-doc for design phase
-    3. Move Stories to Active-Sprint when ready
-    ```
+1. **Invoke `[product-manager]` skill** to:
+   - Update MOC files
+   - Add project section to `docs/000-Index.md`
+2. Present final summary with all created documents
+3. Suggest next steps: `/ui-ux-design` or `/implement-feature`
 
 ---
 
 ## Quick Reference
 
-> 📖 For detailed folder structure and naming conventions, see `.agent/rules/documentation.md`
+| Step | Skill             | Output                     |
+| ---- | ----------------- | -------------------------- |
+| 0    | product-manager   | clarification-questions.md |
+| 1    | product-manager   | Roadmap-{Project}.md       |
+| 2    | product-manager   | PRD-{Project}.md           |
+| 3    | lead-architect    | SDD-{Project}.md           |
+| 4    | business-analysis | Epic-{Feature}.md          |
+| 5    | business-analysis | UC-{NN}-{Name}.md          |
+| 6    | business-analysis | Story-{Name}.md            |
+| 7    | lead-architect    | ADR-{NNN}-{Decision}.md    |
+| 8    | product-manager   | Updated MOCs               |

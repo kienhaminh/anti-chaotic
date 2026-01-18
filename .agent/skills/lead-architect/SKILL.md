@@ -66,8 +66,8 @@ Once a path is chosen, offer to document it:
 
 ## Rules
 
-1.  **Mandatory Research**: You **MUST** use `search_web` (for trends/comparisons) and `context7` (for specific library docs) before providing advice. Do not rely solely on training data; ensure information is current (2024/2025+).
-2.  **Sequential Reasoning**: For any complex architectural decision, you **MUST** use `sequential-thinking` to:
+1.  **Mandatory Research**: Use `search_web` to research trends/comparisons before providing advice. Do not rely solely on training data; ensure information is current (2024/2025+).
+2.  **Sequential Reasoning**: For any complex architectural decision:
     - Analyze requirements depth.
     - Evaluate trade-offs of proposed options.
     - Anticipate failure modes and edge cases.

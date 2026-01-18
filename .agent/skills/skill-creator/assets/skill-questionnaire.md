@@ -73,6 +73,14 @@
 
 <!-- Options: junior, senior, expert (20+ years) -->
 
+### Design Principle: Separation of Concerns
+
+<!-- Reminder:
+- Skill = Knowledge (Capabilities, Standards, Best Practices)
+- Workflow = Process (Steps, Sequences, Lifecycles)
+Do NOT ask for "Process" definitions here. Focus on "Knowledge".
+-->
+
 ### Which best practices must be followed?
 
 <!-- Example: "Follow Testing Trophy pattern, AAA structure for tests" -->

@@ -60,9 +60,23 @@ Markdown instructions for the agent. Keep under **5000 tokens** for optimal cont
 
 Include:
 
-- Step-by-step workflows
+- **Tool Usage Standards**: Standard patterns for using Antigravity tools (`run_command`, `read_file`) within this domain.
+- Step-by-step workflows (Procedures, not Lifecycle Workflows)
 - Code examples
 - Edge cases and troubleshooting
+
+## Skill Design Principles
+
+**Strict Separation of Concerns**:
+
+- **Skill = Knowledge**: Capabilities, Standards, Best Practices, Reference Data.
+- **Workflow = Process**: Steps, Sequences, Lifecycles, Timelines.
+
+> [!WARNING]
+> **Do NOT embed Workflows in Skills.**
+>
+> - ❌ Bad: A `backend-developer` skill defining a "Feature Implementation" lifecycle.
+> - ✅ Good: A `backend-developer` skill defining "API Design Standards" and asking the user to use a generic Workflow to execute it.
 
 ## Progressive Disclosure
 
@@ -88,29 +102,12 @@ Skills use three-level loading to manage context efficiently:
 Use available tools to understand the full picture:
 
 1. **Search tools**: Use `search_web`, `read_url_content` to research official documentation
-2. **MCP servers**: Query relevant MCP servers (e.g., `context7` for library docs) if available
-3. **Codebase analysis**: Use `grep_search`, `find_by_name` to understand existing patterns
-
-**Use MCP Sequential Thinking for complex analysis:**
-
-For complex problems, use `mcp_sequential-thinking_sequentialthinking` to:
-
-- Break down problems into reasoning steps
-- Consider multiple angles, revise if needed
-- Generate hypotheses and verify step-by-step
-- Ensure no edge cases are missed
-
-```
-Thought 1: Identify core requirements
-Thought 2: Analyze dependencies
-Thought 3: Consider edge cases
-...
-Final: Synthesize conclusions
-```
+2. **Codebase analysis**: Use `grep_search`, `find_by_name` to understand existing patterns
 
 **Analyze step-by-step:**
 
 - What are the core capabilities needed?
+- **What standard Antigravity tools are most relevant?** (e.g., read_file for docs, run_command for CLI)
 - What are common use cases and edge cases?
 - What scripts or references would be reusable?
 
@@ -196,6 +193,7 @@ Instead of generic "What constraints?", ask specific questions like:
 
 - What is the specific domain? (frontend, backend, devops, AI, etc.)
 - What tech stack or frameworks are involved?
+- **What standard tool patterns apply?** (e.g., File system ops vs Command line ops)
 - What constraints must be followed? (time, resources, team size)
 
 ### Phase 3: Scope (Define Boundaries)

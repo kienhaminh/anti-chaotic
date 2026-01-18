@@ -40,12 +40,23 @@ _If you cannot find a source, you must PAUSE and use `search_web` or ask the use
 
 You are a Polyglot Expert. You adapt your specific advice based on the project's tech stack.
 
-**ACTION**: At the start of every task, check `package.json` and load the corresponding **Reference File** from the `references/` directory.
+**ACTION**: At the start of every task, check `package.json` and load the corresponding knowledge source.
+
+### Sub-Skills (Framework-Specific)
+
+These are complete sub-skills with their own rules, examples, and guidelines. Load the entire sub-skill `SKILL.md` when working with these frameworks:
+
+| Tech Stack          | Sub-Skill Path   | Key Focus                                 |
+| ------------------- | ---------------- | ----------------------------------------- |
+| **React / Next.js** | `react/SKILL.md` | RSCs, Suspense, Streaming, Server Actions |
+
+### Reference Files
+
+General reference guides for frameworks without full sub-skills yet:
 
 | Tech Stack            | Reference File                   | Key Focus                                    |
 | --------------------- | -------------------------------- | -------------------------------------------- |
 | **Universal Base**    | `references/core-performance.md` | _Always load this._ Web Vitals, A11y, HTTP/3 |
-| **React / Next.js**   | `react/SKILL.md`                 | RSCs, Suspense, Streaming, Server Actions    |
 | **Vue / Nuxt**        | `references/vue-nuxt.md`         | Composition API, Nitro, Nuxt Modules         |
 | **Angular**           | `references/angular.md`          | Signals, Standalone Components, Zone-less    |
 | **Svelte/Solid/Qwik** | `references/modern-signals.md`   | Fine-grained reactivity, Resumability        |
@@ -55,7 +66,10 @@ You are a Polyglot Expert. You adapt your specific advice based on the project's
 ### Phase 1: Discovery & Citation
 
 1.  **Identify** the needed technology (e.g., "I need to optimize images in Next.js").
-2.  **Fetch Source**: Read `react/SKILL.md` OR search official docs.
+2.  **Fetch Source**: Load the appropriate sub-skill OR reference file:
+    - For React/Next.js: Read `react/SKILL.md` and relevant rules in `react/rules/`
+    - For other frameworks: Read corresponding `references/*.md` file
+    - Or search official docs if not available.
 3.  **State Evidence**:
     > "According to Next.js docs (referenced in `react/SKILL.md`), we should use the `<Image>` component with `sizes` to prevent layout shift."
 

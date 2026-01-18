@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: Always apply when creating, organizing, or modifying documentation files
+description: Always apply when creating, organizing, reading or modifying documentation files
 ---
 
 # Documentation Structure Rule

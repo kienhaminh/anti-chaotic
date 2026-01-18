@@ -71,15 +71,6 @@ Before acting, determine the stack components using the **Comparison Tables** be
 > [!TIP]
 > **Long-tail Tools**: If a user asks for a tool NOT listed above (e.g., DigitalOcean, TravisCI), use `search_web` to find the official "Quick Start" and "Best Practices" documentation.
 
-## 🛠️ Universal Workflow
-
-1.  **Plan**: Analyze requirements -> Select Stack (Matrix) -> Design Architecture.
-2.  **Setup**: Initialize Repo -> Configure Code Quality Tools (Husky/Lint-staged/Biom).
-3.  **Provision (IaC)**: Write Terraform/Pulumi code -> Plan -> Apply.
-4.  **Configure**: Setup Secrets (GH Secrets/Vault) -> Env Vars.
-5.  **Pipeline**: Create CI/CD workflow (Lint -> Test -> Build -> Deploy).
-6.  **Verify**: Check Logs/Metrics -> Smoke Test -> Rollback strategy.
-
 ## 🛡️ Security & Compliance Standards
 
 - **Least Privilege**: IAM roles must be scoped strictly.
