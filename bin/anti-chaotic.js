@@ -41,8 +41,25 @@ program
   .description("Update .agent configuration from GitHub")
   .action(async () => {
     const targetAgentDir = path.join(process.cwd(), ".agent");
+    const { default: inquirer } = await import("inquirer");
 
     try {
+      if (await fs.pathExists(targetAgentDir)) {
+        const { confirm } = await inquirer.prompt([
+          {
+            type: "confirm",
+            name: "confirm",
+            message: `Directory ${targetAgentDir} already exists. Do you want to overwrite it?`,
+            default: false,
+          },
+        ]);
+
+        if (!confirm) {
+          console.log(chalk.yellow("Operation cancelled by user."));
+          return;
+        }
+      }
+
       console.log(
         chalk.blue(`Updating Anti-Chaotic Agent Kit from ${REPO_URI}...`),
       );

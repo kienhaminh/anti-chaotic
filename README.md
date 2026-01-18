@@ -125,29 +125,6 @@ Read and execute the workflow at .agent/workflows/requirement-analysis.md
 | **`/workflow-rule-from-codebase`** | Analyzes the codebase to identify patterns and conventions, creating a project-specific rules file.           | Establishing coding standards for a new or existing team.                       |
 | **`/workflow-rule-from-feedback`** | Updates or creates rules based on user feedback to prevent recurring AI errors.                               | When the Agent makes repeated mistakes or you want to enforce a new preference. |
 
-## 💡 Tips & Best Practices
-
-### ✅ Do's
-
-1. **Read output carefully before approving** - Each step has a checkpoint for review
-2. **Use artifacts for comments** - AI will create draft files for you to review first
-3. **Provide complete context** - Describe requirements in detail from the start
-4. **Chain workflows** - Combine multiple workflows for a complete process
-
-### ❌ Don'ts
-
-1. **Skip clarification step** - The clarification step is crucial
-2. **Approve without reading** - Always review before confirming
-3. **Run inappropriate workflows** - Choose the right workflow for the right use case
-
-### 🔧 Troubleshooting
-
-| Issue                      | Solution                                      |
-| -------------------------- | --------------------------------------------- |
-| Workflow doesn't run       | Check slash command syntax                    |
-| Output has wrong format    | Ensure `.agent/rules/documentation.md` exists |
-| AI asks too many questions | Provide more context in the initial request   |
-
 ---
 
 ## 🤝 Contributing
