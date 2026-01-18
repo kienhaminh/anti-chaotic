@@ -30,12 +30,24 @@ These patterns guide how to combine multiple specialized skills to solve complex
 1.  **Designer**: creating the look & feel, animations, and component structure.
 2.  **Dev**: Translates the design into React/CSS code.
 
-## 4. The "Reasoning" Bridge
+32:
+33: ## 4. The "Delegation" Pattern (Process vs Knowledge)
+34:
+35: **Best for**: Enforcing standards within workflows.
+36: **Sequence**: `Workflow` (Process) -> `Skill` (Knowledge).
+37:
+38: **Rule**: Workflows define _when_ to do something. Skills define _how_ to do it.
+39:
+40: - ❌ **Bad Workflow**: "Step 4: Check that contrast is 4.5:1." (Hardcoded)
+41: - ✅ **Good Workflow**: "Step 4: Verify accessibility using [designer] skill." (Delegated)
+42:
+43: ## 5. The "Reasoning" Bridge
+44:
 
 **Best for**: Ambiguity, complex debugging.
-**Sequence**: `[Any Skill]` -> `sequential-thinking` -> `[Any Skill]`.
+**Approach**: Break down the problem step-by-step before switching skills.
 
-Use `sequential-thinking` as a bridge whenever you get stuck or need to plan the next move.
+Use step-by-step reasoning as a bridge whenever you get stuck or need to plan the next move.
 
 - "I have the error log, but don't know the cause." -> **Think** -> "Hypothesis: DB connection timeout."
 - "I have the requirements, but don't know which library to use." -> **Think** -> "Evaluate options A, B, C."

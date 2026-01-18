@@ -17,15 +17,22 @@ This skill empowers the Agent to act as an **Autonomous Process Orchestrator**, 
 Before creating any rule or workflow, the Agent MUST:
 
 1.  **Analyze the Goal**: What is the user trying to achieve? (e.g., "Add a feature", "Fix a bug").
-2.  **Determine the Strategy**: Use `sequential-thinking` to plan the steps.
-3.  **Orchestrate Capabilities**: Identify which _other_ skills (Frontend, Backend, QA) needed to execute the plan.
+2.  **Orchestrate Capabilities**: Identify which _other_ skills (Frontend, Backend, QA) needed to execute the plan.
+
+### Design Principle: Separation of Concerns
+
+- **Workflows are Processes**: They define the sequence of steps (Step 1 -> Step 2).
+- **Workflows are NOT Knowledge**: They should NOT contain hardcoded rules (e.g., WCAG 2.1 ratios, specific library versions).
+- **Delegation**: Workflows must **delegate** to Skills/Roles for execution standards.
+  - ❌ Bad: `Step 3: Check accessibility using 4.5:1 contrast ratio.`
+  - ✅ Good: `Step 3: Verify accessibility compliance using [designer] skill.`
 
 ## 📚 Resource Library
 
-### Templates (`assets/templates/`)
+### Guides & Templates (`references/`)
 
-- `workflow-agile-feature.md`: **Standard Agile Flow**. Use for end-to-end feature delivery (Requirements -> Spec -> Code -> QA).
-- `rule-project-rules.md`: **Project Insight Rule**. Use to capture domain knowledge, tech stack, and rigid constraints.
+- `rules-guide.md`: **Rule Creation Guide**. Contains templates for Always-On, Glob, Manual, and Model Decision rules.
+- `workflows-guide.md`: **Workflow Creation Guide**. Contains the standard Feature Implementation workflow template.
 
 ### Workflows (`../../workflows/`)
 
@@ -53,18 +60,15 @@ At the rule level, you can define **how** a rule should be activated:
 | **Model Decision** | `model_decision` | Model decides based on natural language `description` in frontmatter |
 | **Glob**           | `glob`           | Applied to files matching the `glob` pattern (e.g., `src/**/*.tsx`)  |
 
-### Examples (in `assets/`)
+### Examples
 
-- `example-rule-always-on.md`: Project standards that always apply
-- `example-rule-glob.md`: React component guidelines for `.tsx` files
-- `example-rule-manual.md`: Deep code review activated via @mention
-- `example-rule-model-decision.md`: Security guidelines auto-applied contextually
+Refer to `references/rules-guide.md` for a comprehensive list of rule pattern examples and templates.
 
 ### Creation Process
 
 1.  **Ask**: "What specific behaviors or constraints must be enforced?"
 2.  **Choose Activation Type**: Select the appropriate trigger based on when the rule should apply
-3.  **Draft**: Use `assets/templates/rule-project-context.md` as a base
+3.  **Draft**: Refer to templates in `references/rules-guide.md`.
 4.  **Refine**: Ensure rules are actionable (e.g., "Use Zod for input" vs "Write good code")
 
 ### Best Practices
@@ -101,19 +105,53 @@ Instead of generic "write code", use structured flows:
 
 1.  **Map the Process**: Identify the roles and steps involved.
 2.  **Select Pattern**: Consult `references/orchestration-patterns.md`.
-3.  **Draft**: Use `assets/templates/workflow-agile-feature.md` as a base.
+3.  **Draft**: Refer to the template in `references/workflows-guide.md`.
 
-### Workflow Syntax Refresher
+## Workflow Design Standards
+
+Follow the "Feature Implementation" pattern (see `references/workflows-guide.md` for full template details):
+
+### 1. Header & Prereqs
+
+- **Description**: Clear, action-oriented.
+- **Rules**: Mandatory reference to global rules (e.g., `documentation.md`).
+- **Tool Guidelines**: A table defining _which_ tools (Antigravity native or MCP) to use, _when_, and with _what queries_.
 
 ```markdown
-## Step 1: [Step Name]
+## Tool Usage Guidelines
 
-[Instructions]
-
-// turbo (Optional: Auto-run commands)
-
-## Step 2: [Next Step]
+| Tool | When to Use | Example Query |
+| ---- | ----------- | ------------- |
+| ...  | ...         | ...           |
 ```
+
+### 2. Step Structure
+
+Each step should be structured for maximum context and autonomy:
+
+1.  **Turbo Annotation**: `// turbo` if the step involves safe, auto-runnable commands.
+2.  **Tool Context**: `> 💡 **Tip**: ...` block to guide specific tool usage for this step.
+3.  **Skill Actions**: key functionality delegated to skills via `**Invoke [skill-name] skill**`.
+4.  **Artifacts**: Explicitly name output files.
+5.  **Checkpoints**: Explicit `**WAIT**` states for user confirmation.
+
+**Example Step:**
+
+```markdown
+## Step 1: Analyze Requirements
+
+// turbo
+
+> 💡 **Tip**: Use `sequential-thinking` (if available) or `read_file` to parse requirements.
+
+1. **Invoke [product-manager] skill** to refine the request.
+2. Create `requirements.md` artifact.
+3. **WAIT** for user confirmation.
+```
+
+### 3. Summary
+
+- **Quick Reference**: A table at the bottom tracking Step -> Skill -> Output.
 
 ---
 
@@ -127,12 +165,17 @@ Instead of generic "write code", use structured flows:
 ### Rule 2: Sequential Thinking
 
 - **Mandatory** for: Debugging, Architecture Design, and Requirement Analysis.
-- **Usage**: call `sequential-thinking` to generate a hypothesis or plan _before_ writing code.
+- **Usage**: Break down problems step-by-step _before_ writing code.
 
 ### Rule 3: Strict Validation
 
 - Verify all generated rules/workflows against the official documentation.
-- If a workflow fails, **stop**, analyze with `sequential-thinking`, and propose a fix.
+- If a workflow fails, **stop**, analyze step-by-step, and propose a fix.
+
+### Rule 4: Process vs Knowledge Separation
+
+- **Strict Enforcement**: When designing, Skills MUST contain Knowledge (Standards, Templates) and Workflows MUST contain Process (Steps, Sequences).
+- **No Overlap**: Never hardcode standards in a workflow. Never bury a lifecycle process in a skill.
 
 ## 4. Self-Correction & Learning
 

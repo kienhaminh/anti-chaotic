@@ -8,27 +8,9 @@
 
 ## Workflow File Template
 
-```markdown
----
-description: [Brief description for workflow discovery]
----
+A basic workflow template is available in `../assets/workflow-basic.md`.
 
-# Workflow Title
-
-[Optional overview of what this workflow accomplishes]
-
-## Step 1: [Action Name]
-
-[Detailed instructions for this step]
-
-## Step 2: [Action Name]
-
-[Detailed instructions for this step]
-
-## Step 3: [Action Name]
-
-[Detailed instructions for this step]
-```
+This template serves as a comprehensive guide for structuring workflows, including tool usage, step definitions, and referencing other skills.
 
 ## Calling Other Workflows
 
@@ -45,6 +27,16 @@ Call /deploy-staging
 After performing a task manually, ask agent to formalize it:
 
 > "Create a workflow from our conversation about deploying to production"
+
+## Workflow Design Principles
+
+When creating new workflows, strictly follow **"Workflow = Process"**:
+
+1.  **Sequence over Standards**: Define _what_ to do and _when_, but delegate _how_ to Skills.
+2.  **Refer to roles**: Use "As [Role]" or "Call [Skill]" instead of hardcoding instructions.
+3.  **Dynamic References**:
+    - ❌ `Ensure indentation is 2 spaces.` (Hardcoded knowledge)
+    - ✅ `Format code according to project standards defined in [frontend-developer] skill.` (Dynamic reference)
 
 ## Best Practices
 

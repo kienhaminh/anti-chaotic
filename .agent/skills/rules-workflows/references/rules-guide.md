@@ -34,55 +34,14 @@ At the rule level, you can define **how** a rule should be activated:
 
 ## Rule File Templates
 
-### Always-On Rule
+Templates are available in the `../assets/` directory:
 
-```markdown
----
-trigger: always_on
----
+- **Always-On Rule**: `../assets/rule-always-on.md`
+- **Model-Decision Rule**: `../assets/rule-model-decision.md`
+- **Glob-Pattern Rule**: `../assets/rule-glob.md`
+- **Manual Rule**: `../assets/rule-manual.md`
 
-# [Rule Name]
-
-[Instructions that always apply to this workspace/globally]
-```
-
-### Model-Decision Rule
-
-```markdown
----
-trigger: model_decision
-description: Apply when working with authentication or security features
----
-
-# Security Guidelines
-
-[Security-related instructions for the agent]
-```
-
-### Glob-Pattern Rule
-
-```markdown
----
-trigger: glob
-glob: src/**/*.tsx
----
-
-# React Component Standards
-
-[Standards to apply when editing React components]
-```
-
-### Manual Rule
-
-```markdown
----
-trigger: manual
----
-
-# [Rule Name]
-
-[Instructions activated via @mention]
-```
+Use these templates as a starting point for creating new rules.
 
 ## Best Practices
 
