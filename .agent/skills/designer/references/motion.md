@@ -35,7 +35,7 @@ Use motion to direct attention.
 
 To specify an animation, you must define **Trigger**, **Properties**, and **Timing**.
 
-**Template Location**: `.agent/templates/documents/design-motion-spec.md`
+**Template Location**: `../templates/design-motion-spec.md`
 **Output Location**: `docs/040-Design/Specs/`
 
 ### 1. Triggers
@@ -86,7 +86,7 @@ When a user asks for animation, **DO NOT write CSS**. Instead:
 
 1.  **Analyze** the interaction.
 2.  **Select** the appropriate parameters (Trigger, Easing, Duration).
-3.  **Generate a Motion Spec** using the template at `.agent/templates/documents/design-motion-spec.md`.
+3.  **Generate a Motion Spec** using the template at `../templates/design-motion-spec.md`.
 4.  **Save** it to `docs/040-Design/Specs/Motion-[FeatureName].md`.
 
 This spec is the deliverable for the Frontend Developer.

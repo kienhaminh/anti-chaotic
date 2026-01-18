@@ -81,7 +81,7 @@ Make that ONE thing unforgettable.
 ```
 
 - **Define Intent**: Why is this moving? (Orientation/Feedback)
-- **Use Template**: Create a spec using `.agent/templates/documents/design-motion-spec.md`
+- **Use Template**: Create a spec using `../templates/design-motion-spec.md`
 - **Spec Output**: Save to `docs/040-Design/Specs/`
 - **No Direct Code**: Leave implementation to `frontend-developer`
 

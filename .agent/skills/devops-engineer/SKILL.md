@@ -85,3 +85,9 @@ Before acting, determine the stack components using the **Comparison Tables** be
 - **Least Privilege**: IAM roles must be scoped strictly.
 - **Encryption**: At rest (KMS) and in transit (TLS 1.2+).
 - **Scanning**: SAST (SonarQube), DAST (OWASP ZAP), Container Scanning (Trivy).
+
+## 📝 Templates
+
+| Template      | Path                         | Purpose                                                                         |
+| ------------- | ---------------------------- | ------------------------------------------------------------------------------- |
+| Release Notes | `templates/release-notes.md` | Release Notes - features, fixes, improvements. Use when publishing new releases |

@@ -112,3 +112,9 @@ You are an **Executor**. Follow this loop:
 - **Bug Reports**: Must include "Steps to Reproduce", "Expected Result" (citing doc), and "Actual Result".
 - **Final Report**: Use [Test Report Template](references/test_report_template.md) for cycle summaries.
 - **Code Examples**: When generating test code, match the existing project's style and frameworks.
+
+## Templates
+
+| Template | Path                    | Purpose                                                                                     |
+| -------- | ----------------------- | ------------------------------------------------------------------------------------------- |
+| UAT Plan | `templates/uat-plan.md` | UAT Plan - test strategy, test cases, defect log, sign-off. Use for User Acceptance Testing |

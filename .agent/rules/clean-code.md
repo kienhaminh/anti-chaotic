@@ -39,3 +39,71 @@ You must adhere to these clean code principles when generating or modifying code
 ## Testing
 
 - Write testable code. Avoid global state and side effects where possible.
+
+## File Length Limits
+
+Files should be kept concise and focused. If a file exceeds these limits, consider splitting it:
+
+| File Type                   | Max Lines | Notes                                          |
+| --------------------------- | --------- | ---------------------------------------------- |
+| Components (`.tsx`, `.jsx`) | 200-300   | Split into smaller components or extract hooks |
+| Utility/Helper files        | 150-200   | Group related utilities, split by domain       |
+| API Routes/Handlers         | 100-150   | Extract business logic to services             |
+| Test files                  | 300-400   | Group by feature, use describe blocks          |
+| Styles (`.css`)             | 200-300   | Use CSS modules or split by component          |
+| Config files                | 100       | Keep minimal, use separate config files        |
+
+**When to split:**
+
+- When a file has multiple responsibilities (violates SRP)
+- When scrolling becomes difficult to follow logic
+- When imports section becomes excessively long (>15 imports)
+- When the file has multiple large functions that could be independent
+
+## File Header Comments
+
+Every new file MUST include a header comment at the top describing its purpose:
+
+**Format for TypeScript/JavaScript:**
+
+```typescript
+/**
+ * @file [filename]
+ * @description [Brief description of what this file contains and its purpose]
+ *
+ * @example (optional - for utilities/hooks)
+ * // Usage example here
+ */
+```
+
+**Format for CSS:**
+
+```css
+/**
+ * @file [filename]
+ * @description [Brief description of styles contained]
+ * 
+ * Sections:
+ * - [List main sections if applicable]
+ */
+```
+
+**Format for Python:**
+
+```python
+"""
+[filename]
+
+[Brief description of what this module contains and its purpose]
+
+Example (optional):
+    >>> usage_example()
+"""
+```
+
+**Requirements:**
+
+- `@file`: The filename (e.g., `user.service.ts`)
+- `@description`: 1-3 sentences explaining the file's purpose
+- Keep headers concise but informative
+- Update headers when file purpose changes significantly

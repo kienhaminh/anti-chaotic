@@ -80,7 +80,9 @@ Once a path is chosen, offer to document it:
 
 To use a template, read the file and fill it in based on the conversation context.
 
-- `.agent/templates/documents/adr.md`
-- `.agent/templates/documents/rfc.md`
-- `.agent/templates/documents/sdd.md`
-- `.agent/templates/documents/technical-spec.md`
+| Template       | Path                          | Purpose                                                                                                            |
+| -------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ADR            | `templates/adr.md`            | Architecture Decision Record - context, options, decision, consequences. Use to document important arch decisions  |
+| RFC            | `templates/rfc.md`            | Request for Comments - proposal, design, alternatives, timeline. Use to propose major technical changes for review |
+| SDD            | `templates/sdd.md`            | System Design Document - C4 diagrams, technology stack, data design. Use for overall system design                 |
+| Technical Spec | `templates/technical-spec.md` | Technical Specification - architecture diagram, data model, API interface. Use for specific feature specs          |

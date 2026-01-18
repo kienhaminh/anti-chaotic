@@ -40,18 +40,41 @@ Before creating any rule or workflow, the Agent MUST:
 
 ## 1. Rules: Shaping Context
 
-Rules are persistent instructions that guide _how_ the Agent thinks and acts.
+Rules are persistent instructions that guide _how_ the Agent thinks and acts. Workspace rules live in the `.agent/rules` folder.
+
+### Rule Activation Types
+
+At the rule level, you can define **how** a rule should be activated:
+
+| Type               | Trigger Value    | Description                                                          |
+| ------------------ | ---------------- | -------------------------------------------------------------------- |
+| **Manual**         | `manual`         | Activated via `@mention` in Agent's input box                        |
+| **Always On**      | `always_on`      | Always applied to every interaction                                  |
+| **Model Decision** | `model_decision` | Model decides based on natural language `description` in frontmatter |
+| **Glob**           | `glob`           | Applied to files matching the `glob` pattern (e.g., `src/**/*.tsx`)  |
+
+### Examples (in `assets/`)
+
+- `example-rule-always-on.md`: Project standards that always apply
+- `example-rule-glob.md`: React component guidelines for `.tsx` files
+- `example-rule-manual.md`: Deep code review activated via @mention
+- `example-rule-model-decision.md`: Security guidelines auto-applied contextually
 
 ### Creation Process
 
 1.  **Ask**: "What specific behaviors or constraints must be enforced?"
-2.  **Draft**: Use `assets/templates/rule-project-context.md` as a base.
-3.  **Refine**: Ensure rules are actionable (e.g., "Use Zod for input" vs "Write good code").
+2.  **Choose Activation Type**: Select the appropriate trigger based on when the rule should apply
+3.  **Draft**: Use `assets/templates/rule-project-context.md` as a base
+4.  **Refine**: Ensure rules are actionable (e.g., "Use Zod for input" vs "Write good code")
 
 ### Best Practices
 
-- **Global vs Workspace**: Use valid paths (`~/.gemini/` for global, `.agent/rules/` for workspace).
-- **Triggers**: Prefer `always_on` for critical project constraints. Use `glob` for file-type specific rules.
+- **Global vs Workspace**: Use valid paths (`~/.gemini/` for global, `.agent/rules/` for workspace)
+- **Activation Selection**:
+  - Use `always_on` for critical project constraints
+  - Use `glob` for file-type specific rules
+  - Use `model_decision` for context-aware rules with clear description
+  - Use `manual` for intensive operations (@mention to activate)
 - **Fail on Error**: Rule syntax is strict. A bad rule can break the Agent. Validate always.
 
 ---
