@@ -5,35 +5,94 @@ const fs = require("fs-extra");
 const path = require("path");
 const chalk = require("chalk");
 
-program.version("0.0.1").description("Antigravity Framework CLI");
+const tiged = require("tiged");
+
+program.version("0.0.1").description("Anti-Chaotic Agent Kit CLI");
+
+const REPO_URI = "kienhaminh/anti-chaotic/.agent";
 
 program
   .command("init")
-  .description("Initialize the Antigravity framework structure")
-  .action(async () => {
+  .description("Initialize the Anti-Chaotic framework structure (local copy)")
+  .option(
+    "-r, --remote",
+    "Fetch from remote GitHub repository instead of local package",
+  )
+  .action(async (cmd) => {
     const projectRoot = process.cwd();
-    const agentDir = path.join(projectRoot, ".agent");
-    const dirs = ["rules", "workflows", "skills"];
+    const sourceAgentDir = path.join(__dirname, "..", ".agent");
+    const targetAgentDir = path.join(projectRoot, ".agent");
 
     try {
-      for (const dir of dirs) {
-        await fs.ensureDir(path.join(agentDir, dir));
-      }
-      console.log(
-        chalk.green("✔ Initialized Antigravity framework in .agent/"),
-      );
+      console.log(chalk.blue("Initializing Anti-Chaotic framework..."));
 
-      // Create a default rule file
-      const ruleFile = path.join(agentDir, "rules", "base.md");
-      if (!(await fs.pathExists(ruleFile))) {
-        await fs.writeFile(
-          ruleFile,
-          "# Base Rules\n\n- Follow clean code principles.\n- Always explain complex logic.\n",
-        );
-        console.log(chalk.blue("  - Created .agent/rules/base.md"));
+      if (cmd.remote) {
+        console.log(chalk.yellow(`Fetching from GitHub: ${REPO_URI}...`));
+        const emitter = tiged(REPO_URI, {
+          disableCache: true,
+          force: true,
+          mode: "git",
+        });
+
+        await emitter.clone(targetAgentDir);
+        console.log(chalk.green("✔ Successfully fetched .agent from GitHub."));
+      } else {
+        // Local Copy
+        if (!(await fs.pathExists(sourceAgentDir))) {
+          // Fallback to remote if local not found (e.g. npx cache issue), though unlikely in packaged env
+          console.log(
+            chalk.yellow("Local source not found, attempting remote fetch..."),
+          );
+          const emitter = tiged(REPO_URI, {
+            disableCache: true,
+            force: true,
+            mode: "git",
+          });
+          await emitter.clone(targetAgentDir);
+          console.log(
+            chalk.green(
+              "✔ Successfully fetched .agent from GitHub (fallback).",
+            ),
+          );
+        } else {
+          await fs.copy(sourceAgentDir, targetAgentDir, { overwrite: true });
+          console.log(
+            chalk.green(
+              "✔ Successfully installed .agent configuration from local package.",
+            ),
+          );
+        }
       }
+
+      console.log(chalk.dim(`  Location: ${targetAgentDir}`));
     } catch (err) {
       console.error(chalk.red("✘ Error initializing framework:"), err.message);
+    }
+  });
+
+program
+  .command("update")
+  .description("Update .agent configuration from GitHub")
+  .action(async () => {
+    const targetAgentDir = path.join(process.cwd(), ".agent");
+
+    try {
+      console.log(
+        chalk.blue(`Updating Anti-Chaotic framework from ${REPO_URI}...`),
+      );
+
+      const emitter = tiged(REPO_URI, {
+        disableCache: true,
+        force: true,
+        mode: "git",
+      });
+
+      await emitter.clone(targetAgentDir);
+
+      console.log(chalk.green("✔ Successfully updated .agent from GitHub."));
+      console.log(chalk.dim(`  Location: ${targetAgentDir}`));
+    } catch (err) {
+      console.error(chalk.red("✘ Error updating framework:"), err.message);
     }
   });
 

@@ -1,18 +1,42 @@
 {
-  "name": "ai-driven-development",
+  "name": "@kienhaminh/anti-chaotic",
   "version": "1.0.0",
-  "description": "",
+  "description": "Anti-Chaotic - An agent kit for Antigravity to standardize the software development process",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kienhaminh/anti-chaotic.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "anti-chaotic",
+    "antigravity",
+    "cli",
+    "agent",
+    "framework",
+    "agile",
+    "process"
+  ],
+  "author": "Kien Ha",
   "license": "ISC",
   "type": "commonjs",
+  "bin": {
+    "ag": "./bin/ag.js",
+    "anti-chaotic": "./bin/ag.js"
+  },
+  "files": [
+    ".agent",
+    "bin"
+  ],
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^14.0.2",
-    "fs-extra": "^11.3.3"
+    "fs-extra": "^11.3.3",
+    "tiged": "^2.12.7"
   }
 }

@@ -1,6 +1,6 @@
-# 🚀 Antigravity Framework
+# 🚀 Anti-Chaotic Agent Kit
 
-> **AI-Driven Development Framework** - A comprehensive toolkit for software development powered by AI Agents.
+> **The Unified Agent Kit for AI-Driven Development** - A comprehensive toolkit for software development powered by AI Agents.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
@@ -9,7 +9,7 @@
 
 ## 🎯 Introduction
 
-**Antigravity Framework** is an open-source framework that optimizes your software development workflow by leveraging the power of AI Agents. This framework provides:
+**Anti-Chaotic** is a comprehensive **Agent Kit** for Antigravity, designed to standardize and optimize your software development workflow. It serves as a versatile toolkit rather than a rigid framework:
 
 - 🧠 **12+ Multi-domain AI Skills** - From Product Manager, Business Analyst to Lead Architect, DevOps Engineer
 - 🔄 **5 Automated Workflows** - Pre-defined, reusable work processes
@@ -58,7 +58,7 @@
 ## 📁 Directory Structure
 
 ```
-antigravity-framework/
+anti-chaotic/
 ├── .agent/
 │   ├── skills/           # 12 AI skills with detailed instructions
 │   │   ├── product-manager/
@@ -94,8 +94,8 @@ antigravity-framework/
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-org/antigravity-framework.git
-cd antigravity-framework
+git clone https://github.com/kienhaminh/anti-chaotic.git
+cd anti-chaotic
 ```
 
 ### 2. Install Dependencies

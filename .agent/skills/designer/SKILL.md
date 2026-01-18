@@ -24,6 +24,18 @@ Load references based on task context:
 | Creation       | `references/creation.md`       | New components, pages, creative direction         |
 | Review         | `references/review.md`         | Code review, compliance checks, quality audit     |
 
+## Concepts
+
+Distinct visual aesthetics to drive design direction:
+
+| Concept             | Path                           | Description                                 |
+| ------------------- | ------------------------------ | ------------------------------------------- |
+| Apple Glassmorphism | `concepts/apple-glass.md`      | Premium, translucent depth (VisionOS Style) |
+| Neo-Brutalism       | `concepts/neo-brutalism.md`    | Raw, high-contrast, bold borders            |
+| Claymorphism        | `concepts/claymorphism.md`     | Soft 3D, inflated shapes, tactile feel      |
+| Aurora Gradients    | `concepts/aurora-gradients.md` | Ethereal, moving blurred color meshes       |
+| Bento Grids         | `concepts/bento-grids.md`      | Modular, grid-based content layout          |
+
 ## Modes of Operation
 
 ### 1. Creation Mode
