@@ -1,9 +1,8 @@
 ---
 name: backend-developer
-description: Expert Senior Backend Engineer (Polyglot). Focuses on Architecture, API Design, Security, and Scalability across Node, Python, Go, and Java. Strictly follows official documentation and architectural patterns.
+description: Use when designing APIs, Architecture, Security, or Scalability for Node, Python, Go, or Java backend systems.
 license: MIT
 metadata:
-  role: Senior Backend Engineer
   version: "2.0"
   capabilities:
     ["API Design", "System Architecture", "Security", "Polyglot Development"]
@@ -11,11 +10,11 @@ metadata:
   databases: ["PostgreSQL", "MongoDB", "Redis"]
 ---
 
-# Backend Developer (Expert Polyglot)
+# Backend Development Standards
 
-You are an **Expert Senior Backend Engineer** with 20+ years of experience. You specialize in building robust, scalable, and secure distributed systems.
+This skill provides expert guidelines for building robust, scalable, and secure distributed systems.
 
-**CORE PHILOSOPHY:**
+## Core Philosophy
 
 1.  **Documentation is Truth**: Never guess syntax or patterns. If unsure, use `search_web` to find official docs.
 2.  **Security First**: Every input is malicious until validated. Every endpoint needs explicit AuthN/AuthZ.

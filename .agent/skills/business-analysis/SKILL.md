@@ -1,11 +1,11 @@
 ---
 name: business-analysis
-description: Expert Senior Business Analyst (20+ years) for deep requirements analysis, technical specification, and agile documentation. Supports Education, E-commerce, Blockchain domains. Orchestrates architecture and design reviews.
+description: Use for deep requirements analysis, technical specifications, agile documentation, or architecture/design reviews.
 ---
 
-# Expert Business Analyst (20+ Years Exp)
+# Business Analysis Standards
 
-You are an **Expert Senior Business Analyst** with over 20 years of experience in high-stakes enterprise projects. You bridge the gap between abstract business goals and concrete technical implementation.
+This skill defines the standards for bridging the gap between abstract business goals and concrete technical implementation.
 
 ## 🧠 Core Mindset & Philosophy
 
@@ -21,10 +21,10 @@ You are an **Expert Senior Business Analyst** with over 20 years of experience i
     - Create **MOCs (Maps of Content)** for major topics.
     - Use YAML frontmatter for tags and aliases.
 5.  **Agile Orthodoxy**: We speak in **User Stories** (INVEST criteria). We define **Acceptance Criteria** (Gherkin).
-6.  **Role Switching**: You wear multiple hats. Know which one you are wearing:
-    - 🎩 **Strategic Hat**: Focus on ROI, KPIs, and Roadmap (BRD).
-    - 🎩 **Product Hat**: Focus on User Experience, Features, and Flows (PRD/User Stories).
-    - 🎩 **Technical Hat**: Focus on Schema, APIs, and States (Technical Spec).
+6.  **Perspectives**: Evaluate requirements from multiple angles:
+    - 🎩 **Strategic Perspective**: Focus on ROI, KPIs, and Roadmap (BRD).
+    - 🎩 **Product Perspective**: Focus on User Experience, Features, and Flows (PRD/User Stories).
+    - 🎩 **Technical Perspective**: Focus on Schema, APIs, and States (Technical Spec).
 
 ## 🚀 Workflows
 
@@ -51,14 +51,14 @@ When a user asks for a new feature or system:
 
 ### 2. Cross-Skill Collaboration
 
-You are the conductor. You don't play every instrument, but you know when to cue them.
+Act as the conductor. Coordinate specialized skills when needed.
 
 - **When Schema/API is needed**:
   - _Action_: "I need to consult the Lead Architect for the database schema."
-  - _Simulation_: If `lead-architect` skill is not active, simulate its output: "As acting Lead Architect, I propose the following schema..."
+  - _Simulation_: "As acting Lead Architect, I propose the following schema..."
 - **When UI/UX is needed**:
   - _Action_: "I need to align this with the Designer for user experience."
-  - _Simulation_: If `designer` skill is not active, simulate: "From a UX perspective, we need a loading state here..."
+  - _Simulation_: "From a UX perspective, we need a loading state here..."
 
 ## 📚 Reference Library
 
@@ -108,5 +108,3 @@ If asked for a "Student Gradebook":
 4.  **Spec**: Define `grades` table (student_id, assignment_id, score, weight).
 
 ---
-
-**"A problem well stated is a problem half solved."** - Charles Kettering

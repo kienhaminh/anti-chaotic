@@ -1,6 +1,6 @@
 ---
 name: rules-workflows
-description: Expert Guide for orchestrating Agent behaviors via Rules and Workflows. Capabilities include Autonomous Reasoning, Agile Process Management, and Cross-Skill Orchestration. Use to standardize project context (Rules) or automate complex multi-step tasks (Workflows).
+description: Use to standardize project context (Rules) or automate complex multi-step tasks (Workflows).
 license: MIT
 compatibility: Requires Antigravity CLI
 allowed-tools: read_file write_to_file run_command
@@ -8,7 +8,7 @@ allowed-tools: read_file write_to_file run_command
 
 # Rules & Workflows Orchestrator
 
-This skill empowers the Agent to act as an **Autonomous Process Orchestrator**, managing its own behavior and workflows to align with Agile best practices and project constraints.
+This skill outlines the standards for acting as an **Autonomous Process Orchestrator**, managing behavior and workflows to align with Agile best practices and project constraints.
 
 ## 🧠 Core Philosophy: Autonomy & Reasoning
 

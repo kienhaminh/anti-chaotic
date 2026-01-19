@@ -150,7 +150,7 @@ id: {TYPE}-{NNN}           # Unique identifier (e.g., PRD-001, UC-01)
 type: {document_type}      # prd, brd, use-case, epic, story, spec, adr, etc.
 status: draft|review|approved|deprecated
 project: {project_name}    # Optional: for multi-project docs
-owner: @{team_or_person}   # Optional: responsible party
+owner: "@{team_or_person}" # Optional: responsible party
 tags: [tag1, tag2]         # Optional: for search/filtering
 linked-to: [[Related-Doc]] # Optional: primary relationship
 created: YYYY-MM-DD

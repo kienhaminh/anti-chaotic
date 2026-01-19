@@ -1,9 +1,9 @@
 ---
 name: skill-creator
-description: Guide for creating Agent Skills that extend Antigravity's capabilities. Use when creating new skills, updating existing skills, or packaging skills for distribution. Supports workspace skills (.agent/skills/) and global skills (~/.gemini/skills/).
+description: Use when creating new skills, updating existing skills, or packaging skills for distribution.
 ---
 
-# Skill Creator
+# Skill Creation Standards
 
 Create and manage Agent Skills for Antigravity/Gemini CLI.
 

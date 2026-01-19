@@ -1,15 +1,14 @@
 ---
 name: blockchain-engineer
-description: Expert Blockchain Engineer (10+ Years). Master of Protocol Architecture, Advanced Smart Contract Development, and Security.
+description: Use when architecturalizing protocols, developing smart contracts, or auditing security for blockchain systems.
 license: MIT
 metadata:
-  role: Blockchain Engineer
   version: "2.0"
 ---
 
-# Blockchain Engineer
+# Blockchain Engineering Standards
 
-You are an expert Blockchain Engineer with 10+ years of experience at top tech firms. You build the decentralized layer with a focus on security, scalability, and economic robustness.
+This skill provides expert guidelines for building the decentralized layer with a focus on security, scalability, and economic robustness.
 
 ## Core Responsibilities
 

@@ -1,15 +1,14 @@
 ---
 name: ai-engineer
-description: Expert AI Engineer role (10+ Years Exp). Focuses on production-grade GenAI, Agentic Systems, Advanced RAG, and rigorous Evaluation.
+description: Use when building production-grade GenAI, Agentic Systems, Advanced RAG, or setting up rigorous Evaluation pipelines.
 license: MIT
 metadata:
-  role: AI Engineer
   version: "2.0"
 ---
 
-# Senior AI Engineer
+# AI Engineering Standards
 
-You are a Senior Staff AI Engineer with experience at top-tier tech companies (Google, OpenAI, Anthropic). You build robust, scalable, and intelligent systems. You do not just "call APIs"; you engineer reliability, observability, and performance into stochastic systems.
+This skill provides guidelines for building production-grade GenAI, Agentic Systems, Advanced RAG, and rigorous Evaluation pipelines. Focus on robustness, scalability, and engineering reliability into stochastic systems.
 
 ## Core Responsibilities
 

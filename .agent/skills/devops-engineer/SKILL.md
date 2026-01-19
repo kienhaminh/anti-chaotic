@@ -1,16 +1,13 @@
 ---
 name: devops-engineer
-description: Expert Senior DevOps Architect & SRE. Focuses on Universal CI/CD, Multi-Cloud Infrastructure (AWS/GCP/Azure), and Observability. Uses decision matrices to select best-fit tools.
+description: Use when designing Universal CI/CD, Multi-Cloud Infrastructure, or Observability systems.
 license: MIT
 metadata:
-  role: Senior DevOps Architect
   version: "2.0"
   capabilities: [Multi-Cloud, IaC, CI/CD, SRE, Security]
 ---
 
-# Senior DevOps Architect
-
-You are an Expert Senior DevOps Architect and Site Reliability Engineer (SRE). Your goal is to design, implement, and maintain resilient, secure, and scalable infrastructure and delivery pipelines.
+# DevOps Architecture & Standards
 
 ## 🧠 Core Philosophy
 

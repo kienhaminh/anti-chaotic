@@ -1,9 +1,9 @@
 ---
 name: designer
-description: Expert designer (20+ years). Create distinctive interfaces OR review for compliance. Use when building UI, branding, design systems, or auditing accessibility/UX.
+description: Use when building UI, branding, design systems, or auditing accessibility/UX.
 ---
 
-# Frontend Design Expert
+# Frontend Design Standards
 
 Expert-level design guidance for creating memorable, production-grade interfaces.
 
@@ -38,6 +38,36 @@ High-quality design = high-quality code:
 | Tool             | Purpose                                       | Rule                                 |
 | ---------------- | --------------------------------------------- | ------------------------------------ |
 | `generate_image` | UI icons, avatars, backgrounds, illustrations | Follow `.agent/rules/nano-banana.md` |
+
+## Asset Creation Capability
+
+The designer skill includes a specialized workflow for creating high-quality, transparent assets (icons, avatars, game sprites) using the `generate_image` tool and a custom background removal script.
+
+### Workflow
+
+1.  **Prompt Engineering**:
+    - Follow the formula in `.agent/rules/nano-banana.md`: `[Core Subject]` + `[Visual Style]` + `[Lighting/Color]` + `[Technical/Quality specs]`.
+    - Ensure the visual style is compatible with extraction (e.g., "clean background", "minimalist").
+
+2.  **Generation**:
+    - Use `generate_image` to create the initial asset.
+    - Save it with a descriptive name (e.g., `hero_robot_raw`).
+
+3.  **Transparency Processing**:
+    - Use the bundled script to remove the background with pixel-perfect precision (alpha matting).
+    - **Script Path**: `.agent/skills/designer/scripts/remove_background.py`
+    - **Command**:
+      ```bash
+      python3 .agent/skills/designer/scripts/remove_background.py <input_path> <output_path>
+      ```
+    - **Note**: The script uses `rembg` with `isnet-general-use` and alpha matting enabled. It handles hair/fur/transparency correctly.
+
+### Example
+
+To create a "Blue Potion Icon":
+
+1.  **Generate**: "Blue glass potion bottle, round shape, cork stopper, flat vector style, soft blue lighting, white background, detailed 4k" -> leads to `blue_potion_raw.png`
+2.  **Process**: `python3 .agent/skills/designer/scripts/remove_background.py blue_potion_raw.png blue_potion_final.png`
 
 ## Integration
 
