@@ -1,6 +1,6 @@
 {
   "name": "@kienha/anti-chaotic",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Anti-Chaotic - An agent kit for Antigravity to standardize the software development process",
   "main": "index.js",
   "publishConfig": {
