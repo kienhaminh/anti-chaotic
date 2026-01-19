@@ -11,15 +11,32 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ## MCP Usage Guidelines
 
-| MCP Tool                                     | When to Use                                       | Example Query                  |
-| -------------------------------------------- | ------------------------------------------------- | ------------------------------ |
-| `mcp_sequential-thinking_sequentialthinking` | Complex decisions, debugging, architecture design | Break down feature into tasks  |
-| `mcp_context7_resolve-library-id`            | Find library ID before querying docs              | "react hook form"              |
-| `mcp_context7_query-docs`                    | Research library patterns, APIs, best practices   | "How to setup auth in Next.js" |
+| MCP Tool                                     | When to Use                                       | Example Query                       |
+| -------------------------------------------- | ------------------------------------------------- | ----------------------------------- |
+| `mcp_sequential-thinking_sequentialthinking` | Complex decisions, debugging, architecture design | Break down feature into tasks       |
+| `mcp_context7_resolve-library-id`            | Find library ID before querying docs              | "react hook form"                   |
+| `mcp_context7_query-docs`                    | Research UI libraries (shadcn, radix, tailwind)   |
+| `search_web`                                 | Research design trends and UX patterns            | "modern SaaS dashboard trends 2026" |
+| `generate_image`                             | Create low-fi wireframes or conceptual assets     |
 
 ---
 
-## Step 0: Quick Specification (Optional)
+## Step 1: Deep Research
+
+// turbo
+
+> 💡 **MANDATORY**: Follow `.agent/rules/research.md` to ensure modern implementation.
+
+1. **Invoke `[research]`** to:
+   - Find the most efficient/modern patterns for the requested feature.
+   - Check for recent updates in libraries used (Next.js, Prisma, etc.).
+   - Identify potential scaling or security issues related to the implementation.
+2. Update/Create research documentation in `docs/050-Research/`.
+3. **WAIT** for user to review if new critical insights are found.
+
+---
+
+## Step 2: Quick Specification (Optional)
 
 **Skip if**: User Stories or specs already exist in `docs/`.
 
@@ -31,7 +48,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 1: Locate Existing Artifacts
+## Step 3: Locate Existing Artifacts
 
 // turbo
 
@@ -44,7 +61,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 2: Implementation Plan
+## Step 4: Implementation Plan
 
 // turbo
 
@@ -57,7 +74,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 3: Design Review (If UI Feature)
+## Step 5: Design Review (If UI Feature)
 
 // turbo
 
@@ -71,7 +88,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 4: Backend Implementation
+## Step 6: Backend Implementation
 
 // turbo
 
@@ -89,7 +106,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 5: Frontend Implementation
+## Step 7: Frontend Implementation
 
 // turbo
 
@@ -103,7 +120,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 6: Integration & QA
+## Step 8: Integration & QA
 
 // turbo
 
@@ -121,7 +138,7 @@ description: Orchestrates feature implementation from specification to deploymen
 
 ---
 
-## Step 7: Finalize
+## Step 9: Finalize
 
 // turbo
 
@@ -137,10 +154,11 @@ description: Orchestrates feature implementation from specification to deploymen
 
 | Step | Skill              | Output                 |
 | ---- | ------------------ | ---------------------- |
-| 0    | product-manager    | feature-spec.md        |
-| 1-2  | lead-architect     | implementation-plan.md |
-| 3    | designer           | Component specs        |
-| 4    | backend-developer  | API, Models, Tests     |
-| 5    | frontend-developer | Components, Tests      |
-| 6    | qa-tester          | qa-report.md           |
-| 7    | lead-architect     | Updated docs           |
+| 1    | research           | research-insights.md   |
+| 2    | product-manager    | feature-spec.md        |
+| 3-4  | lead-architect     | implementation-plan.md |
+| 5    | designer           | Component specs        |
+| 6    | backend-developer  | API, Models, Tests     |
+| 7    | frontend-developer | Components, Tests      |
+| 8    | qa-tester          | qa-report.md           |
+| 9    | lead-architect     | Updated docs           |

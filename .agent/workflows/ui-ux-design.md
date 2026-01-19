@@ -14,11 +14,27 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 | MCP Tool                  | When to Use                                     |
 | ------------------------- | ----------------------------------------------- |
 | `mcp_context7_query-docs` | Research UI libraries (shadcn, radix, tailwind) |
+| `search_web`              | Research design trends and UX patterns          |
 | `generate_image`          | Create low-fi wireframes or conceptual assets   |
 
 ---
 
-## Step 0: Discovery & Context
+## Step 1: Deep Research
+
+// turbo
+
+> 💡 **MANDATORY**: Follow `.agent/rules/research.md` for visual and UX excellence.
+
+1. **Invoke `[designer]` skill** and `search_web` to:
+   - Identify "Design of the Year" level trends for the specific sector.
+   - Find innovative UX patterns (micro-interactions, navigation).
+   - Gather reference images/styles for the mood board.
+2. Create `design-research.md` in `docs/050-Research/`.
+3. **WAIT** for user to approve the creative direction.
+
+---
+
+## Step 2: Discovery & Context
 
 // turbo
 
@@ -30,7 +46,7 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 
 ---
 
-## Step 1: Design System (If Needed)
+## Step 3: Design System (If Needed)
 
 // turbo
 
@@ -47,7 +63,7 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 
 ---
 
-## Step 2: Component & Flow Design
+## Step 4: Component & Flow Design
 
 // turbo
 
@@ -60,7 +76,7 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 
 ---
 
-## Step 3: Prototyping
+## Step 5: Prototyping
 
 // turbo
 
@@ -75,7 +91,7 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 
 ---
 
-## Step 4: Review & Handoff
+## Step 6: Review & Handoff
 
 // turbo
 
@@ -90,7 +106,8 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 
 | Step | Skill              | Output              |
 | ---- | ------------------ | ------------------- |
-| 0    | designer           | Scope analysis      |
-| 1    | designer           | Design System docs  |
-| 2    | designer           | Flow/Component docs |
-| 3    | frontend-developer | HTML Prototypes     |
+| 1    | designer           | Design Research     |
+| 2    | designer           | Scope analysis      |
+| 3    | designer           | Design System docs  |
+| 4    | designer           | Flow/Component docs |
+| 5    | frontend-developer | HTML Prototypes     |

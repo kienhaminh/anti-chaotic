@@ -11,11 +11,27 @@ description: Analyze ideas with the user and create preliminary high-level docum
 
 ## MCP Usage Guidelines
 
-| MCP Tool                                     | When to Use                                            | Example                           |
-| :------------------------------------------- | :----------------------------------------------------- | :-------------------------------- |
-| `mcp_sequential-thinking_sequentialthinking` | Analyze requirements, feature dependencies, trade-offs | Break down ambiguous requests     |
-| `mcp_context7_resolve-library-id`            | Find library ID before querying                        | "mermaid js"                      |
-| `mcp_context7_query-docs`                    | Research tech stack options, diagram syntax            | "Mermaid sequence diagram syntax" |
+| MCP Tool                                     | When to Use                                            | Example                                 |
+| :------------------------------------------- | :----------------------------------------------------- | :-------------------------------------- |
+| `mcp_sequential-thinking_sequentialthinking` | Analyze requirements, feature dependencies, trade-offs | Break down ambiguous requests           |
+| `mcp_context7_resolve-library-id`            | Find library ID before querying                        | "mermaid js"                            |
+| `mcp_context7_query-docs`                    | Research library patterns, APIs, best practices        | "How to setup auth in Next.js"          |
+| `search_web`                                 | Proactive research for implementation patterns         | "best architecture for agentic systems" |
+
+---
+
+## Step 1: Deep Research
+
+// turbo
+
+> 💡 **MANDATORY**: Follow `.agent/rules/research.md` before starting any ideation.
+
+1. **Invoke `[research]`** (via `search_web` + `read_url_content`) to:
+   - Identify 5-10 key trends in the project's domain.
+   - Find "best-in-class" examples of similar products.
+   - Identify common pitfalls and modern "Wow Factors".
+2. Create `research-insights.md` artifact in `docs/050-Research/`.
+3. **WAIT** for user to review the research findings.
 
 ---
 
@@ -28,7 +44,7 @@ Priority 1: PRD           ← Strategic Overview
 
 ---
 
-## Step 0: Clarification & Understanding
+## Step 2: Clarification & Understanding
 
 **Role: Product Manager**
 
@@ -45,7 +61,7 @@ Priority 1: PRD           ← Strategic Overview
 
 ---
 
-## Step 1: Create Roadmap
+## Step 3: Create Roadmap
 
 // turbo
 
@@ -61,7 +77,7 @@ Priority 1: PRD           ← Strategic Overview
 
 ---
 
-## Step 2: Create PRD
+## Step 4: Create PRD
 
 // turbo
 
@@ -75,7 +91,7 @@ Priority 1: PRD           ← Strategic Overview
 
 ---
 
-## Step 3: Transition to Documentation
+## Step 5: Transition to Documentation
 
 1. Present summary of created artifacts (Roadmap, PRD).
 2. Suggest next step: Run `/documentation` to generate detailed specifications (SDD, Epics, Stories).

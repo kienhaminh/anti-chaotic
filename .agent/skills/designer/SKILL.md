@@ -54,13 +54,13 @@ The designer skill includes a specialized workflow for creating high-quality, tr
     - Save it with a descriptive name (e.g., `hero_robot_raw`).
 
 3.  **Transparency Processing**:
-    - Use the bundled script to remove the background with pixel-perfect precision (alpha matting).
-    - **Script Path**: `.agent/skills/designer/scripts/remove_background.py`
-    - **Command**:
+    - Run the helper script to remove the background:
       ```bash
       python3 .agent/skills/designer/scripts/remove_background.py <input_path> <output_path>
       ```
-    - **Note**: The script uses `rembg` with `isnet-general-use` and alpha matting enabled. It handles hair/fur/transparency correctly.
+    - **Parameters**:
+      - `<input_path>`: Path to the image file you want to process.
+      - `<output_path>`: File path where the result should be saved.
 
 ### Example
 

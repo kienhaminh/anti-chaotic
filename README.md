@@ -135,6 +135,19 @@ Read and execute the workflow at .agent/workflows/brainstorm.md
 
 ---
 
+## 💡 Tips for Best Results
+
+- **Model Selection**:
+  - **Workflows**: Use **Fast Mode** with a reasoning model (**Gemini 3 Pro High** / **Claude Thinking Model**) when running flows.
+  - **Manual Edits**: Use **Planning Mode** when making edits without a workflow.
+  - **Gemini 3 Flash**: Use only for **small tasks**. Do not use for large, complex operations.
+- **Workflow Usage**:
+  - **Tagging**: Only tag a workflow in the **first request** of each session. **Do not** tag 2 or more workflows in the same session.
+- **Skills**:
+  - **Explicit Activation**: Proactively call a skill or use keywords associated with it for better efficiency.
+
+---
+
 ## 🎓 Workflow Details
 
 ## 🔄 Automated Workflows
