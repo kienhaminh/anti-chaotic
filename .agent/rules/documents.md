@@ -1,12 +1,9 @@
 ---
 trigger: model_decision
-description: Always apply when creating, organizing, reading or modifying documentation files
+description: Always apply when working with documentation files
 ---
 
 # Documentation Structure Rule
-
-> [!IMPORTANT]
-> This rule is **MANDATORY** for all documentation operations. Violations will result in incorrect project structure.
 
 ## Critical Rules (MUST Follow)
 

@@ -1,5 +1,9 @@
 # 🚀 Anti-Chaotic Agent Kit
 
+<p align="center">
+  <img src="web/logo.png" width="400" alt="Anti-Chaotic Logo">
+</p>
+
 > **The Unified Agent Kit for AI-Driven Development** - A comprehensive toolkit for software development powered by AI Agents.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

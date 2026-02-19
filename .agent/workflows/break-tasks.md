@@ -4,11 +4,6 @@ description: Orchestrates breaking down requirements into actionable tasks for i
 
 # Break Tasks Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Follow `.agent/rules/documents.md` for all task-related documentation.
-
----
-
 ## MCP Usage Guidelines
 
 | MCP Tool                                     | When to Use                                               |

@@ -47,6 +47,22 @@ These are complete sub-skills with their own rules, examples, and guidelines. Lo
 | ------------------- | ---------------- | ----------------------------------------- |
 | **React / Next.js** | `react/SKILL.md` | RSCs, Suspense, Streaming, Server Actions |
 
+### Three.js Sub-Skills
+
+Load the relevant Three.js sub-skill based on the task:
+
+| Area                    | Sub-Skill Path                            | Key Focus                              |
+| ----------------------- | ----------------------------------------- | -------------------------------------- |
+| **Fundamentals**        | `threejs/fundamentals.md`                  | Scene, camera, renderer, transforms    |
+| **Geometry**            | `threejs/geometry.md`                      | BufferGeometry, attributes, meshes     |
+| **Materials**           | `threejs/materials.md`                     | Material types, PBR, shading           |
+| **Textures**            | `threejs/textures.md`                      | Texture loading, UVs, maps             |
+| **Lighting**            | `threejs/lighting.md`                      | Light types, shadows, lightmaps        |
+| **Loaders**             | `threejs/loaders.md`                       | GLTF/OBJ loading, assets, pipelines    |
+| **Animation**           | `threejs/animation.md`                     | AnimationMixer, clips, timelines       |
+| **Interaction**         | `threejs/interaction.md`                   | Raycasting, input, controls            |
+| **Shaders**             | `threejs/shaders.md`                       | ShaderMaterial, GLSL, custom effects   |
+| **Postprocessing**      | `threejs/postprocessing.md`                | EffectComposer, passes, render targets |
 ### Reference Files
 
 General reference guides for frameworks without full sub-skills yet:

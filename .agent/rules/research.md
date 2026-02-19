@@ -1,12 +1,9 @@
 ---
 trigger: model_decision
-description: Always apply when starting new tasks, invoking workflows, or using skills that require specialized knowledge or deep insight.
+description: Always apply when doing research
 ---
 
 # Deep Research & Insight Gathering Rule
-
-> [!IMPORTANT]
-> This rule is **MANDATORY** to ensure that solutions provided are modern, cutting-edge, and high-impact. Relying solely on internal knowledge is NOT SUFFICIENT.
 
 ## Core Rules (MUST Follow)
 

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Anti-Chaotic",
+  "logo": {
+    "light": "/logo.png",
+    "dark": "/logo.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#0F172A",
+    "light": "#F8FAFC",
+    "dark": "#020617",
+    "anchors": "#3B82F6"
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@example.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://github.com/kienhaminh/anti-chaotic"
+  },
+  "primaryTab": {
+    "name": "Home"
+  },
+  "tabs": [
+    {
+      "name": "Guide",
+      "url": "quickstart"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": ["introduction", "quickstart"]
+    },
+    {
+      "group": "Essentials",
+      "pages": ["essentials/workflow", "essentials/tools"]
+    }
+  ]
+}

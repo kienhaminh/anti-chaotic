@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "project-manager",
+  "description": "Routes queries to appropriate reference documents based on keywords and context",
+  "routes": [
+    {
+      "id": "prd-template",
+      "keywords": [
+        "PRD",
+        "product requirements",
+        "requirements document",
+        "strategic",
+        "hypothesis",
+        "success metrics",
+        "analytics"
+      ],
+      "path": "templates/prd-strategic.md",
+      "description": "PRD Strategic Template - 'What & Why'. Hypothesis, success metrics, analytics."
+    },
+    {
+      "id": "user-story-template",
+      "keywords": [
+        "user story",
+        "backlog",
+        "acceptance criteria",
+        "DoD",
+        "definition of done",
+        "story"
+      ],
+      "path": "templates/user-story-simple.md",
+      "description": "User Story Template - Backlog items with Story + Acceptance Criteria + DoD."
+    },
+    {
+      "id": "strategy-one-pager",
+      "keywords": [
+        "strategy",
+        "one-pager",
+        "pitch",
+        "value",
+        "cost",
+        "risk",
+        "new idea"
+      ],
+      "path": "templates/pm-strategy-one-pager.md",
+      "description": "Strategy One-Pager Template - Pitching new ideas (Value, Cost, Risk)."
+    },
+    {
+      "id": "rules-guide",
+      "keywords": [
+        "rules",
+        "SOP",
+        "context injection",
+        "rule structure",
+        "governance",
+        "standards",
+        ".agent/rules"
+      ],
+      "path": "references/rules-guide.md",
+      "description": "STANDARD: SOPs, Context Injection, Rule Structure for .agent/rules/"
+    },
+    {
+      "id": "workflows-guide",
+      "keywords": [
+        "workflow",
+        "turbo",
+        "checkpoint",
+        "flow design",
+        "automation",
+        ".agent/workflows"
+      ],
+      "path": "references/workflows-guide.md",
+      "description": "STANDARD: Turbo execution, checkpoints, flow design for .agent/workflows/"
+    },
+    {
+      "id": "task-decomposition",
+      "keywords": [
+        "decomposition",
+        "breakdown",
+        "split",
+        "granularity",
+        "estimation",
+        "vertical slice",
+        "entity-action"
+      ],
+      "path": "references/task-decomposition.md",
+      "description": "Methodology for breaking docs into granular tasks (2-8 hours)."
+    },
+    {
+      "id": "strategic-frameworks",
+      "keywords": [
+        "RICE",
+        "Kano",
+        "prioritization",
+        "scoring",
+        "ranking",
+        "framework"
+      ],
+      "path": "references/strategic-frameworks.md",
+      "description": "RICE, Kano, and other prioritization methods."
+    },
+    {
+      "id": "ba-collaboration",
+      "keywords": [
+        "business analyst",
+        "BA",
+        "domain",
+        "compliance",
+        "regulatory",
+        "persona",
+        "industry"
+      ],
+      "path": "references/ba-collaboration.md",
+      "description": "Collaboration guide with Business Analyst skill for domain-specific context."
+    },
+    {
+      "id": "skill-creation",
+      "keywords": [
+        "create skill",
+        "update skill",
+        "manage skill",
+        "skill maintenance",
+        "new agent skill"
+      ],
+      "path": "references/skill-creation.md",
+      "description": "Comprehensive guide for creating, initializing, and maintaining Agent Skills."
+    },
+    {
+      "id": "skill-questionnaire",
+      "keywords": [
+        "skill creation",
+        "new skill",
+        "update skill",
+        "skill requirements",
+        "questionnaire"
+      ],
+      "path": "templates/skill-questionnaire.md",
+      "description": "Questionnaire to gather requirements for creating or updating an Agent Skill."
+    }
+  ],
+  "relatedSkills": [
+    {
+      "name": "business-analysis",
+      "path": "/Users/kien.ha/Code/ai-driven-development/.agent/skills/business-analysis/SKILL.md",
+      "description": "For deep domain-specific context, regulations, and industry standards.",
+      "keywords": [
+        "domain",
+        "compliance",
+        "regulatory",
+        "user persona",
+        "industry metrics",
+        "FinTech",
+        "Healthcare"
+      ]
+    }
+  ],
+  "usageInstructions": {
+    "howToUse": "1. Match user query keywords against routes[].keywords. 2. Load the corresponding path file for detailed instructions. 3. For domain-specific queries, consult relatedSkills.",
+    "priority": "Templates for creation tasks, References for standards/methodology, RelatedSkills for domain expertise."
+  }
+}
