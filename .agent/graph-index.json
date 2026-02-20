@@ -9,7 +9,7 @@
       "domain": "ai",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 435,
+      "estimated_tokens": 5230,
       "path": "ai-engineer/SKILL.md",
       "edges": {
         "extends": [
