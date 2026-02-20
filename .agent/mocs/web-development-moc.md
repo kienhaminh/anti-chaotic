@@ -47,53 +47,64 @@ Capability Add-ons (apply to any):
 
 ## Learning Paths
 
-### 🔰 Beginner → Fullstack Developer
+### 🔰 Fullstack Web Agent
+**Load Order:** Foundation → Frontend → Backend → Infrastructure
 ```
-Week 1-2:  [[frontend-developer]] (foundation)
-Week 3-4:  [[typescript]] (type safety)
-Week 5-6:  [[react-nextjs]] (specialization)
-Week 7-8:  [[backend-developer]] (APIs)
-Week 9-10: [[devops-engineer]] (deploy)
-```
-
-### 🎨 Frontend Specialist
-```
-[[frontend-developer]]
-    ↓
-[[react-nextjs]] or [[vue-developer]]
-    ↓
-[[tailwind-setup]] (styling)
-    ↓
-Choose branch:
-    ├── [[threejs]] ──► 3D/VFX
-    ├── [[remotion-best-practices]] ──► Video
-    └── [[nextjs-testing]] ──► Quality
+[[frontend-developer]]          (~2k tokens)
+    ↓ extends
+[[react-nextjs]]                (~1k tokens)  
+    ↓ suggests
+[[backend-developer]]           (~2k tokens)
+    ↓ suggests  
+[[devops-engineer]]             (~1k tokens)
+────────────────────────────────────────────
+Total Context: ~6k tokens
 ```
 
-### 🚀 Indie Hacker / SaaS Builder
+### 🎨 Frontend Specialist Agent
+**Focus:** UI/UX, component libraries, creative tech
 ```
-[[frontend-developer]]
-    ↓
-[[react-nextjs]]
-    ↓
-[[backend-developer]] + [[prisma]]
-    ↓
-[[devops-engineer]] + [[stripe-integration]]
-    ↓
-[[analytics-setup]]
+[[frontend-developer]]          (~2k tokens)
+    ↓ extends
+[[react-nextjs]]                (~1k tokens)
+    ↓ enhances
+[[tailwind-setup]]              (~0.5k tokens)
+    ↓ suggests (choose one)
+    ├── [[threejs]]             (~2k tokens) ──► 3D/VFX projects
+    ├── [[remotion-best-practices]] (~1k tokens) ──► Programmatic video
+    └── [[nextjs-testing]]      (~1k tokens) ──► Quality focus
 ```
 
-### 🎮 Creative Developer
+### 🚀 SaaS / Indie Maker Agent  
+**Stack:** Next.js + API + Database + Payment
 ```
-[[frontend-developer]]
-    ↓
-[[threejs]] (fundamentals)
-    ↓
-[[r3f-best-practices]] (React Three Fiber)
-    ↓
-[[shaders-webgl]] (custom effects)
-    ↓
-[[postprocessing-effects]]
+[[frontend-developer]]          (~2k tokens)
+    ↓ extends
+[[react-nextjs]]                (~1k tokens)
+    ↓ requires
+[[backend-developer]]           (~2k tokens)
+    ↓ suggests
+[[prisma]]                      (~0.5k tokens)
+    ↓ suggests
+[[stripe-integration]]          (~0.5k tokens)
+────────────────────────────────────────────
+Total Context: ~6k tokens
+```
+
+### 🎮 Creative Developer Agent
+**Stack:** WebGL, shaders, motion graphics
+```
+[[frontend-developer]]          (~2k tokens)
+    ↓ extends
+[[threejs]]                     (~2k tokens)
+    ↓ requires
+[[webgl-basics]]                (~1k tokens)
+    ↓ suggests
+[[r3f-best-practices]]          (~1k tokens)
+    ↓ suggests
+[[shaders-webgl]]               (~1k tokens)
+────────────────────────────────────────────
+Total Context: ~7k tokens
 ```
 
 ## Quick Reference
