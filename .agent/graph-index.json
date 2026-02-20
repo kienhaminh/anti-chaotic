@@ -468,6 +468,31 @@
         "moc": []
       }
     },
+    "prompt-engineer": {
+      "name": "prompt-engineer",
+      "type": "skill",
+      "domain": "ai",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 1674,
+      "path": "prompt-engineer/SKILL.md",
+      "edges": {
+        "extends": [
+          "ai-engineer"
+        ],
+        "requires": [],
+        "suggests": [
+          "skill-creator"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "project-manager"
+        ],
+        "moc": [
+          "ai-development-moc"
+        ]
+      }
+    },
     "qa-tester": {
       "name": "qa-tester",
       "type": "skill",
@@ -508,13 +533,9 @@
         "remotion-best-practices",
         "react-nextjs",
         "prisma",
-        "typescript",
-        "vue-developer",
         "nextjs-testing",
         "stripe-integration",
-        "analytics-setup",
         "shaders-webgl",
-        "postprocessing-effects",
         "next-auth",
         "clerk",
         "supabase",
