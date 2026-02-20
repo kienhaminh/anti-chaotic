@@ -34,7 +34,7 @@
       "domain": "infra",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 620,
+      "estimated_tokens": 5064,
       "path": "backend-developer/SKILL.md",
       "edges": {
         "extends": [],
@@ -57,14 +57,20 @@
       "domain": "blockchain",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 493,
+      "estimated_tokens": 6618,
       "path": "blockchain-engineer/SKILL.md",
       "edges": {
-        "extends": [],
+        "extends": [
+          "backend-developer"
+        ],
         "requires": [],
-        "suggests": [],
+        "suggests": [
+          "devops-engineer"
+        ],
         "conflicts": [],
-        "enhances": [],
+        "enhances": [
+          "backend-developer"
+        ],
         "moc": [
           "blockchain-moc"
         ]
