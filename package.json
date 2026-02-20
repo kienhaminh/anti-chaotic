@@ -1,7 +1,7 @@
 {
   "name": "@kienha/anti-chaotic",
-  "version": "1.0.11",
-  "description": "Anti-Chaotic - An agent kit for Antigravity to standardize the software development process",
+  "version": "2.0.0",
+  "description": "Anti-Chaotic - Knowledge Graph powered agent kit for standardized software development",
   "main": "index.js",
   "publishConfig": {
     "access": "public"

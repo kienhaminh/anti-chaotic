@@ -1,81 +1,63 @@
 ---
 name: devops-engineer
-description: Use when designing Universal CI/CD, Multi-Cloud Infrastructure, or Observability systems.
-license: MIT
-metadata:
-  version: "2.0"
-  capabilities: [Multi-Cloud, IaC, CI/CD, SRE, Security]
+type: skill
+domain: infra
+status: stable
+version: "2.0.0"
+estimated_tokens: 6000
+description: CI/CD, multi-cloud infrastructure, and observability. Use for AWS/GCP/Azure, Docker, Kubernetes, and SRE practices.
 ---
 
-# DevOps Architecture & Standards
+# DevOps Engineer
 
-## 🧠 Core Philosophy
+Infrastructure automation, deployment pipelines, and observability systems.
 
-1.  **Automate Everything**: If it's done twice, script it.
-2.  **Infrastructure as Code (IaC)**: No click-ops. All infra must be defined in code (Terraform, Pulumi, Ansible).
-3.  **Security First**: Shift security left. Manage secrets via Vault/KMS, not env vars.
-4.  **Observability**: You can't fix what you can't see. Logs, Metrics, and Traces are mandatory.
+## Knowledge Graph
 
-## 🎛️ Decision Engine & Routing
+- **extends**: []
+- **requires**: []
+- **suggests**: [[docker-compose]], [[kubernetes]], [[terraform]], [[github-actions]], [[observability]]
+- **conflicts**: []
+- **enhances**: [[backend-developer]], [[mobile-developer]] (EAS CI/CD)
+- **moc**: [[infrastructure-moc]]
 
-**STEP 1: Context Analysis**
-Before acting, determine the stack components using the **Comparison Tables** below.
+## Core Philosophy
 
-### 1. Cloud Provider Selection
+1. **Automate Everything** — If done twice, script it
+2. **Infrastructure as Code** — No click-ops (Terraform, Pulumi)
+3. **Security First** — Secrets via Vault/KMS, not env vars
+4. **Observability** — Logs, Metrics, Traces are mandatory
 
-| Feature      | AWS                                  | GCP                           | Azure                             | Vercel/Supabase              |
-| :----------- | :----------------------------------- | :---------------------------- | :-------------------------------- | :--------------------------- |
-| **Best For** | Enterprise, complex granular control | Data/AI, K8s (GKE)            | Enterprise Windows/AD integration | Frontend/Jamstack, Quick MVP |
-| **Compute**  | EC2, Lambda, ECS/EKS                 | GCE, Cloud Run, GKE           | Azure VM, Functions, AKS          | Edge Functions               |
-| **Storage**  | S3, EBS, EFS                         | GCS, Persistent Disk          | Blob Storage, Files               | Storage Bucket               |
-| **Database** | RDS, DynamoDB, Aurora                | Cloud SQL, Firestore, Spanner | SQL Database, CosmosDB            | Postgres (Supabase)          |
+## Stack Selection
 
-### 2. Codebase Normalization Tools
+| Component | Options | Best For |
+|:----------|:--------|:---------|
+| **Cloud** | AWS / GCP / Azure | AWS=Enterprise, GCP=Data/AI, Azure=Windows |
+| **IaC** | Terraform / Pulumi / CDK | TF=Standard, Pulumi=Dev-friendly |
+| **CI/CD** | GitHub Actions / GitLab CI / Jenkins | GHA=Open Source, GitLab=DevSecOps |
+| **Containers** | Docker / Kubernetes | Docker=Simple, K8s=Orchestration |
+| **Observability** | Datadog / Grafana / CloudWatch | Full stack monitoring |
 
-| Feature      | Husky + Lint-staged     | Lefthook             | Biome                | ESLint + Prettier      |
-| :----------- | :---------------------- | :------------------- | :------------------- | :--------------------- |
-| **Type**     | Git Hooks (Node.js)     | Git Hooks (Go)       | All-in-one Toolchain | Linter + Formatter     |
-| **Speed**    | Standard                | Fast                 | Extremely Fast       | Standard               |
-| **Best For** | Standard JS/TS Projects | Monorepos / Polyglot | Greenfields / Speed  | Legacy / Complex Rules |
+## Security Standards
 
-### 3. IaC Tool Selection
+- **Least Privilege** — IAM strictly scoped
+- **Encryption** — At rest (KMS) and in transit (TLS 1.2+)
+- **Scanning** — SAST, DAST, Container scanning (Trivy)
 
-| Feature      | Terraform                                   | Pulumi                          | Ansible                       | CDK (AWS/TF)              |
-| :----------- | :------------------------------------------ | :------------------------------ | :---------------------------- | :------------------------ |
-| **Language** | HCL (Declarative)                           | TS/Python/Go (Imperative)       | YAML (Configuration)          | TS/Python (Imperative)    |
-| **State**    | Remote state file (S3/GCS)                  | Pulumi Service / S3             | No state (Idempotent scripts) | CloudFormation / TF State |
-| **Use Case** | Industry Standard, Multi-cloud provisioning | Dev-friendly, Logic-heavy infra | Config Mgmt, Mutable infra    | AWS-centric, Type-safety  |
+## References
 
-### 4. CI/CD Platform Selection
+- `cloud-providers.md` — AWS/GCP/Azure specifics
+- `iac-tools.md` — Terraform/Pulumi patterns
+- `ci-cd-pipelines.md` — Pipeline design
+- `container-orchestration.md` — Docker/Kubernetes
+- `observability-security.md` — Monitoring, logging
 
-| Feature         | GitHub Actions               | GitLab CI               | Jenkins                           | CircleCI                      |
-| :-------------- | :--------------------------- | :---------------------- | :-------------------------------- | :---------------------------- |
-| **Integration** | Native to GitHub             | Native to GitLab        | Self-hosted, Plugins              | Fast, SaaS-first              |
-| **Config**      | YAML (`.github/workflows`)   | YAML (`.gitlab-ci.yml`) | Groovy (Jenkinsfile)              | YAML (`.circleci/config.yml`) |
-| **Best For**    | Open Source, Integrated flow | Integrated DevSecOps    | Legacy / Highly Custom Enterprise | High Performance              |
+## Related Skills
 
-## 📚 Dynamic Knowledge Base
+- [[backend-developer]] — Application deployment
+- [[mobile-developer]] — EAS CI/CD for mobile
+- [[lead-architect]] — High-level infrastructure decisions
 
-**ACTION**: Load the specific reference based on your decision above.
+---
 
-- **Cloud Infrastructure** (AWS/GCP/Azure): [Load `cloud-providers.md`](references/cloud-providers.md)
-- **Infrastructure as Code** (Terraform/Pulumi): [Load `iac-tools.md`](references/iac-tools.md)
-- **CI/CD Pipelines** (GHA/GitLab): [Load `ci-cd-pipelines.md`](references/ci-cd-pipelines.md)
-- **Containers & Orchestration** (Docker/K8s: [Load `container-orchestration.md`](references/container-orchestration.md)
-- **Observability & Security** (Monitoring/Logging): [Load `observability-security.md`](references/observability-security.md)
-- **Codebase Normalization** (Husky/Linting): [Load `codebase-normalization.md`](references/codebase-normalization.md)
-
-> [!TIP]
-> **Long-tail Tools**: If a user asks for a tool NOT listed above (e.g., DigitalOcean, TravisCI), use `search_web` to find the official "Quick Start" and "Best Practices" documentation.
-
-## 🛡️ Security & Compliance Standards
-
-- **Least Privilege**: IAM roles must be scoped strictly.
-- **Encryption**: At rest (KMS) and in transit (TLS 1.2+).
-- **Scanning**: SAST (SonarQube), DAST (OWASP ZAP), Container Scanning (Trivy).
-
-## 📝 Templates
-
-| Template      | Path                         | Purpose                                                                         |
-| ------------- | ---------------------------- | ------------------------------------------------------------------------------- |
-| Release Notes | `templates/release-notes.md` | Release Notes - features, fixes, improvements. Use when publishing new releases |
+*Part of [[infrastructure-moc]] | Foundation for all deployments*

@@ -1,0 +1,532 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-02-20",
+  "schema": "knowledge-graph",
+  "nodes": {
+    "ai-engineer": {
+      "name": "ai-engineer",
+      "type": "skill",
+      "domain": "ai",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 435,
+      "path": "ai-engineer/SKILL.md",
+      "edges": {
+        "extends": [
+          "backend-developer"
+        ],
+        "requires": [],
+        "suggests": [
+          "vector-db"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "frontend-developer"
+        ],
+        "moc": [
+          "ai-development-moc"
+        ]
+      }
+    },
+    "backend-developer": {
+      "name": "backend-developer",
+      "type": "skill",
+      "domain": "infra",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 626,
+      "path": "backend-developer/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "nodejs-api"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "frontend-developer"
+        ],
+        "moc": [
+          "web-development-moc"
+        ]
+      }
+    },
+    "blockchain-engineer": {
+      "name": "blockchain-engineer",
+      "type": "skill",
+      "domain": "blockchain",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 475,
+      "path": "blockchain-engineer/SKILL.md",
+      "edges": {
+        "extends": [
+          "backend-developer"
+        ],
+        "requires": [],
+        "suggests": [
+          "devops-engineer"
+        ],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "business-analysis": {
+      "name": "business-analysis",
+      "type": "skill",
+      "domain": "analysis",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 655,
+      "path": "business-analysis/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "project-manager"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "qa-tester"
+        ],
+        "moc": []
+      }
+    },
+    "designer": {
+      "name": "designer",
+      "type": "skill",
+      "domain": "design",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 577,
+      "path": "designer/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "frontend-developer"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "frontend-developer"
+        ],
+        "moc": []
+      }
+    },
+    "devops-engineer": {
+      "name": "devops-engineer",
+      "type": "skill",
+      "domain": "infra",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 514,
+      "path": "devops-engineer/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "docker-compose"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "backend-developer"
+        ],
+        "moc": [
+          "infrastructure-moc"
+        ]
+      }
+    },
+    "frontend-developer": {
+      "name": "frontend-developer",
+      "type": "skill",
+      "domain": "web",
+      "status": "stable",
+      "version": "3.2.0",
+      "estimated_tokens": 653,
+      "path": "frontend-developer/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "react-nextjs"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "designer"
+        ],
+        "moc": [
+          "web-development-moc"
+        ]
+      }
+    },
+    "react-nextjs": {
+      "name": "react-nextjs",
+      "type": "skill",
+      "domain": "web",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 913,
+      "path": "react-nextjs/SKILL.md",
+      "edges": {
+        "extends": [
+          "frontend-developer"
+        ],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [
+          "mobile-developer"
+        ],
+        "moc": [
+          "web-development-moc"
+        ]
+      }
+    },
+    "knowledge-graph": {
+      "name": "knowledge-graph",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 1232,
+      "path": "knowledge-graph/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "lead-architect": {
+      "name": "lead-architect",
+      "type": "skill",
+      "domain": "infra",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 581,
+      "path": "lead-architect/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "devops-engineer"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "project-manager"
+        ],
+        "moc": [
+          "infrastructure-moc"
+        ]
+      }
+    },
+    "marketer": {
+      "name": "marketer",
+      "type": "skill",
+      "domain": "marketing",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 457,
+      "path": "marketer/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "remotion-best-practices"
+        ],
+        "conflicts": [],
+        "enhances": [],
+        "moc": [
+          "video-production-moc"
+        ]
+      }
+    },
+    "remotion-best-practices": {
+      "name": "remotion-best-practices",
+      "type": "capability",
+      "domain": "video",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 480,
+      "path": "marketer/remotion-best-practices/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [
+          "react-nextjs"
+        ],
+        "suggests": [
+          "threejs"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "marketer"
+        ],
+        "moc": [
+          "video-production-moc"
+        ]
+      }
+    },
+    "mobile-developer": {
+      "name": "mobile-developer",
+      "type": "skill",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 673,
+      "path": "mobile-developer/SKILL.md",
+      "edges": {
+        "extends": [
+          "frontend-developer"
+        ],
+        "requires": [],
+        "suggests": [
+          "backend-developer"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "react-nextjs"
+        ],
+        "moc": [
+          "mobile-development-moc"
+        ]
+      }
+    },
+    "api-routes": {
+      "name": "api-routes",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 2162,
+      "path": "mobile-developer/api-routes/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "building-ui": {
+      "name": "building-ui",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 2556,
+      "path": "mobile-developer/building-ui/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "cicd-workflows": {
+      "name": "cicd-workflows",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 869,
+      "path": "mobile-developer/cicd-workflows/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "data-fetching": {
+      "name": "data-fetching",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 2771,
+      "path": "mobile-developer/data-fetching/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "deployment": {
+      "name": "deployment",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 929,
+      "path": "mobile-developer/deployment/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "dev-client": {
+      "name": "dev-client",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 878,
+      "path": "mobile-developer/dev-client/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "tailwind-setup": {
+      "name": "tailwind-setup",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 2978,
+      "path": "mobile-developer/tailwind-setup/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "upgrading-expo": {
+      "name": "upgrading-expo",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 924,
+      "path": "mobile-developer/upgrading-expo/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "use-dom": {
+      "name": "use-dom",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 2419,
+      "path": "mobile-developer/use-dom/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "project-manager": {
+      "name": "project-manager",
+      "type": "skill",
+      "domain": "management",
+      "status": "stable",
+      "version": "4.1.0",
+      "estimated_tokens": 613,
+      "path": "project-manager/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "business-analysis"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "frontend-developer"
+        ],
+        "moc": []
+      }
+    },
+    "qa-tester": {
+      "name": "qa-tester",
+      "type": "skill",
+      "domain": "qa",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 604,
+      "path": "qa-tester/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [
+          "frontend-developer"
+        ],
+        "conflicts": [],
+        "enhances": [
+          "project-manager"
+        ],
+        "moc": []
+      }
+    }
+  },
+  "mocs": {
+    "web-development-moc": {
+      "path": "mocs/web-development-moc.md",
+      "domain": "web",
+      "skills": [
+        "web-development-moc",
+        "frontend-developer",
+        "backend-developer",
+        "devops-engineer",
+        "react-  [[vue-      [[nodejs-  [[python-  [[docker-  [[cicd-\n nextjs",
+        "threejs",
+        "kubernetes",
+        "webgl-basics",
+        "r3f-best-practices",
+        "tailwind-setup",
+        "remotion-best-practices",
+        "react-nextjs",
+        "prisma",
+        "typescript",
+        "vue-developer",
+        "nextjs-testing",
+        "stripe-integration",
+        "analytics-setup",
+        "shaders-webgl",
+        "postprocessing-effects",
+        "next-auth",
+        "clerk",
+        "supabase",
+        "mobile-developer",
+        "ai-engineer",
+        "video-production-moc",
+        "mobile-development-moc",
+        "ai-development-moc",
+        "infrastructure-moc",
+        "agent-skills-index"
+      ]
+    }
+  },
+  "conflict_matrix": {}
+}

@@ -140,7 +140,7 @@
   "relatedSkills": [
     {
       "name": "business-analysis",
-      "path": "/Users/kien.ha/Code/ai-driven-development/.agent/skills/business-analysis/SKILL.md",
+      "path": "../business-analysis/SKILL.md",
       "description": "For deep domain-specific context, regulations, and industry standards.",
       "keywords": [
         "domain",

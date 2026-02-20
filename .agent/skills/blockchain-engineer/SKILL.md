@@ -1,52 +1,69 @@
 ---
 name: blockchain-engineer
-description: Use when architecturalizing protocols, developing smart contracts, or auditing security for blockchain systems.
-license: MIT
-metadata:
-  version: "2.0"
+type: skill
+domain: blockchain
+status: stable
+version: "2.0.0"
+estimated_tokens: 5000
+description: Smart contracts, protocol architecture, and security auditing. Use for EVM/Solana, tokenomics, and DeFi.
 ---
 
-# Blockchain Engineering Standards
+# Blockchain Engineer
 
-This skill provides expert guidelines for building the decentralized layer with a focus on security, scalability, and economic robustness.
+Decentralized systems with focus on security, scalability, and economic robustness.
+
+## Knowledge Graph
+
+- **extends**: [[backend-developer]]
+- **requires**: []
+- **suggests**: [[devops-engineer]], [[security-auditor]]
+- **conflicts**: []
+- **enhances**: []
+- **moc**: []
 
 ## Core Responsibilities
 
-1.  **Protocol Architecture**: Design tokenomics, governance structures, and ensuring incentive alignment across the network.
-2.  **Smart Contract Mastery**: End-to-end lifecycle management of smart contracts on EVM (Solidity/Yul) and SVM (Rust/Anchor).
-3.  **Advanced Security**: Protect value through formal verification, fuzzing, and rigorous audit preparation.
-4.  **Scaling Solutions**: Architect solutions using L2s, Optimistic/ZK Rollups, and AppChains.
+1. **Protocol Architecture** — Tokenomics, governance, incentive alignment
+2. **Smart Contracts** — EVM (Solidity/Yul) and SVM (Rust/Anchor)
+3. **Security** — Formal verification, fuzzing, audit preparation
+4. **Scaling** — L2s, Optimistic/ZK Rollups, AppChains
 
-## Technical Standards & Best Practices
+## Development Standards
 
-### Development Lifecycle
+### Environment
+- **EVM**: Hardhat, Foundry (Forge/Cast/Anvil)
+- **Solana**: Anchor
+- **Testing**: Invariant testing, fuzzing (Echidna/Medusa), fork testing
 
-- **Environment**: Master usage of Hardhat and Foundry (Forge/Cast/Anvil) for EVM; Anchor for Solana.
-- **Testing**: Beyond unit tests—implement invariant testing, fuzzing (Echo/Medusa), and fork testing.
-- **CI/CD**: Automated pipelines for linting, testing, and deterministic deployments.
+### Optimization
+- **Gas Golfing** — Yul/Assembly, storage packing, calldata mastery
+- **Quality** — NatSpec, strict linting (Solhint/Clippy)
 
-### Optimization & Quality
-
-- **Gas Golfing**: Optimize for gas efficiency using Yul/Assembly, storage layout packing, and calldata mastery.
-- **Code Quality**: Enforce NatSpec documentation, strict linting (Solhint/Clippy), and clean code patterns.
-
-### Deployment & Ops
-
-- **Patterns**: Use deterministic deployment (Create2) and manage upgrades via standard proxies (Transparent, UUPS, Diamond/EIP-2535).
-- **Security**: Manage keys via Multi-sig (Gnosis Safe) and Timelocks. Automate ops with scripting.
+### Deployment
+- **Patterns** — Create2 deterministic deployment
+- **Upgrades** — Transparent, UUPS, Diamond (EIP-2535)
+- **Security** — Multi-sig (Gnosis Safe), Timelocks
 
 ## Architecture Patterns
 
-- **Upgradeability**: Future-proof contracts using Transparent, UUPS, or Diamond patterns.
-- **Interoperability**: Connect chains using Bridges, Atomic Swaps, and CCIP.
-- **Data Integration**: Index data with Subgraphs (The Graph) and secure external feeds via Oracles (Chainlink, Pyth).
+| Pattern | Use |
+|:--------|:----|
+| **Upgradeability** | Transparent, UUPS, Diamond |
+| **Interoperability** | Bridges, Atomic Swaps, CCIP |
+| **Data** | Subgraphs (The Graph), Oracles (Chainlink, Pyth) |
 
-## Dynamic Stack Loading
+## References
 
-- **EVM (Ethereum/Polygon/Arbitrum)**:
-  - [EVM Overview](references/evm.md)
-  - [Solidity Development](references/solidity.md)
-  - [Deployment & Ops](references/deployment.md)
-  - [Mechanisms & Internals](references/mechanisms.md)
-- **Solana**: (Create `references/solana.md` if needed)
-- **ZK & Privacy**: Focus on ZK-SNARKs/STARKs for privacy and scaling.
+- `evm.md` — EVM overview
+- `solidity.md` — Solidity development
+- `deployment.md` — Deployment & ops
+- `mechanisms.md` — Internals
+
+## Related Skills
+
+- [[backend-developer]] — API and service layer
+- [[devops-engineer]] — Infrastructure and CI/CD
+
+---
+
+*Extends [[backend-developer]] | Specialized for decentralized systems*

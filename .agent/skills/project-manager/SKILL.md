@@ -1,72 +1,76 @@
 ---
 name: project-manager
-description: Use for **Project Planning**, **Roadmapping**, **Requirements Definition** (PRD/User Stories), **Task Prioritization** (RICE/Kano), **Process Orchestration**, **Rule Management**, **Workflow Automation**, and **Skill Creation**.
-license: MIT
-metadata:
-  version: "4.0"
-  experience: "Senior Project Manager / Product Owner / Technical Lead"
-  methodology: Agile/Scrum + Process Automation
-allowed-tools: read_file write_to_file run_command
+type: skill
+domain: management
+status: stable
+version: "4.1.0"
+estimated_tokens: 9600
+description: Project planning, roadmapping, requirements, prioritization, and skill management. Use for PRDs, user stories, RICE/Kano, and process automation.
 ---
 
-# Project & Process Management Standards
+# Project Manager
 
-> **Router**: Consult `router.json` to find specific templates and references based on keywords.
+Deliver value through efficient systems and clear processes.
+
+## Knowledge Graph
+
+- **extends**: []
+- **requires**: []
+- **suggests**: [[business-analysis]], [[qa-tester]], [[lead-architect]]
+- **conflicts**: []
+- **enhances**: [[frontend-developer]], [[backend-developer]], [[mobile-developer]] (skill detection)
+- **moc**: []
 
 ## Core Philosophy
 
-1. **Outcome & Efficiency**: Deliver value (Product) through efficient systems (Process).
-2. **Voice of the User & Team**: Represent user in requirements; represent team in process.
-3. **Ruthless Prioritization**: "No" protects focus. Prioritize work _and_ improvements.
-4. **Automated Governance**: Don't just follow rules—automate them.
+1. **Outcome & Efficiency** — Value (Product) through efficient systems (Process)
+2. **Voice of User & Team** — Represent user in requirements, team in process
+3. **Ruthless Prioritization** — "No" protects focus
+4. **Automated Governance** — Automate rules, don't just follow them
 
 ## Capabilities
 
-| Capability                 | Keywords                     | Router Reference                      |
-| :------------------------- | :--------------------------- | :------------------------------------ |
-| **Strategic Planning**     | Roadmap, Vision, OKRs        | `strategic-frameworks`                |
-| **Requirement Definition** | PRD, Specs, User Stories     | `prd-template`, `user-story-template` |
-| **Process Orchestration**  | Rules, Workflows, Automation | `rules-guide`, `workflows-guide`      |
-| **Task Decomposition**     | Breakdown, Split, Estimation | `task-decomposition`                  |
-| **Skill Management**       | Create Skill, Update Skill   | `skill-questionnaire`                 |
+| Capability | Keywords | Router |
+|:-----------|:---------|:-------|
+| **Strategic Planning** | Roadmap, Vision, OKRs | `strategic-frameworks` |
+| **Requirements** | PRD, Specs, User Stories | `prd-template`, `user-story-template` |
+| **Process** | Rules, Workflows | `rules-guide`, `workflows-guide` |
+| **Decomposition** | Breakdown, Estimation | `task-decomposition` |
+| **Skill Management** | Create/Update skills | `skill-questionnaire` |
 
 ## Quick Rules
 
 - **Repeated 3x?** → Make a **Workflow** (`.agent/workflows/`)
 - **Mistake 2x?** → Make a **Rule** (`.agent/rules/`)
-- **Domain-specific?** → Consult **business-analysis** skill
+- **Domain-specific?** → Consult **[[business-analysis]]**
 
-## Interaction Style
+## Skill Detection Matrix
 
-- **With Stakeholders**: Be proactive. Challenge low-value requirements.
-- **With Team**: Be clear. Provide structure so they focus on logic.
+| Domain | Required Skill |
+|:-------|:---------------|
+| Frontend/UI | [[frontend-developer]] |
+| Backend/API | [[backend-developer]] |
+| Mobile | [[mobile-developer]] |
+| Design | [[designer]] |
+| Infrastructure | [[devops-engineer]] |
+| AI/LLM | [[ai-engineer]] |
+| Blockchain | [[blockchain-engineer]] |
+| Video | [[remotion-best-practices]] |
 
-## Skill Management
+## References
 
-As a Project Manager, you are responsible for ensuring the team has the necessary skills (Agent Skills) to complete tasks.
+- `router.json` — Find templates by keyword
+- `templates/adr.md` — Architecture Decision Record
+- `templates/rfc.md` — Request for Comments
+- `templates/prd-template.md` — Product Requirements
+- `templates/user-story-template.md` — User stories
 
-### 1. Skill Detection
+## Related Skills
 
-When analyzing a new request or planning a task, start by identifying the required domain expertise:
+- [[business-analysis]] — Deep requirements analysis
+- [[qa-tester]] — Quality and testing
+- [[lead-architect]] — High-level technical decisions
 
-- **Frontend/UI**: React, Vue, CSS, Tailwind → `frontend-developer`
-- **Backend/API**: Node, Python, DB, Architecture → `backend-developer`
-- **Mobile**: React Native, Expo → `mobile-developer`
-- **Design**: Figma, UI/UX, Branding → `designer`
-- **Infrastructure**: CI/CD, Docker, Cloud → `devops-engineer`
-- **AI/LLM**: RAG, GenAI, Evaluation → `ai-engineer`
-- **Blockchain**: Smart Contracts, Web3 → `blockchain-engineer`
-- **Video**: Remotion → `remotion-best-practices`
-- **Skill Authoring**: New/Modify Agent Skills → `project-manager` (Self)
+---
 
-### 2. Auto-Install Proposal
-
-If a required skill is **NOT** currently loaded or available in the context:
-
-1. **Check Availability**: Run `npx @kienha/anti-chaotic list-skills` to see available skills if you are unsure.
-2. **Propose Installation**: Ask the user _explicitly_:
-   > "I notice this task requires the **[skill-name]** skill which is adaptable for this task but not currently installed. Shall I install it for you?"
-3. **Execute**: Upon user approval, run:
-   ```bash
-   npx @kienha/anti-chaotic install-skill [skill-name]
-   ```
+*Orchestrates all other skills | Hub for project governance*

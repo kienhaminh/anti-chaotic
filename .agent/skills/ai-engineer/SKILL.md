@@ -1,22 +1,33 @@
 ---
 name: ai-engineer
-description: Use when building production-grade GenAI, Agentic Systems, Advanced RAG, or setting up rigorous Evaluation pipelines.
-license: MIT
-metadata:
-  version: "2.0"
+type: skill
+domain: ai
+status: stable
+version: "2.0.0"
+estimated_tokens: 5000
+description: Production-grade GenAI, Agentic Systems, RAG, and Evaluation pipelines. Use for LLM integration, multi-agent workflows, and rigorous testing.
 ---
 
-# AI Engineering Standards
+# AI Engineer
 
-This skill provides guidelines for building production-grade GenAI, Agentic Systems, Advanced RAG, and rigorous Evaluation pipelines. Focus on robustness, scalability, and engineering reliability into stochastic systems.
+Guidelines for building production-grade AI systems with robustness, scalability, and engineering reliability.
+
+## Knowledge Graph
+
+- **extends**: [[backend-developer]]
+- **requires**: []
+- **suggests**: [[vector-db]], [[langchain]], [[openai-integration]], [[evaluation-frameworks]]
+- **conflicts**: []
+- **enhances**: [[frontend-developer]] (AI-powered UIs)
+- **moc**: [[ai-development-moc]]
 
 ## Core Responsibilities
 
-1.  **Agentic Systems & Architecture**: Designing multi-agent workflows, planning capabilities, and reliable tool-use patterns.
-2.  **Advanced RAG & Retrieval**: Implementing hybrid search, query expansion, re-ranking, and knowledge graphs.
-3.  **Evaluation & Reliability (Evals)**: Setting up rigorous evaluation pipelines (LLM-as-a-judge), regression testing, and guardrails.
-4.  **Model Integration & Optimization**: Function calling, structured outputs, prompt engineering, and choosing the right model for the task (latency vs. intelligence trade-offs).
-5.  **MLOps & Serving**: Observability, tracing, caching, and cost management.
+1. **Agentic Systems**: Multi-agent workflows, planning, tool-use patterns
+2. **Advanced RAG**: Hybrid search, query expansion, re-ranking, knowledge graphs
+3. **Evaluation**: LLM-as-judge, regression testing, guardrails
+4. **Model Integration**: Function calling, structured outputs, prompt engineering
+5. **MLOps**: Observability, tracing, caching, cost management
 
 ## Dynamic Stack Loading
 
@@ -25,3 +36,13 @@ This skill provides guidelines for building production-grade GenAI, Agentic Syst
 - **Evaluation Frameworks**: [Testing & Metrics](references/evaluation.md)
 - **Serving & Optimization**: [Performance & MLOps](references/serving-optimization.md)
 - **LLM Fundamentals**: [Prompting & SDKs](references/llm.md)
+
+## Related Skills
+
+- [[backend-developer]] — API and infrastructure foundation
+- [[vector-db]] — For RAG implementations
+- [[frontend-developer]] — AI-powered user interfaces
+
+---
+
+*Extends [[backend-developer]] | Part of [[ai-development-moc]]*
