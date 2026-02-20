@@ -16,7 +16,7 @@ Guidelines for building production-grade AI systems with robustness, scalability
 
 - **extends**: [[backend-developer]]
 - **requires**: []
-- **suggests**: [[prompt-engineer]], [[skill-creator]]
+- **suggests**: [[prompt-engineer]]
 - **conflicts**: []
 - **enhances**: [[frontend-developer]] (AI-powered UIs), [[data-scientist]] (ML pipelines)
 - **moc**: [[ai-development-moc]]

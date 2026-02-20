@@ -14,9 +14,16 @@ Designing effective prompts and agent skills for AI-driven development.
 ## Knowledge Graph
 
 - **extends**: [[ai-engineer]]
-- **suggests**: [[skill-creator]], [[frontend-developer]], [[backend-developer]]
+- **suggests**: [[frontend-developer]], [[backend-developer]]
 - **enhances**: [[project-manager]], [[lead-architect]]
 - **moc**: [[ai-development-moc]]
+
+## Sub-capabilities
+
+| Capability | Location | Use For |
+|:-----------|:---------|:--------|
+| Skill Creator | `skill-creator/` | Authoring new skills for the framework |
+| Prompt Templates | `references/prompt-templates.md` | Reusable prompt patterns |
 
 ## Role Definition
 
@@ -283,9 +290,8 @@ Before publishing a skill:
 ## Related Skills
 
 - [[ai-engineer]] — LLM integration patterns
-- [[skill-creator]] — Skill packaging and publishing
-- [[knowledge-graph]] — Graph validation and resolution
+- [[backend-developer]] — API development for AI services
 
 ---
 
-*Part of [[ai-development-moc]]*
+*Part of [[ai-development-moc]] | Skill creator guide in `skill-creator/` sub-directory*

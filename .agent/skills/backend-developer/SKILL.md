@@ -16,7 +16,7 @@ Expert guidelines for building robust, scalable, and secure distributed systems.
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[docker-compose]], [[vector-db]], [[devops-engineer]], [[lead-architect]]
+- **suggests**: [[devops-engineer]], [[lead-architect]]
 - **conflicts**: []
 - **enhances**: [[frontend-developer]] (fullstack), [[ai-engineer]] (AI APIs), [[blockchain-engineer]] (Web3 APIs)
 - **moc**: [[web-development-moc]]

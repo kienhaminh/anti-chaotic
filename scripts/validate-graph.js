@@ -25,7 +25,7 @@ const fs = {
   }
 };
 
-const GRAPH_PATH = path.join(__dirname, '..', '..', '..', 'graph-index.json');
+const GRAPH_PATH = path.join(__dirname, '..', '.agent', 'graph-index.json');
 
 /**
  * Load graph

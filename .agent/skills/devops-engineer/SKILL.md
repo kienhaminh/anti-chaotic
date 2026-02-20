@@ -16,10 +16,18 @@ Infrastructure automation, deployment pipelines, and observability systems.
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[docker-compose]], [[kubernetes]], [[terraform]], [[github-actions]], [[observability]]
+- **suggests**: []
 - **conflicts**: []
 - **enhances**: [[backend-developer]], [[mobile-developer]] (EAS CI/CD)
 - **moc**: [[infrastructure-moc]]
+
+## Capability Add-ons
+
+| Sub-capability | Location | Use For |
+|:---------------|:---------|:--------|
+| Docker Compose | `docker-compose/` | Local development environments |
+| Kubernetes | Load `kubernetes/` reference | Container orchestration |
+| Observability | Load `observability/` reference | Monitoring & logging |
 
 ## Core Philosophy
 

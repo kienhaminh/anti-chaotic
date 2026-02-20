@@ -9,8 +9,8 @@
       "domain": "ai",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 5228,
-      "path": "ai-engineer/SKILL.md",
+      "estimated_tokens": 5224,
+      "path": "anti-chaotic/.agent/skills/ai-engineer/SKILL.md",
       "edges": {
         "extends": [
           "backend-developer"
@@ -34,13 +34,13 @@
       "domain": "infra",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 5064,
-      "path": "backend-developer/SKILL.md",
+      "estimated_tokens": 5056,
+      "path": "anti-chaotic/.agent/skills/backend-developer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
         "suggests": [
-          "docker-compose"
+          "devops-engineer"
         ],
         "conflicts": [],
         "enhances": [
@@ -58,7 +58,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 6618,
-      "path": "blockchain-engineer/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/blockchain-engineer/SKILL.md",
       "edges": {
         "extends": [
           "backend-developer"
@@ -83,7 +83,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 682,
-      "path": "business-analysis/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/business-analysis/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -106,7 +106,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 586,
-      "path": "designer/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/designer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -128,39 +128,16 @@
       "domain": "infra",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 514,
-      "path": "devops-engineer/SKILL.md",
+      "estimated_tokens": 573,
+      "path": "anti-chaotic/.agent/skills/devops-engineer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
-        "suggests": [
-          "docker-compose"
-        ],
+        "suggests": [],
         "conflicts": [],
         "enhances": [
           "backend-developer"
         ],
-        "moc": [
-          "infrastructure-moc"
-        ]
-      }
-    },
-    "docker-compose": {
-      "name": "docker-compose",
-      "type": "capability",
-      "domain": "infra",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 221,
-      "path": "docker-compose/SKILL.md",
-      "edges": {
-        "extends": [],
-        "requires": [
-          "devops-engineer"
-        ],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [],
         "moc": [
           "infrastructure-moc"
         ]
@@ -172,14 +149,12 @@
       "domain": "web",
       "status": "stable",
       "version": "3.2.0",
-      "estimated_tokens": 676,
-      "path": "frontend-developer/SKILL.md",
+      "estimated_tokens": 672,
+      "path": "anti-chaotic/.agent/skills/frontend-developer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
-        "suggests": [
-          "skill-creator"
-        ],
+        "suggests": [],
         "conflicts": [],
         "enhances": [
           "designer"
@@ -189,23 +164,6 @@
         ]
       }
     },
-    "knowledge-graph": {
-      "name": "knowledge-graph",
-      "type": "skill",
-      "domain": "general",
-      "status": "stable",
-      "version": "2.0.0",
-      "estimated_tokens": 1291,
-      "path": "knowledge-graph/SKILL.md",
-      "edges": {
-        "extends": [],
-        "requires": [],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [],
-        "moc": []
-      }
-    },
     "lead-architect": {
       "name": "lead-architect",
       "type": "skill",
@@ -213,7 +171,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 581,
-      "path": "lead-architect/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/lead-architect/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -236,7 +194,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 457,
-      "path": "marketer/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/marketer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -257,7 +215,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 490,
-      "path": "marketer/remotion-best-practices/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/marketer/remotion-best-practices/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [
@@ -280,7 +238,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 671,
-      "path": "mobile-developer/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/SKILL.md",
       "edges": {
         "extends": [
           "frontend-developer"
@@ -305,7 +263,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 2254,
-      "path": "mobile-developer/api-routes/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/api-routes/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -330,7 +288,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 2647,
-      "path": "mobile-developer/building-ui/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/building-ui/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -353,7 +311,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 938,
-      "path": "mobile-developer/cicd-workflows/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/cicd-workflows/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [
@@ -374,7 +332,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 2845,
-      "path": "mobile-developer/data-fetching/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/data-fetching/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -397,7 +355,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 1005,
-      "path": "mobile-developer/deployment/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/deployment/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -420,7 +378,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 946,
-      "path": "mobile-developer/dev-client/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/dev-client/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -443,7 +401,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 3075,
-      "path": "mobile-developer/tailwind-setup/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/tailwind-setup/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -464,7 +422,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 989,
-      "path": "mobile-developer/upgrading-expo/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/upgrading-expo/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -485,7 +443,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 2490,
-      "path": "mobile-developer/use-dom/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/mobile-developer/use-dom/SKILL.md",
       "edges": {
         "extends": [
           "mobile-developer"
@@ -508,7 +466,7 @@
       "status": "stable",
       "version": "4.1.0",
       "estimated_tokens": 632,
-      "path": "project-manager/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/project-manager/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -528,15 +486,15 @@
       "domain": "ai",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 1674,
-      "path": "prompt-engineer/SKILL.md",
+      "estimated_tokens": 1734,
+      "path": "anti-chaotic/.agent/skills/prompt-engineer/SKILL.md",
       "edges": {
         "extends": [
           "ai-engineer"
         ],
         "requires": [],
         "suggests": [
-          "skill-creator"
+          "frontend-developer"
         ],
         "conflicts": [],
         "enhances": [
@@ -554,7 +512,7 @@
       "status": "stable",
       "version": "2.0.0",
       "estimated_tokens": 626,
-      "path": "qa-tester/SKILL.md",
+      "path": "anti-chaotic/.agent/skills/qa-tester/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
@@ -564,23 +522,6 @@
         "moc": [
           "quality-assurance-moc"
         ]
-      }
-    },
-    "skill-creator": {
-      "name": "skill-creator",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 214,
-      "path": "skill-creator/SKILL.md",
-      "edges": {
-        "extends": [],
-        "requires": [],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [],
-        "moc": []
       }
     }
   },

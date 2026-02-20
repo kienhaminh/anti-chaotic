@@ -32,7 +32,7 @@ const fs = {
   }
 };
 
-const AGENT_DIR = path.join(__dirname, '..', '..', '..');  // Up to .agent/
+const AGENT_DIR = path.join(__dirname, '..', '.agent');  // Project .agent/
 const SKILLS_DIR = path.join(AGENT_DIR, 'skills');
 const MOCS_DIR = path.join(AGENT_DIR, 'mocs');
 const OUTPUT_PATH = path.join(AGENT_DIR, 'graph-index.json');

@@ -16,7 +16,7 @@ Foundation skill for web frontend development. Framework-agnostic patterns for p
 
 - **extends**: none (base skill)
 - **requires**: []
-- **suggests**: [[skill-creator]]
+- **suggests**: []
 - **conflicts**: []
 - **enhances**: [[designer]] (implementation of designs)
 - **moc**: [[web-development-moc]]
