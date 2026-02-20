@@ -67,7 +67,7 @@ test('CLI graph --stats should show statistics', () => {
 test('CLI graph --list should list all skills', () => {
   const output = runCLI('graph --list');
   assert(output.includes('frontend-developer'));
-  assert(output.includes('react-nextjs'));
+  assert(output.includes('ai-engineer'));
 });
 
 // Test 5: Graph MOCs command
@@ -78,10 +78,10 @@ test('CLI graph --mocs should list MOCs', () => {
 
 // Test 6: Resolve command
 test('CLI resolve should show load order', () => {
-  const output = runCLI('resolve react-nextjs');
-  assert(output.includes('Resolution for [[react-nextjs]]'));
+  const output = runCLI('resolve prompt-engineer');
+  assert(output.includes('Resolution for [[prompt-engineer]]'));
   assert(output.includes('Load Order'));
-  assert(output.includes('frontend-developer'));
+  assert(output.includes('ai-engineer'));
 });
 
 // Test 7: Resolve with suggests (ai-engineer has suggestions)

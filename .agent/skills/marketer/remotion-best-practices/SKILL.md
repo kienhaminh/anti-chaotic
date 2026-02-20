@@ -15,8 +15,8 @@ Programmatic video creation using React and TypeScript.
 ## Knowledge Graph
 
 - **extends**: []
-- **requires**: [[react-nextjs]]
-- **suggests**: [[threejs]], [[framer-motion]]
+- **requires**: [[frontend-developer]]
+- **suggests**: []
 - **conflicts**: []
 - **enhances**: [[marketer]] (video content)
 - **moc**: [[video-production-moc]]
@@ -46,10 +46,10 @@ Programmatic video creation using React and TypeScript.
 
 ## Related Skills
 
-- [[react-nextjs]] — Required foundation
-- [[threejs]] — For 3D video content
+- [[frontend-developer]] — Required foundation (load `react-nextjs/` sub-capability)
+- [[ai-engineer]] — For AI-generated video content
 - [[marketer]] — Content strategy
 
 ---
 
-*Requires [[react-nextjs]] | Part of [[video-production-moc]]*
+*Requires [[frontend-developer]] | Part of [[video-production-moc]]*

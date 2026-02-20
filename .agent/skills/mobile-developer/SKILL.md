@@ -16,9 +16,9 @@ Expert guidelines for React Native and Expo development.
 
 - **extends**: [[frontend-developer]]
 - **requires**: []
-- **suggests**: [[backend-developer]], [[devops-engineer]], [[threejs]]
+- **suggests**: [[backend-developer]], [[devops-engineer]]
 - **conflicts**: []
-- **enhances**: [[react-nextjs]] (shared patterns via Expo Router)
+- **enhances**: [[frontend-developer]] (shared patterns via Expo Router)
 - **moc**: [[mobile-development-moc]]
 
 ## Sub-Skills

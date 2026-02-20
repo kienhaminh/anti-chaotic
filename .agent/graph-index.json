@@ -9,7 +9,7 @@
       "domain": "ai",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 5230,
+      "estimated_tokens": 5228,
       "path": "ai-engineer/SKILL.md",
       "edges": {
         "extends": [
@@ -17,7 +17,7 @@
         ],
         "requires": [],
         "suggests": [
-          "vector-db"
+          "prompt-engineer"
         ],
         "conflicts": [],
         "enhances": [
@@ -172,13 +172,13 @@
       "domain": "web",
       "status": "stable",
       "version": "3.2.0",
-      "estimated_tokens": 653,
+      "estimated_tokens": 676,
       "path": "frontend-developer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
         "suggests": [
-          "react-nextjs"
+          "skill-creator"
         ],
         "conflicts": [],
         "enhances": [
@@ -256,16 +256,14 @@
       "domain": "video",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 480,
+      "estimated_tokens": 490,
       "path": "marketer/remotion-best-practices/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [
-          "react-nextjs"
+          "frontend-developer"
         ],
-        "suggests": [
-          "threejs"
-        ],
+        "suggests": [],
         "conflicts": [],
         "enhances": [
           "marketer"
@@ -281,7 +279,7 @@
       "domain": "mobile",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 673,
+      "estimated_tokens": 671,
       "path": "mobile-developer/SKILL.md",
       "edges": {
         "extends": [
@@ -293,7 +291,7 @@
         ],
         "conflicts": [],
         "enhances": [
-          "react-nextjs"
+          "frontend-developer"
         ],
         "moc": [
           "mobile-development-moc"
@@ -568,29 +566,6 @@
         ]
       }
     },
-    "react-nextjs": {
-      "name": "react-nextjs",
-      "type": "skill",
-      "domain": "web",
-      "status": "stable",
-      "version": "2.0.0",
-      "estimated_tokens": 913,
-      "path": "react-nextjs/SKILL.md",
-      "edges": {
-        "extends": [
-          "frontend-developer"
-        ],
-        "requires": [],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [
-          "mobile-developer"
-        ],
-        "moc": [
-          "web-development-moc"
-        ]
-      }
-    },
     "skill-creator": {
       "name": "skill-creator",
       "type": "skill",
@@ -607,50 +582,6 @@
         "enhances": [],
         "moc": []
       }
-    },
-    "threejs": {
-      "name": "threejs",
-      "type": "capability",
-      "domain": "web",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 222,
-      "path": "threejs/SKILL.md",
-      "edges": {
-        "extends": [],
-        "requires": [
-          "frontend-developer"
-        ],
-        "suggests": [
-          "react-nextjs"
-        ],
-        "conflicts": [],
-        "enhances": [],
-        "moc": [
-          "web-development-moc"
-        ]
-      }
-    },
-    "vector-db": {
-      "name": "vector-db",
-      "type": "capability",
-      "domain": "ai",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 224,
-      "path": "vector-db/SKILL.md",
-      "edges": {
-        "extends": [],
-        "requires": [
-          "ai-engineer"
-        ],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [],
-        "moc": [
-          "ai-development-moc"
-        ]
-      }
     }
   },
   "mocs": {
@@ -661,19 +592,16 @@
         "ai-development-moc",
         "ai-engineer",
         "prompt-engineer",
-        "vector-db",
-        "backend-  [[frontend-  [[skill-   [[lang-    [[pinecone",
-        "chroma",
+        "langchain",
+        "backend-  [[frontend-  [[skill-   [[openai-   [[evaluation-\ndeveloper",
         "ai-integration",
         "backend-developer",
         "frontend-developer",
-        "react-nextjs",
         "skill-creator",
         "devops-engineer",
         "web-development-moc",
         "infrastructure-moc",
-        "mobile-development-moc",
-        "agent-skills-index"
+        "mobile-development-moc"
       ]
     },
     "blockchain-moc": {
@@ -836,28 +764,17 @@
         "frontend-developer",
         "backend-developer",
         "devops-engineer",
-        "react-  [[vue-      [[nodejs-  [[python-  [[docker-  [[cicd-\n nextjs",
-        "threejs",
-        "kubernetes",
-        "webgl-basics",
-        "r3f-best-practices",
-        "tailwind-setup",
+        "vue-      [[python-  [[docker-  [[cicd-\n nextjs/   developer",
         "remotion-best-practices",
+        "qa-tester",
+        "docker-compose",
         "react-nextjs",
-        "prisma",
-        "nextjs-testing",
-        "stripe-integration",
-        "shaders-webgl",
-        "next-auth",
-        "clerk",
-        "supabase",
         "mobile-developer",
         "ai-engineer",
         "video-production-moc",
         "mobile-development-moc",
         "ai-development-moc",
-        "infrastructure-moc",
-        "agent-skills-index"
+        "infrastructure-moc"
       ]
     }
   },

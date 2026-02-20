@@ -16,7 +16,7 @@ Foundation skill for web frontend development. Framework-agnostic patterns for p
 
 - **extends**: none (base skill)
 - **requires**: []
-- **suggests**: [[react-nextjs]], [[vue-developer]], [[svelte-developer]]
+- **suggests**: [[skill-creator]]
 - **conflicts**: []
 - **enhances**: [[designer]] (implementation of designs)
 - **moc**: [[web-development-moc]]
@@ -43,7 +43,7 @@ _If no source found, PAUSE and `search_web` or ask._
 
 | Framework | Skill | Relationship |
 |-----------|-------|--------------|
-| React / Next.js | [[react-nextjs]] | **extends** this skill |
+| React / Next.js | `react-nextjs/` | **extends** this skill |
 | Vue / Nuxt | [[vue-developer]] | **extends** this skill |
 | Angular | [[angular-developer]] | **extends** this skill |
 | Svelte / Solid / Qwik | [[modern-signals]] | **extends** this skill |
@@ -52,12 +52,17 @@ _If no source found, PAUSE and `search_web` or ask._
 
 Add these to any frontend specialization:
 
-| Capability | Skill | Use For |
-|------------|-------|---------|
-| 3D Graphics | [[threejs]] | WebGL, 3D product showcases |
+| Capability | Location | Use For |
+|------------|----------|---------|
+| 3D Graphics | `threejs/` | WebGL, 3D product showcases |
 | Video Generation | [[remotion-best-practices]] | Programmatic video |
 | Animations | [[framer-motion]] | Complex UI animations |
 | Styling | [[tailwind-setup]] | Utility-first CSS |
+
+## Dynamic Stack Loading
+
+- **React/Next.js** → Load `react-nextjs/` subdirectory
+- **Three.js** → Load `threejs/` subdirectory
 
 ## Quick Rules
 

@@ -16,7 +16,7 @@ Guidelines for building production-grade AI systems with robustness, scalability
 
 - **extends**: [[backend-developer]]
 - **requires**: []
-- **suggests**: [[vector-db]], [[langchain]], [[openai-integration]], [[evaluation-frameworks]], [[prompt-engineer]]
+- **suggests**: [[prompt-engineer]], [[skill-creator]]
 - **conflicts**: []
 - **enhances**: [[frontend-developer]] (AI-powered UIs), [[data-scientist]] (ML pipelines)
 - **moc**: [[ai-development-moc]]
@@ -782,6 +782,7 @@ def select_relevant_chunks(query: str, chunks: list, max_tokens: int) -> list:
 
 - **Agentic Patterns**: [ReAct, Plan-and-Solve, Multi-Agent](references/agentic-patterns.md)
 - **Advanced RAG**: [Hybrid search, reranking, query transformation](references/rag-advanced.md)
+- **Vector Databases**: [Pinecone, Chroma, pgvector](vector-db/) — Load for RAG implementations
 - **Evaluation**: [LLM-as-judge, automated testing](references/evaluation.md)
 - **Serving**: [Caching, batching, streaming](references/serving-optimization.md)
 - **LLM Fundamentals**: [Prompting, tokenization, APIs](references/llm.md)
@@ -789,7 +790,6 @@ def select_relevant_chunks(query: str, chunks: list, max_tokens: int) -> list:
 ### Related Skills
 
 - [[backend-developer]] — API and infrastructure foundation
-- [[vector-db]] — For RAG implementations
 - [[frontend-developer]] — AI-powered user interfaces
 - [[prompt-engineer]] — Deep prompt engineering expertise
 - [[data-scientist]] — ML model training and evaluation

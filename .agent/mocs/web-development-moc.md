@@ -30,20 +30,30 @@ This domain covers:
         │                       │                       │
    ┌────┴────┐             ┌────┴────┐            ┌────┴────┐
    ▼         ▼             ▼         ▼            ▼         ▼
-[[react-  [[vue-      [[nodejs-  [[python-  [[docker-  [[cicd-
- nextjs]]  developer]]   api]]    api]]    compose]]  pipelines]]
-   │                                                   │
-   ▼                                                   ▼
-[[threejs]]                                       [[kubernetes]]
+ react/    [[vue-      [[python-  [[docker-  [[cicd-
+ nextjs/   developer]]   api]]    compose]]  pipelines]]
    │
-   ├─ requires ── [[webgl-basics]]
-   └─ suggests ── [[r3f-best-practices]]
+   ├─ threejs/ (3D capability)
+   └─ tailwind-setup/ (styling)
 
 Capability Add-ons (apply to any):
-├── [[tailwind-setup]] ──► any frontend
-├── [[remotion-best-practices]] ──► requires → [[react-nextjs]]
-└── [[prisma]] ──► any backend
+├── tailwind-setup ──► any frontend
+├── remotion-best-practices ──► React video generation
+└── prisma ──► any backend
 ```
+
+## Modular Skill Structure
+
+### Frontend Developer ([[frontend-developer]])
+Base skill with modular sub-capabilities:
+
+| Sub-capability | Location | Tokens | Use When |
+|:---------------|:---------|:-------|:---------|
+| React/Next.js | `react-nextjs/` | ~18k | App Router projects |
+| Three.js | `threejs/` | ~8k | 3D graphics, WebGL |
+| Tailwind | `tailwind-setup/` | ~3k | Utility-first styling |
+
+Load via: "Load `frontend-developer/react-nextjs/` for Next.js patterns"
 
 ## Learning Paths
 
@@ -51,28 +61,28 @@ Capability Add-ons (apply to any):
 **Load Order:** Foundation → Frontend → Backend → Infrastructure
 ```
 [[frontend-developer]]          (~2k tokens)
-    ↓ extends
-[[react-nextjs]]                (~1k tokens)  
+    ↓ extends (load react-nextjs/)
+    + react-nextjs/               (~18k tokens)
     ↓ suggests
-[[backend-developer]]           (~2k tokens)
+[[backend-developer]]           (~35k tokens)
     ↓ suggests  
 [[devops-engineer]]             (~1k tokens)
 ────────────────────────────────────────────
-Total Context: ~6k tokens
+Total Context: ~56k tokens
 ```
 
 ### 🎨 Frontend Specialist Agent
 **Focus:** UI/UX, component libraries, creative tech
 ```
 [[frontend-developer]]          (~2k tokens)
-    ↓ extends
-[[react-nextjs]]                (~1k tokens)
-    ↓ enhances
-[[tailwind-setup]]              (~0.5k tokens)
-    ↓ suggests (choose one)
-    ├── [[threejs]]             (~2k tokens) ──► 3D/VFX projects
-    ├── [[remotion-best-practices]] (~1k tokens) ──► Programmatic video
-    └── [[nextjs-testing]]      (~1k tokens) ──► Quality focus
+    ↓ extends (load react-nextjs/)
+    + react-nextjs/               (~18k tokens)
+    ↓ enhances (load tailwind-setup/)
+    + tailwind-setup/             (~3k tokens)
+    ↓ suggests (choose capability)
+    ├── threejs/                  (~8k tokens) ──► 3D/VFX projects
+    ├── [[remotion-best-practices]] (~10k tokens) ──► Programmatic video
+    └── [[qa-tester]]             (~8k tokens) ──► Quality focus
 ```
 
 ### 🚀 SaaS / Indie Maker Agent  
@@ -80,51 +90,46 @@ Total Context: ~6k tokens
 ```
 [[frontend-developer]]          (~2k tokens)
     ↓ extends
-[[react-nextjs]]                (~1k tokens)
+    + react-nextjs/               (~18k tokens)
     ↓ requires
-[[backend-developer]]           (~2k tokens)
+[[backend-developer]]           (~35k tokens)
     ↓ suggests
-[[prisma]]                      (~0.5k tokens)
-    ↓ suggests
-[[stripe-integration]]          (~0.5k tokens)
+[[docker-compose]]              (~2k tokens)
 ────────────────────────────────────────────
-Total Context: ~6k tokens
+Total Context: ~57k tokens
 ```
 
 ### 🎮 Creative Developer Agent
 **Stack:** WebGL, shaders, motion graphics
 ```
 [[frontend-developer]]          (~2k tokens)
-    ↓ extends
-[[threejs]]                     (~2k tokens)
-    ↓ requires
-[[webgl-basics]]                (~1k tokens)
-    ↓ suggests
-[[r3f-best-practices]]          (~1k tokens)
-    ↓ suggests
-[[shaders-webgl]]               (~1k tokens)
+    ↓ load capability
+    + threejs/                    (~8k tokens)
+    ↓ requires (optional)
+    + [[react-nextjs]] (if using R3F)
 ────────────────────────────────────────────
-Total Context: ~7k tokens
+Total Context: ~28k tokens
 ```
 
 ## Quick Reference
 
 | I want to... | Start Here |
-|--------------|------------|
-| Build landing page | [[frontend-developer]] + [[tailwind-setup]] |
-| Build fullstack SaaS | [[react-nextjs]] + [[backend-developer]] |
-| Add 3D product viewer | [[threejs]] (extends any frontend) |
+|:-------------|:-----------|
+| Build landing page | [[frontend-developer]] |
+| Build Next.js app | [[frontend-developer]] → load `react-nextjs/` |
+| Add 3D product viewer | [[frontend-developer]] → load `threejs/` |
+| Build fullstack SaaS | [[frontend-developer]] + [[backend-developer]] |
 | Generate videos programmatically | [[remotion-best-practices]] |
 | Deploy to production | [[devops-engineer]] |
-| Add auth | [[next-auth]] or [[clerk]] |
-| Set up database | [[prisma]] or [[supabase]] |
+| Add auth | next-auth or clerk |
+| Set up database | prisma or supabase |
 
 ## Cross-Domain Skills
 
 Skills that bridge web with other domains:
 
 | Skill | Bridges To | Use Case |
-|-------|-----------|----------|
+|:------|:-----------|:---------|
 | [[mobile-developer]] | Mobile MOC | React Native with Next.js patterns |
 | [[ai-engineer]] | AI MOC | LLM integration in web apps |
 | [[video-production-moc]] | Video MOC | Remotion + video editing |
@@ -138,4 +143,4 @@ Skills that bridge web with other domains:
 
 ---
 
-*Entry point for all web development | [[agent-skills-index]]*
+*Entry point for all web development | Modular sub-capabilities in subdirectories*
