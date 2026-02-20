@@ -16,7 +16,7 @@ Expert guidelines for building robust, scalable, and secure distributed systems.
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[nodejs-api]], [[python-api]], [[go-api]], [[prisma]], [[supabase]], [[redis]]
+- **suggests**: [[docker-compose]], [[vector-db]], [[devops-engineer]]
 - **conflicts**: []
 - **enhances**: [[frontend-developer]] (fullstack), [[ai-engineer]] (AI APIs)
 - **moc**: [[web-development-moc]]

@@ -34,13 +34,13 @@
       "domain": "infra",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 626,
+      "estimated_tokens": 620,
       "path": "backend-developer/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
         "suggests": [
-          "nodejs-api"
+          "docker-compose"
         ],
         "conflicts": [],
         "enhances": [
@@ -495,27 +495,6 @@
         "conflicts": [],
         "enhances": [],
         "moc": []
-      }
-    },
-    "nodejs-api": {
-      "name": "nodejs-api",
-      "type": "capability",
-      "domain": "infra",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 234,
-      "path": "nodejs-api/SKILL.md",
-      "edges": {
-        "extends": [],
-        "requires": [
-          "backend-developer"
-        ],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [],
-        "moc": [
-          "web-development-moc"
-        ]
       }
     },
     "project-manager": {
