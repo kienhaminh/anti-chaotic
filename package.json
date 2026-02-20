@@ -11,7 +11,11 @@
     "url": "git+https://github.com/kienhaminh/anti-chaotic.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/run-tests.js",
+    "test:unit": "node tests/resolver.test.js && node tests/detector.test.js",
+    "test:integration": "node tests/integration.test.js",
+    "test:resolver": "node tests/resolver.test.js",
+    "test:detector": "node tests/detector.test.js"
   },
   "keywords": [
     "anti-chaotic",
@@ -32,7 +36,8 @@
   "files": [
     ".agent",
     "bin",
-    "lib"
+    "lib",
+    "tests"
   ],
   "dependencies": {
     "chalk": "^4.1.2",
