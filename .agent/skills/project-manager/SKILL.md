@@ -16,10 +16,10 @@ Deliver value through efficient systems and clear processes.
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[business-analysis]], [[qa-tester]], [[lead-architect]]
+- **suggests**: [[business-analysis]], [[qa-tester]], [[lead-architect]], [[designer]]
 - **conflicts**: []
-- **enhances**: [[frontend-developer]], [[backend-developer]], [[mobile-developer]] (skill detection)
-- **moc**: []
+- **enhances": [[frontend-developer]], [[backend-developer]], [[mobile-developer]] (skill detection), [[business-analysis]] (requirements)
+- **moc**: [[product-development-moc]]
 
 ## Core Philosophy
 

@@ -57,19 +57,17 @@
       "domain": "blockchain",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 475,
+      "estimated_tokens": 493,
       "path": "blockchain-engineer/SKILL.md",
       "edges": {
-        "extends": [
-          "backend-developer"
-        ],
+        "extends": [],
         "requires": [],
-        "suggests": [
-          "devops-engineer"
-        ],
+        "suggests": [],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "blockchain-moc"
+        ]
       }
     },
     "business-analysis": {
@@ -78,7 +76,7 @@
       "domain": "analysis",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 655,
+      "estimated_tokens": 682,
       "path": "business-analysis/SKILL.md",
       "edges": {
         "extends": [],
@@ -90,7 +88,9 @@
         "enhances": [
           "qa-tester"
         ],
-        "moc": []
+        "moc": [
+          "product-development-moc"
+        ]
       }
     },
     "designer": {
@@ -99,7 +99,7 @@
       "domain": "design",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 577,
+      "estimated_tokens": 586,
       "path": "designer/SKILL.md",
       "edges": {
         "extends": [],
@@ -111,7 +111,9 @@
         "enhances": [
           "frontend-developer"
         ],
-        "moc": []
+        "moc": [
+          "design-moc"
+        ]
       }
     },
     "devops-engineer": {
@@ -503,7 +505,7 @@
       "domain": "management",
       "status": "stable",
       "version": "4.1.0",
-      "estimated_tokens": 613,
+      "estimated_tokens": 632,
       "path": "project-manager/SKILL.md",
       "edges": {
         "extends": [],
@@ -512,10 +514,10 @@
           "business-analysis"
         ],
         "conflicts": [],
-        "enhances": [
-          "frontend-developer"
-        ],
-        "moc": []
+        "enhances": [],
+        "moc": [
+          "product-development-moc"
+        ]
       }
     },
     "prompt-engineer": {
@@ -549,23 +551,195 @@
       "domain": "qa",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 604,
+      "estimated_tokens": 626,
       "path": "qa-tester/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
-        "suggests": [
-          "frontend-developer"
-        ],
+        "suggests": [],
         "conflicts": [],
-        "enhances": [
-          "project-manager"
-        ],
-        "moc": []
+        "enhances": [],
+        "moc": [
+          "quality-assurance-moc"
+        ]
       }
     }
   },
   "mocs": {
+    "ai-development-moc": {
+      "path": "mocs/ai-development-moc.md",
+      "domain": "ai",
+      "skills": [
+        "ai-development-moc",
+        "ai-engineer",
+        "prompt-engineer",
+        "vector-db",
+        "backend-  [[frontend-  [[skill-   [[lang-    [[pinecone",
+        "chroma",
+        "ai-integration",
+        "backend-developer",
+        "frontend-developer",
+        "react-nextjs",
+        "skill-creator",
+        "devops-engineer",
+        "web-development-moc",
+        "infrastructure-moc",
+        "mobile-development-moc",
+        "agent-skills-index"
+      ]
+    },
+    "blockchain-moc": {
+      "path": "mocs/blockchain-moc.md",
+      "domain": "blockchain",
+      "skills": [
+        "blockchain-moc",
+        "blockchain-engineer",
+        "smart-contract-\n                    │                   auditor",
+        "solidity",
+        "rust-      [[web3-    [[formal-\n              anchor",
+        "defi-protocols",
+        "backend-developer",
+        "security-auditor",
+        "frontend-developer",
+        "web3-integration",
+        "devops-engineer",
+        "infrastructure-moc",
+        "web-development-moc",
+        "agent-skills-index"
+      ]
+    },
+    "design-moc": {
+      "path": "mocs/design-moc.md",
+      "domain": "design",
+      "skills": [
+        "design-moc",
+        "designer",
+        "brand-\n                    │           designer",
+        "ui-design",
+        "ux-research",
+        "motion-\n                                    design",
+        "design-system",
+        "framer-motion",
+        "accessibility",
+        "frontend-developer",
+        "tailwind-setup",
+        "motion-design",
+        "mobile-developer",
+        "marketer",
+        "web-development-moc",
+        "mobile-development-moc",
+        "video-production-moc",
+        "agent-skills-index"
+      ]
+    },
+    "infrastructure-moc": {
+      "path": "mocs/infrastructure-moc.md",
+      "domain": "infra",
+      "skills": [
+        "infrastructure-moc",
+        "devops-engineer",
+        "lead-architect",
+        "sre-engineer",
+        "docker-  [[cicd-      [[micro-   [[server-  [[monitoring",
+        "security",
+        "kubernetes",
+        "terraform",
+        "docker-compose",
+        "backend-developer",
+        "security-auditor",
+        "mobile-developer",
+        "blockchain-engineer",
+        "web-development-moc",
+        "ai-development-moc",
+        "agent-skills-index"
+      ]
+    },
+    "mobile-development-moc": {
+      "path": "mocs/mobile-development-moc.md",
+      "domain": "mobile",
+      "skills": [
+        "mobile-development-moc",
+        "mobile-developer",
+        "ios-developer",
+        "building-ui",
+        "data-    [[deployment",
+        "swift-",
+        "tailwind-   [[api-     [[cicd-\n setup",
+        "use-dom",
+        "frontend-developer",
+        "tailwind-setup",
+        "deployment",
+        "cicd-workflows",
+        "data-fetching",
+        "api-routes",
+        "backend-developer",
+        "designer",
+        "web-development-moc",
+        "ai-development-moc",
+        "agent-skills-index"
+      ]
+    },
+    "product-development-moc": {
+      "path": "mocs/product-development-moc.md",
+      "domain": "product",
+      "skills": [
+        "product-development-moc",
+        "project-manager",
+        "business-analysis",
+        "product-owner",
+        "roadmap",
+        "agile-    [[user-    [[technical- [[stakeholder",
+        "metrics",
+        "qa-tester",
+        "lead-architect",
+        "designer",
+        "marketer",
+        "web-development-moc",
+        "design-moc",
+        "agent-skills-index"
+      ]
+    },
+    "quality-assurance-moc": {
+      "path": "mocs/quality-assurance-moc.md",
+      "domain": "qa",
+      "skills": [
+        "quality-assurance-moc",
+        "qa-tester",
+        "test-automation",
+        "unit-testing",
+        "e2e-     [[security",
+        "cicd-\n                testing",
+        "frontend-  [[backend-\ndeveloper",
+        "frontend-developer",
+        "backend-developer",
+        "devops-engineer",
+        "cicd-workflows",
+        "security-auditor",
+        "web-development-moc",
+        "mobile-development-moc",
+        "agent-skills-index"
+      ]
+    },
+    "video-production-moc": {
+      "path": "mocs/video-production-moc.md",
+      "domain": "video",
+      "skills": [
+        "video-production-moc",
+        "marketer",
+        "video-\n        │                                       editor",
+        "remotion-best-                                ┌──────┴──────┐\npractices",
+        "motion-    [[color-\n        ▼                                 graphics",
+        "react-nextjs",
+        "frontend-developer",
+        "remotion-best-practices",
+        "designer",
+        "framer-motion",
+        "video-editor",
+        "web-development-moc",
+        "design-moc",
+        "agent-skills-index"
+      ]
+    },
     "web-development-moc": {
       "path": "mocs/web-development-moc.md",
       "domain": "web",

@@ -16,10 +16,10 @@ Bridge the gap between abstract business goals and concrete technical implementa
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[project-manager]], [[lead-architect]], [[designer]]
+- **suggests**: [[project-manager]], [[lead-architect]], [[designer]], [[frontend-developer]], [[backend-developer]]
 - **conflicts**: []
-- **enhances**: [[qa-tester]] (acceptance criteria)
-- **moc**: []
+- **enhances**: [[qa-tester]] (acceptance criteria), [[lead-architect]] (technical specs)
+- **moc**: [[product-development-moc]]
 
 ## Core Philosophy
 

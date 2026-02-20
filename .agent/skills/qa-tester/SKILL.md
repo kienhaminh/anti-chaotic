@@ -16,10 +16,10 @@ Comprehensive testing standards for high-quality software delivery.
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[frontend-developer]], [[backend-developer]], [[devops-engineer]]
-- **conflicts**: []
-- **enhances**: [[project-manager]] (quality metrics)
-- **moc**: []
+- **suggests": [[frontend-developer]], [[backend-developer]], [[devops-engineer]], [[mobile-developer]]
+- **conflicts": []
+- **enhances": [[project-manager]] (quality metrics), [[business-analysis]] (acceptance criteria)
+- **moc**: [[quality-assurance-moc]]
 
 ## Core Philosophy
 

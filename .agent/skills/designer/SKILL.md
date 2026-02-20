@@ -16,10 +16,10 @@ Expert design guidance for production-grade interfaces and design systems.
 
 - **extends**: []
 - **requires**: []
-- **suggests**: [[frontend-developer]], [[tailwind-setup]], [[framer-motion]]
+- **suggests**: [[frontend-developer]], [[tailwind-setup]], [[framer-motion]], [[mobile-developer]]
 - **conflicts**: []
 - **enhances**: [[frontend-developer]] (implementation of designs)
-- **moc**: []
+- **moc**: [[design-moc]]
 
 ## Core Principles
 

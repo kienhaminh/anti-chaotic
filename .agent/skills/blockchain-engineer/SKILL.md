@@ -14,12 +14,12 @@ Decentralized systems with focus on security, scalability, and economic robustne
 
 ## Knowledge Graph
 
-- **extends**: [[backend-developer]]
+- **extends": [[backend-developer]]
 - **requires**: []
-- **suggests**: [[devops-engineer]], [[security-auditor]]
-- **conflicts**: []
-- **enhances**: []
-- **moc**: []
+- **suggests": [[devops-engineer]], [[security-auditor]], [[lead-architect]]
+- **conflicts": []
+- **enhances": [[backend-developer]] (web3 integration)
+- **moc**: [[blockchain-moc]]
 
 ## Core Responsibilities
 
