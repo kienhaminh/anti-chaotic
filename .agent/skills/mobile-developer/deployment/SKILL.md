@@ -1,11 +1,26 @@
 ---
 name: deployment
 description: Deploying Expo apps to iOS App Store, Android Play Store, web hosting, and API routes
-version: 1.0.0
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 3000
 license: MIT
 ---
 
 # Deployment
+
+## Knowledge Graph
+
+- **extends**: [[mobile-developer]]
+- **requires**: []
+- **suggests**: [[cicd-workflows]], [[devops-engineer]]
+- **conflicts**: []
+- **enhances**: []
+- **moc**: [[mobile-development-moc]]
+
+## Deployment Overview
 
 This skill covers deploying Expo applications across all platforms using EAS (Expo Application Services).
 

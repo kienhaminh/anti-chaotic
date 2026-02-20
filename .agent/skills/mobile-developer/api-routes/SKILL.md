@@ -1,9 +1,27 @@
 ---
 name: api-routes
 description: Guidelines for creating API routes in Expo Router with EAS Hosting
-version: 1.0.0
-license: MIT
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 5000
 ---
+
+# API Routes for Expo
+
+Server-side API routes in Expo Router with EAS Hosting.
+
+## Knowledge Graph
+
+- **extends**: [[mobile-developer]]
+- **requires**: [[backend-developer]]
+- **suggests**: [[deployment]]
+- **conflicts**: []
+- **enhances**: []
+- **moc**: [[mobile-development-moc]]
+
+## When to Use API Routes
 
 ## When to Use API Routes
 

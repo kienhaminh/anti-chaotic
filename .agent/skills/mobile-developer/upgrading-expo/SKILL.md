@@ -1,9 +1,24 @@
 ---
 name: upgrading-expo
 description: Guidelines for upgrading Expo SDK versions and fixing dependency issues
-version: 1.0.0
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 2500
 license: MIT
 ---
+
+# Upgrading Expo
+
+## Knowledge Graph
+
+- **extends**: [[mobile-developer]]
+- **requires**: []
+- **suggests**: []
+- **conflicts**: []
+- **enhances**: []
+- **moc**: [[mobile-development-moc]]
 
 ## References
 

@@ -1,9 +1,27 @@
 ---
 name: building-ui
 description: Complete guide for building beautiful apps with Expo Router. Covers fundamentals, styling, components, navigation, animations, patterns, and native tabs.
-version: 1.0.0
-license: MIT
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 8000
 ---
+
+# Expo UI Guidelines
+
+Building beautiful mobile apps with Expo Router and React Native.
+
+## Knowledge Graph
+
+- **extends**: [[mobile-developer]]
+- **requires**: []
+- **suggests**: [[tailwind-setup]], [[use-dom]]
+- **conflicts**: []
+- **enhances**: []
+- **moc**: [[mobile-development-moc]]
+
+## References
 
 # Expo UI Guidelines
 

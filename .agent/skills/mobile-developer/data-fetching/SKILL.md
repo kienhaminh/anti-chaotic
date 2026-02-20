@@ -1,11 +1,26 @@
 ---
 name: data-fetching
 description: Use when implementing or debugging ANY network request, API call, or data fetching. Covers fetch API, axios, React Query, SWR, error handling, caching strategies, offline support.
-version: 1.0.0
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 7000
 license: MIT
 ---
 
 # Expo Networking
+
+## Knowledge Graph
+
+- **extends**: [[mobile-developer]]
+- **requires**: []
+- **suggests**: [[api-routes]], [[backend-developer]]
+- **conflicts**: []
+- **enhances**: []
+- **moc**: [[mobile-development-moc]]
+
+## When to Use
 
 **You MUST use this skill for ANY networking work including API requests, data fetching, caching, or network debugging.**
 

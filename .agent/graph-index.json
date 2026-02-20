@@ -296,50 +296,68 @@
     },
     "api-routes": {
       "name": "api-routes",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 2162,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 2254,
       "path": "mobile-developer/api-routes/SKILL.md",
       "edges": {
-        "extends": [],
-        "requires": [],
-        "suggests": [],
+        "extends": [
+          "mobile-developer"
+        ],
+        "requires": [
+          "backend-developer"
+        ],
+        "suggests": [
+          "deployment"
+        ],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "building-ui": {
       "name": "building-ui",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 2556,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 2647,
       "path": "mobile-developer/building-ui/SKILL.md",
       "edges": {
-        "extends": [],
+        "extends": [
+          "mobile-developer"
+        ],
         "requires": [],
-        "suggests": [],
+        "suggests": [
+          "tailwind-setup"
+        ],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "cicd-workflows": {
       "name": "cicd-workflows",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 869,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 938,
       "path": "mobile-developer/cicd-workflows/SKILL.md",
       "edges": {
         "extends": [],
-        "requires": [],
-        "suggests": [],
+        "requires": [
+          "mobile-developer"
+        ],
+        "suggests": [
+          "deployment"
+        ],
         "conflicts": [],
         "enhances": [],
         "moc": []
@@ -347,101 +365,133 @@
     },
     "data-fetching": {
       "name": "data-fetching",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 2771,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 2845,
       "path": "mobile-developer/data-fetching/SKILL.md",
       "edges": {
-        "extends": [],
+        "extends": [
+          "mobile-developer"
+        ],
         "requires": [],
-        "suggests": [],
+        "suggests": [
+          "api-routes"
+        ],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "deployment": {
       "name": "deployment",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 929,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 1005,
       "path": "mobile-developer/deployment/SKILL.md",
       "edges": {
-        "extends": [],
+        "extends": [
+          "mobile-developer"
+        ],
         "requires": [],
-        "suggests": [],
+        "suggests": [
+          "cicd-workflows"
+        ],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "dev-client": {
       "name": "dev-client",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 878,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 946,
       "path": "mobile-developer/dev-client/SKILL.md",
       "edges": {
-        "extends": [],
+        "extends": [
+          "mobile-developer"
+        ],
         "requires": [],
-        "suggests": [],
+        "suggests": [
+          "building-ui"
+        ],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "tailwind-setup": {
       "name": "tailwind-setup",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 2978,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 3075,
       "path": "mobile-developer/tailwind-setup/SKILL.md",
       "edges": {
         "extends": [],
         "requires": [],
         "suggests": [],
         "conflicts": [],
-        "enhances": [],
-        "moc": []
+        "enhances": [
+          "mobile-developer"
+        ],
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "upgrading-expo": {
       "name": "upgrading-expo",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 924,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 989,
       "path": "mobile-developer/upgrading-expo/SKILL.md",
       "edges": {
-        "extends": [],
+        "extends": [
+          "mobile-developer"
+        ],
         "requires": [],
         "suggests": [],
         "conflicts": [],
         "enhances": [],
-        "moc": []
+        "moc": [
+          "mobile-development-moc"
+        ]
       }
     },
     "use-dom": {
       "name": "use-dom",
-      "type": "skill",
-      "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 2419,
+      "type": "capability",
+      "domain": "mobile",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 2490,
       "path": "mobile-developer/use-dom/SKILL.md",
       "edges": {
-        "extends": [],
-        "requires": [],
-        "suggests": [],
+        "extends": [
+          "mobile-developer"
+        ],
+        "requires": [
+          "frontend-developer"
+        ],
+        "suggests": [
+          "building-ui"
+        ],
         "conflicts": [],
         "enhances": [],
         "moc": []

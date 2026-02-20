@@ -1,12 +1,26 @@
 ---
 name: cicd-workflows
 description: Helps understand and write EAS workflow YAML files for Expo projects. Use this skill when the user asks about CI/CD or workflows in an Expo or EAS context, mentions .eas/workflows/, or wants help with EAS build pipelines or deployment automation.
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 3000
 allowed-tools: "Read,Write,Bash(node:*)"
-version: 1.0.0
 license: MIT License
 ---
 
 # EAS Workflows Skill
+
+## Knowledge Graph
+
+- **extends**: []
+- **requires**: [[mobile-developer]]
+- **suggests**: [[deployment]], [[devops-engineer]]
+- **conflicts": []
+- **enhances**: []
+- **moc": [[mobile-development-moc]]
+
 
 Help developers write and edit EAS CI/CD workflow YAML files.
 

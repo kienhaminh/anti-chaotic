@@ -1,9 +1,27 @@
 ---
 name: tailwind-setup
 description: Set up Tailwind CSS v4 in Expo with react-native-css and NativeWind v5 for universal styling
-version: 1.0.0
-license: MIT
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 6000
 ---
+
+# Tailwind CSS Setup for Expo
+
+Universal styling with Tailwind v4, react-native-css, and NativeWind v5.
+
+## Knowledge Graph
+
+- **extends**: []
+- **requires**: []
+- **suggests**: []
+- **conflicts**: []
+- **enhances**: [[mobile-developer]], [[frontend-developer]], [[building-ui]]
+- **moc**: [[mobile-development-moc]]
+
+## Overview
 
 # Tailwind CSS Setup for Expo with react-native-css
 

@@ -1,9 +1,24 @@
 ---
 name: use-dom
 description: Use Expo DOM components to run web code in a webview on native and as-is on web. Migrate web code to native incrementally.
-version: 1.0.0
+type: capability
+domain: mobile
+status: stable
+version: "2.0.0"
+estimated_tokens: 5000
 license: MIT
 ---
+
+# Use DOM
+
+## Knowledge Graph
+
+- **extends**: [[mobile-developer]]
+- **requires**: [[frontend-developer]]
+- **suggests**: [[building-ui]]
+- **conflicts**: []
+- **enhances": []
+- **moc": [[mobile-development-moc]]
 
 ## What are DOM Components?
 
