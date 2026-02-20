@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "threejs",
+  "description": "Routes Three.js queries to the most relevant sub-skill based on keywords",
+  "routes": [
+    {
+      "id": "threejs-fundamentals",
+      "keywords": [
+        "scene",
+        "camera",
+        "renderer",
+        "object3d",
+        "transform",
+        "coordinate",
+        "frustum",
+        "fog",
+        "render loop",
+        "clock"
+      ],
+      "path": "fundamentals.md",
+      "description": "Scene setup, cameras, renderer, Object3D hierarchy, transforms."
+    },
+    {
+      "id": "threejs-geometry",
+      "keywords": [
+        "geometry",
+        "buffergeometry",
+        "attributes",
+        "indices",
+        "normals",
+        "uv",
+        "mesh",
+        "instancedmesh",
+        "morph targets",
+        "wireframe"
+      ],
+      "path": "geometry.md",
+      "description": "Geometry creation/manipulation, attributes, meshes."
+    },
+    {
+      "id": "threejs-materials",
+      "keywords": [
+        "material",
+        "meshstandardmaterial",
+        "meshphysicalmaterial",
+        "meshbasicmaterial",
+        "pbr",
+        "roughness",
+        "metalness",
+        "opacity",
+        "transparency",
+        "shader material"
+      ],
+      "path": "materials.md",
+      "description": "Material types, PBR, shading settings."
+    },
+    {
+      "id": "threejs-textures",
+      "keywords": [
+        "texture",
+        "textureloader",
+        "uv mapping",
+        "normal map",
+        "roughness map",
+        "metalness map",
+        "ao map",
+        "environment map",
+        "cubemap",
+        "anisotropy"
+      ],
+      "path": "textures.md",
+      "description": "Texture loading, UVs, maps, and environment textures."
+    },
+    {
+      "id": "threejs-lighting",
+      "keywords": [
+        "light",
+        "ambient light",
+        "directional light",
+        "point light",
+        "spotlight",
+        "hemisphere light",
+        "shadows",
+        "shadow map",
+        "lightmap",
+        "bloom"
+      ],
+      "path": "lighting.md",
+      "description": "Light types, shadows, and lighting effects."
+    },
+    {
+      "id": "threejs-loaders",
+      "keywords": [
+        "loader",
+        "gltf",
+        "glb",
+        "obj",
+        "fbx",
+        "draco",
+        "ktx2",
+        "asset pipeline",
+        "model import",
+        "texture loading"
+      ],
+      "path": "loaders.md",
+      "description": "GLTF/OBJ loading, assets, compression pipelines."
+    },
+    {
+      "id": "threejs-animation",
+      "keywords": [
+        "animation",
+        "animationmixer",
+        "clip",
+        "keyframes",
+        "timeline",
+        "skeletal",
+        "rig",
+        "morph",
+        "playback",
+        "crossfade"
+      ],
+      "path": "animation.md",
+      "description": "AnimationMixer, clips, timelines, blending."
+    },
+    {
+      "id": "threejs-interaction",
+      "keywords": [
+        "interaction",
+        "raycaster",
+        "picking",
+        "hover",
+        "click",
+        "pointer",
+        "controls",
+        "orbitcontrols",
+        "drag",
+        "input"
+      ],
+      "path": "interaction.md",
+      "description": "Raycasting, input handling, and controls."
+    },
+    {
+      "id": "threejs-shaders",
+      "keywords": [
+        "shader",
+        "glsl",
+        "vertex shader",
+        "fragment shader",
+        "uniform",
+        "varying",
+        "shader material",
+        "custom material",
+        "noise",
+        "postprocessing"
+      ],
+      "path": "shaders.md",
+      "description": "ShaderMaterial, GLSL, custom effects."
+    },
+    {
+      "id": "threejs-postprocessing",
+      "keywords": [
+        "postprocessing",
+        "effectcomposer",
+        "render pass",
+        "bloom",
+        "ssao",
+        "outline",
+        "bokeh",
+        "render target",
+        "tone mapping",
+        "fxaa"
+      ],
+      "path": "postprocessing.md",
+      "description": "EffectComposer, passes, render targets."
+    }
+  ],
+  "usageInstructions": {
+    "howToUse": "Match user query keywords against routes[].keywords, then load the corresponding SKILL.md file.",
+    "priority": "Start with the most specific route; fall back to fundamentals if unsure."
+  }
+}

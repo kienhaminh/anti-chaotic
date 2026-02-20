@@ -4,11 +4,6 @@ description: Generate unit, E2E, security, and performance tests using the qa-te
 
 # Generate Tests Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Apply `.agent/rules/documents.md` for all document creation and directory structure. All QA documents MUST be stored under `docs/035-QA/`.
-
----
-
 ## Step 1: Discovery & Strategy
 
 // turbo

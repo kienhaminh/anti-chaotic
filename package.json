@@ -1,7 +1,7 @@
 {
   "name": "@kienha/anti-chaotic",
-  "version": "1.0.10",
-  "description": "Anti-Chaotic - An agent kit for Antigravity to standardize the software development process",
+  "version": "2.0.0",
+  "description": "Anti-Chaotic - Knowledge Graph powered agent kit for standardized software development",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -11,7 +11,14 @@
     "url": "git+https://github.com/kienhaminh/anti-chaotic.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/run-tests.js",
+    "test:unit": "node tests/resolver.test.js && node tests/detector.test.js",
+    "test:integration": "node tests/integration.test.js",
+    "test:resolver": "node tests/resolver.test.js",
+    "test:detector": "node tests/detector.test.js",
+    "build:graph": "node scripts/build-graph.js",
+    "validate:graph": "node scripts/validate-graph.js",
+    "resolve:skill": "node scripts/resolve-skill.js"
   },
   "keywords": [
     "anti-chaotic",
@@ -31,7 +38,9 @@
   },
   "files": [
     ".agent",
-    "bin"
+    "bin",
+    "lib",
+    "tests"
   ],
   "dependencies": {
     "chalk": "^4.1.2",

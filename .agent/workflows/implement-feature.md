@@ -4,11 +4,6 @@ description: Orchestrates feature implementation from specification to deploymen
 
 # Feature Implementation Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Read `.agent/rules/documents.md` before creating any document.
-
----
-
 ## MCP Usage Guidelines
 
 | MCP Tool                                     | When to Use                                       | Example Query                       |

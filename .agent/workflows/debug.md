@@ -4,12 +4,6 @@ description: Scientific debugging workflow: Hypothesize, Instrument, Reproduce, 
 
 # Scientific Debug & Fix Workflow
 
-> [!IMPORTANT]
-> **GOAL**: Follow a scientific process to identify root causes with EVIDENCE before applying fixes.
-> **Best for**: Hard-to-reproduce bugs, race conditions, performance issues, and regressions.
-
----
-
 ## Step 1: Hypothesis Generation
 
 1. **Analyze the Issue**: Review the bug report and available context.

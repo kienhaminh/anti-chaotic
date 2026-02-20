@@ -4,11 +4,6 @@ description: Transform requirements into comprehensive UI/UX design deliverables
 
 # UI/UX Design Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Apply `.agent/rules/documents.md` for all documentation structure.
-
----
-
 ## MCP Usage Guidelines
 
 | MCP Tool                  | When to Use                                     |

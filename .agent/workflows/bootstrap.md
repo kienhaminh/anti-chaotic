@@ -4,11 +4,6 @@ description: Sets up project structure, installs dependencies, and configures en
 
 # Bootstrap Workflow
 
-> [!IMPORTANT]
-> **Prerequisite**: Ensure SDD exists in `docs/030-Specs/Architecture/`.
-
----
-
 ## MCP Usage Guidelines
 
 | MCP Tool                          | When to Use                        |

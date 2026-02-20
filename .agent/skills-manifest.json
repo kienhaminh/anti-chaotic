@@ -1,0 +1,151 @@
+{
+  "version": "1.0.0",
+  "core": ["project-manager", "business-analysis", "qa-tester"],
+  "skills": {
+    "project-manager": {
+      "name": "Project Manager",
+      "description": "Project Planning, Roadmapping, Requirements, Skill Creation",
+      "size": "96K",
+      "dependencies": [],
+      "triggers": ["roadmap", "PRD", "requirements", "user story", "prioritization", "RICE", "Kano"],
+      "router": "./skills/project-manager/router.json"
+    },
+    "business-analysis": {
+      "name": "Business Analysis",
+      "description": "Requirements analysis, specs, agile documentation",
+      "size": "80K",
+      "dependencies": [],
+      "triggers": ["domain", "compliance", "persona", "user research", "acceptance criteria"]
+    },
+    "marketer": {
+      "name": "Marketer",
+      "description": "Marketing, SEO, social media",
+      "size": "80K",
+      "dependencies": [],
+      "triggers": ["marketing", "SEO", "social media", "content strategy"],
+      "sub-skills": ["remotion-best-practices"]
+    },
+    "qa-tester": {
+      "name": "QA Tester",
+      "description": "Test planning, test cases, bug reporting",
+      "size": "72K",
+      "dependencies": [],
+      "triggers": ["testing", "test case", "QA", "bug", "E2E", "unit test"]
+    },
+    "frontend-developer": {
+      "name": "Frontend Developer",
+      "description": "Frontend, React, optimization",
+      "size": "292K",
+      "dependencies": [],
+      "triggers": ["react", "vue", "angular", "css", "tailwind", "frontend", "component", "performance"],
+      "sub-skills": ["react-nextjs", "threejs"]
+    },
+    "backend-developer": {
+      "name": "Backend Developer",
+      "description": "API, Architecture, Security, Node/Python/Go",
+      "size": "36K",
+      "dependencies": [],
+      "triggers": ["API", "database", "auth", "security", "microservice", "backend", "node", "python", "go"]
+    },
+    "mobile-developer": {
+      "name": "Mobile Developer",
+      "description": "React Native, Expo, mobile deployment",
+      "size": "236K",
+      "dependencies": [],
+      "triggers": ["expo", "react-native", "ios", "android", "mobile", "app store", "play store"],
+      "sub-skills": ["api-routes", "building-ui", "data-fetching", "deployment", "dev-client", "tailwind-setup", "upgrading-expo", "use-dom", "cicd-workflows"]
+    },
+    "designer": {
+      "name": "Designer",
+      "description": "UI/UX, branding, design systems",
+      "size": "104K",
+      "dependencies": [],
+      "triggers": ["design", "figma", "UI", "UX", "design system", "accessibility", "branding"]
+    },
+    "devops-engineer": {
+      "name": "DevOps Engineer",
+      "description": "CI/CD, Infrastructure, Observability",
+      "size": "40K",
+      "dependencies": [],
+      "triggers": ["docker", "kubernetes", "CI/CD", "deployment", "monitoring", "observability", "terraform"]
+    },
+    "lead-architect": {
+      "name": "Lead Architect",
+      "description": "System design, high-stakes decisions",
+      "size": "48K",
+      "dependencies": [],
+      "triggers": ["architecture", "system design", "scalability", "ADR", "RFC", "tech spec"]
+    },
+    "ai-engineer": {
+      "name": "AI Engineer",
+      "description": "GenAI, RAG, Evaluation pipelines",
+      "size": "24K",
+      "dependencies": [],
+      "triggers": ["AI", "LLM", "RAG", "prompt", "embedding", "fine-tune", "openai", "anthropic"]
+    },
+    "blockchain-engineer": {
+      "name": "Blockchain Engineer",
+      "description": "Smart contracts, protocols, security auditing",
+      "size": "20K",
+      "dependencies": [],
+      "triggers": ["blockchain", "smart contract", "web3", "ethereum", "solidity", "defi"]
+    },
+    "remotion-best-practices": {
+      "name": "Remotion Best Practices",
+      "description": "Video creation with Remotion",
+      "size": "132K",
+      "parent": "marketer",
+      "dependencies": ["frontend-developer"],
+      "triggers": ["remotion", "video", "composition", "animation", "render"]
+    },
+    "react-nextjs": {
+      "name": "React & Next.js",
+      "description": "Next.js best practices and React optimization",
+      "size": "180K",
+      "parent": "frontend-developer",
+      "dependencies": ["frontend-developer"],
+      "triggers": ["nextjs", "next.js", "server component", "RSC", "app router"]
+    },
+    "threejs": {
+      "name": "Three.js",
+      "description": "3D graphics with Three.js",
+      "size": "520K",
+      "parent": "frontend-developer",
+      "dependencies": ["frontend-developer"],
+      "triggers": ["threejs", "three.js", "3D", "webgl", "scene", "camera", "renderer"],
+      "router": "./skills/frontend-developer/threejs/router.json"
+    }
+  },
+  "profiles": {
+    "web-frontend": {
+      "name": "Web Frontend",
+      "description": "React/Vue/Angular web applications",
+      "skills": ["frontend-developer", "designer"],
+      "optional": ["react-nextjs", "threejs"]
+    },
+    "fullstack-saas": {
+      "name": "Fullstack SaaS",
+      "description": "Complete SaaS application with frontend, backend, and infrastructure",
+      "skills": ["frontend-developer", "backend-developer", "devops-engineer", "project-manager", "qa-tester"],
+      "optional": ["react-nextjs", "ai-engineer"]
+    },
+    "mobile-app": {
+      "name": "Mobile App",
+      "description": "React Native / Expo mobile application",
+      "skills": ["mobile-developer", "designer", "qa-tester"],
+      "optional": ["backend-developer"]
+    },
+    "video-content": {
+      "name": "Video Content Tool",
+      "description": "Video creation and editing with Remotion",
+      "skills": ["marketer", "frontend-developer", "remotion-best-practices"],
+      "optional": ["threejs"]
+    },
+    "ai-powered-app": {
+      "name": "AI-Powered Application",
+      "description": "Applications with LLM integration and AI features",
+      "skills": ["ai-engineer", "frontend-developer", "backend-developer"],
+      "optional": ["lead-architect"]
+    }
+  }
+}

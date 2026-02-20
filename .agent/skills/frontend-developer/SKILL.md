@@ -1,111 +1,109 @@
 ---
 name: frontend-developer
-description: Use when implementing frontend code, optimizing performance, or ensuring strict adherence to documentation/references.
-license: MIT
-metadata:
-  version: "3.1"
-  capabilities:
-    - multi-framework-implementation
-    - evidence-based-coding
-    - extreme-performance-optimization
-    - accessibility-compliance
-allowed-tools: read_file list_dir search_web read_url_content
+type: skill
+domain: web
+status: stable
+version: "3.2.0"
+estimated_tokens: 3500
+description: Foundation for all frontend development. Use when implementing UI code, optimizing performance, or ensuring accessibility.
 ---
 
-# Frontend Development Standards
+# Frontend Developer
 
-This skill provides expert-level guidelines for frontend code quality, runtime performance, and pixel-perfect implementation.
+Foundation skill for web frontend development. Framework-agnostic patterns for performance, accessibility, and code quality.
+
+## Knowledge Graph
+
+- **extends**: none (base skill)
+- **requires**: []
+- **suggests**: []
+- **conflicts**: []
+- **enhances**: [[designer]] (implementation of designs)
+- **moc**: [[web-development-moc]]
 
 ## 🛑 THE GOLDEN RULE: "Quote First"
 
 **You must NEVER write code without first citing your source.**
 
-Before implementing any feature or fixing any bug, you must:
+Before implementing:
+1. **Locate** authoritative documentation
+2. **Quote** the specific section justifying your decision
+3. **Implement** strictly according to that quote
 
-1.  **Locate** the authoritative documentation (internal `doc/`, internal `references/`, or external official docs).
-2.  **Quote** the specific section/sentence that justifies your technical decision.
-3.  **Implement** strictly according to that quote.
+_If no source found, PAUSE and `search_web` or ask._
 
-_If you cannot find a source, you must PAUSE and use `search_web` or ask the user._
+## 🧠 Core Philosophy
 
-## 🧠 The "Performance Obsessed" Mindset
+1. **Zero-Bundle Budget** — Every kilobyte justifies existence
+2. **Hydration is Overhead** — Static when possible
+3. **User Waits for Nothing** — Optimistic UI, non-blocking main thread
+4. **Accessibility is NOT Optional** — `<div onClick>` is a bug
 
-1.  **Zero-Bundle Budget**: Every kilobyte must justify its existence.
-2.  **Hydration is Overhead**: If it can be static, it MUST be static.
-3.  **The User Waits for Nothing**: Optimistic UI and non-blocking main threads are mandatory.
-4.  **Accessibility is NOT Optional**: A div with an onClick is a bug. Use semantic HTML.
+## Framework Specializations
 
-## 📚 Dynamic Knowledge Base
+| Framework | Skill | Relationship |
+|-----------|-------|--------------|
+| React / Next.js | `react-nextjs/` | **extends** this skill |
+| Vue / Nuxt | [[vue-developer]] | **extends** this skill |
+| Angular | [[angular-developer]] | **extends** this skill |
+| Svelte / Solid / Qwik | [[modern-signals]] | **extends** this skill |
 
-**ACTION**: At the start of every task, check `package.json` and load the corresponding knowledge source.
+## Capability Add-ons
 
-### Sub-Skills (Framework-Specific)
+Add these to any frontend specialization:
 
-These are complete sub-skills with their own rules, examples, and guidelines. Load the entire sub-skill `SKILL.md` when working with these frameworks:
+| Capability | Location | Use For |
+|------------|----------|---------|
+| 3D Graphics | `threejs/` | WebGL, 3D product showcases |
+| Video Generation | [[remotion-best-practices]] | Programmatic video |
+| Animations | [[framer-motion]] | Complex UI animations |
+| Styling | [[tailwind-setup]] | Utility-first CSS |
 
-| Tech Stack          | Sub-Skill Path   | Key Focus                                 |
-| ------------------- | ---------------- | ----------------------------------------- |
-| **React / Next.js** | `react/SKILL.md` | RSCs, Suspense, Streaming, Server Actions |
+## Dynamic Stack Loading
 
-### Reference Files
+Load framework-specific guides as needed:
 
-General reference guides for frameworks without full sub-skills yet:
+| When User Needs | Load This |
+|:----------------|:----------|
+| Next.js App Router patterns | `react-nextjs/README.md` |
+| 3D graphics, WebGL | `threejs/README.md` |
+| Tailwind CSS setup | `tailwind-setup/README.md` |
 
-| Tech Stack            | Reference File                   | Key Focus                                    |
-| --------------------- | -------------------------------- | -------------------------------------------- |
-| **Universal Base**    | `references/core-performance.md` | _Always load this._ Web Vitals, A11y, HTTP/3 |
-| **Vue / Nuxt**        | `references/vue-nuxt.md`         | Composition API, Nitro, Nuxt Modules         |
-| **Angular**           | `references/angular.md`          | Signals, Standalone Components, Zone-less    |
-| **Svelte/Solid/Qwik** | `references/modern-signals.md`   | Fine-grained reactivity, Resumability        |
+### Example Workflows
 
-## 🛠 Workflow: The "Evidence-Based" Loop
+**Next.js Project:**
+```
+User: "Build a Next.js app with App Router"
+→ Load frontend-developer/react-nextjs/README.md
+→ Follow Server Components patterns
+→ Implement loading.tsx, error.tsx
+```
 
-### Phase 1: Discovery & Citation
+**3D Product Viewer:**
+```
+User: "Add a 3D model viewer to my React app"
+→ Load frontend-developer/threejs/README.md
+→ Set up React Three Fiber
+→ Configure Canvas, lights, controls
+```
 
-1.  **Identify** the needed technology (e.g., "I need to optimize images in Next.js").
-2.  **Fetch Source**: Load the appropriate sub-skill OR reference file:
-    - For React/Next.js: Read `react/SKILL.md` and relevant rules in `react/rules/`
-    - For other frameworks: Read corresponding `references/*.md` file
-    - Or search official docs if not available.
-3.  **State Evidence**:
-    > "According to Next.js docs (referenced in `react/SKILL.md`), we should use the `<Image>` component with `sizes` to prevent layout shift."
+## Quick Rules
 
-### Phase 2: Implementation (The Engineer's Core)
+| Aspect | Rule |
+|--------|------|
+| Performance | Check Web Vitals after every change |
+| Accessibility | All images need `alt`, interactive elements need focus |
+| Bundles | Code-split by route, lazy load below fold |
+| Images | Use modern formats (WebP, AVIF), provide fallbacks |
 
-1.  **Write Code**: Implement exactly as the evidence suggests.
-2.  **Optimize**: Look for low-hanging fruit (memoization, lazy loading).
-3.  **Verify Compliance**: Check against `references/core-performance.md`.
-    - _Did I add `alt` text?_
-    - _Did I avoid `useEffect` for derived state?_
+## Related Skills
 
-### Phase 3: Self-Correction
-
-Before showing code to the user, run this mental audit:
-
-- [ ] **Is this creating a hydration mismatch?** (SSR frameworks)
-- [ ] **Is this blocking the main thread?** (Long tasks)
-- [ ] **Could this function be smaller?** (Code complexity)
-
-## 🚀 Framework-Specific Philosophies
-
-### React & Next.js
-
-- **Server Components First**: Client components are the exception, not the rule.
-- **Fetch in Components**: No `useEffect` data fetching. Use Server Components or React Query.
-
-### Vue & Nuxt
-
-- **Composables over Mixins**: Never use Mixins.
-- **Auto-imports**: Use them responsibly, but know where they come from.
-
-### Angular
-
-- **Signals over Observables**: For synchronous state, use Signals. RxJS is for events.
-- **Standalone**: No NgModules unless legacy.
-
-### Svelte / Solid / Qwik
-
-- **Reactivity is Fine-Grained**: Never clone the whole object. Update the specific field.
-- **Resumability (Qwik)**: Do not execute JS just to hydrate.
+- [[react-nextjs]] — React & Next.js specific
+- [[vue-developer]] — Vue & Nuxt specific
+- [[backend-developer]] — When building fullstack
+- [[designer]] — Design system implementation
+- [[qa-tester]] — E2E testing
 
 ---
+
+*Part of [[web-development-moc]] | Base skill for all frontend work*

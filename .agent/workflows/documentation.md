@@ -4,11 +4,6 @@ description: Generate comprehensive documentation (Architecture, API, Specs) fro
 
 # Documentation Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Apply `.agent/rules/documents.md` for all document creation.
-
----
-
 ## MCP Usage Guidelines
 
 | MCP Tool                                     | When to Use                                    |

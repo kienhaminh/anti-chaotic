@@ -5,8 +5,6 @@ globs: **/*.{ts,tsx,js,jsx,py,go,java,rb,c,cpp,h,hpp,rs,css,html}
 
 # Clean Code Standards
 
-You must adhere to these clean code principles when generating or modifying code.
-
 ## Core Principles
 
 - **SOLID**: Follow Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion principles.

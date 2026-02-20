@@ -4,11 +4,6 @@ description: Create comprehensive test case documents and test plans based on pr
 
 # QA Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Apply `.agent/rules/documents.md` for all document creation and directory structure. All QA documents MUST be stored under `docs/035-QA/`.
-
----
-
 ## MCP Usage Guidelines
 
 | MCP Tool                                     | When to Use                                      |

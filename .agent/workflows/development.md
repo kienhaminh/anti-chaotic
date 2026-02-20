@@ -4,11 +4,6 @@ description: General coding workflow for implementing changes, bug fixes, or min
 
 # Development Workflow
 
-> [!IMPORTANT]
-> **MANDATORY**: Always read `.agent/rules/documents.md` before creating or modifying any documentation related to development.
-
----
-
 ## Step 1: Analyze & Plan
 
 // turbo
