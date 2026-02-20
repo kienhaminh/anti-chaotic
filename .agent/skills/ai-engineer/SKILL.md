@@ -780,12 +780,34 @@ def select_relevant_chunks(query: str, chunks: list, max_tokens: int) -> list:
 
 ### Dynamic Stack Loading
 
-- **Agentic Patterns**: [ReAct, Plan-and-Solve, Multi-Agent](references/agentic-patterns.md)
-- **Advanced RAG**: [Hybrid search, reranking, query transformation](references/rag-advanced.md)
-- **Vector Databases**: [Pinecone, Chroma, pgvector](vector-db/) — Load for RAG implementations
-- **Evaluation**: [LLM-as-judge, automated testing](references/evaluation.md)
-- **Serving**: [Caching, batching, streaming](references/serving-optimization.md)
-- **LLM Fundamentals**: [Prompting, tokenization, APIs](references/llm.md)
+Load specialized references based on task requirements:
+
+| When User Needs | Load This |
+|:----------------|:----------|
+| Multi-agent workflows | `references/agentic-patterns.md` |
+| RAG implementation | `references/rag-advanced.md` + `vector-db/README.md` |
+| Production deployment | `references/serving-optimization.md` |
+| Testing & evaluation | `references/evaluation.md` |
+| LLM integration basics | `references/llm.md` |
+
+### Example Workflows
+
+**RAG Pipeline:**
+```
+User: "Build a RAG system for my documents"
+→ Load ai-engineer/vector-db/README.md
+→ Choose provider (Pinecone/Chroma/pgvector)
+→ Set up embeddings and retrieval
+→ Integrate with LLM calls
+```
+
+**Multi-Agent System:**
+```
+User: "Create a team of AI agents for research"
+→ Load ai-engineer/references/agentic-patterns.md
+→ Design agent roles and tools
+→ Implement ReAct or supervisor pattern
+```
 
 ### Related Skills
 

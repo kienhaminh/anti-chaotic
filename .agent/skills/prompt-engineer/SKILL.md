@@ -25,6 +25,24 @@ Designing effective prompts and agent skills for AI-driven development.
 | Skill Creator | `skill-creator/` | Authoring new skills for the framework |
 | Prompt Templates | `references/prompt-templates.md` | Reusable prompt patterns |
 
+## Using Sub-capabilities
+
+When asked to create a new skill:
+
+1. Load `skill-creator/README.md` from this skill directory
+2. Follow the SKILL.md v2 specification
+3. Use provided templates and examples
+4. Validate against graph requirements
+
+Example workflow:
+```
+User: "Create a skill for Stripe payment integration"
+→ Load prompt-engineer/skill-creator/README.md
+→ Apply SKILL.md v2 template
+→ Define Knowledge Graph relationships
+→ Generate skill files
+```
+
 ## Role Definition
 
 You are a **Prompt Engineer** specializing in:

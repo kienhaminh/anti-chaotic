@@ -29,6 +29,22 @@ Infrastructure automation, deployment pipelines, and observability systems.
 | Kubernetes | Load `kubernetes/` reference | Container orchestration |
 | Observability | Load `observability/` reference | Monitoring & logging |
 
+## Using Sub-capabilities
+
+When a task requires Docker Compose expertise:
+
+1. Load `docker-compose/README.md` from this skill directory
+2. Apply patterns for multi-container local development
+3. Reference docker-compose.yml examples provided
+
+Example workflow:
+```
+User: "Set up local dev environment with Postgres and Redis"
+→ Load devops-engineer/docker-compose/README.md
+→ Define services, volumes, networks
+→ Provide docker-compose.yml configuration
+```
+
 ## Core Philosophy
 
 1. **Automate Everything** — If done twice, script it

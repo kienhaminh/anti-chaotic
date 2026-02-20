@@ -9,7 +9,7 @@
       "domain": "ai",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 5224,
+      "estimated_tokens": 5311,
       "path": "anti-chaotic/.agent/skills/ai-engineer/SKILL.md",
       "edges": {
         "extends": [
@@ -128,7 +128,7 @@
       "domain": "infra",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 573,
+      "estimated_tokens": 688,
       "path": "anti-chaotic/.agent/skills/devops-engineer/SKILL.md",
       "edges": {
         "extends": [],
@@ -149,7 +149,7 @@
       "domain": "web",
       "status": "stable",
       "version": "3.2.0",
-      "estimated_tokens": 672,
+      "estimated_tokens": 813,
       "path": "anti-chaotic/.agent/skills/frontend-developer/SKILL.md",
       "edges": {
         "extends": [],
@@ -486,7 +486,7 @@
       "domain": "ai",
       "status": "stable",
       "version": "2.0.0",
-      "estimated_tokens": 1734,
+      "estimated_tokens": 1849,
       "path": "anti-chaotic/.agent/skills/prompt-engineer/SKILL.md",
       "edges": {
         "extends": [

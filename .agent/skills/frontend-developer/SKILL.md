@@ -61,8 +61,31 @@ Add these to any frontend specialization:
 
 ## Dynamic Stack Loading
 
-- **React/Next.js** → Load `react-nextjs/` subdirectory
-- **Three.js** → Load `threejs/` subdirectory
+Load framework-specific guides as needed:
+
+| When User Needs | Load This |
+|:----------------|:----------|
+| Next.js App Router patterns | `react-nextjs/README.md` |
+| 3D graphics, WebGL | `threejs/README.md` |
+| Tailwind CSS setup | `tailwind-setup/README.md` |
+
+### Example Workflows
+
+**Next.js Project:**
+```
+User: "Build a Next.js app with App Router"
+→ Load frontend-developer/react-nextjs/README.md
+→ Follow Server Components patterns
+→ Implement loading.tsx, error.tsx
+```
+
+**3D Product Viewer:**
+```
+User: "Add a 3D model viewer to my React app"
+→ Load frontend-developer/threejs/README.md
+→ Set up React Three Fiber
+→ Configure Canvas, lights, controls
+```
 
 ## Quick Rules
 
