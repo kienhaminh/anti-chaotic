@@ -31,7 +31,8 @@
   },
   "files": [
     ".agent",
-    "bin"
+    "bin",
+    "lib"
   ],
   "dependencies": {
     "chalk": "^4.1.2",
