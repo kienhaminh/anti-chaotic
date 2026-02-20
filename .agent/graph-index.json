@@ -139,6 +139,27 @@
         ]
       }
     },
+    "docker-compose": {
+      "name": "docker-compose",
+      "type": "capability",
+      "domain": "infra",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 221,
+      "path": "docker-compose/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [
+          "devops-engineer"
+        ],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": [
+          "infrastructure-moc"
+        ]
+      }
+    },
     "frontend-developer": {
       "name": "frontend-developer",
       "type": "skill",
@@ -499,6 +520,27 @@
         "moc": []
       }
     },
+    "nodejs-api": {
+      "name": "nodejs-api",
+      "type": "capability",
+      "domain": "infra",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 234,
+      "path": "nodejs-api/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [
+          "backend-developer"
+        ],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": [
+          "web-development-moc"
+        ]
+      }
+    },
     "project-manager": {
       "name": "project-manager",
       "type": "skill",
@@ -561,6 +603,67 @@
         "enhances": [],
         "moc": [
           "quality-assurance-moc"
+        ]
+      }
+    },
+    "skill-creator": {
+      "name": "skill-creator",
+      "type": "skill",
+      "domain": "general",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 214,
+      "path": "skill-creator/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": []
+      }
+    },
+    "threejs": {
+      "name": "threejs",
+      "type": "capability",
+      "domain": "web",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 222,
+      "path": "threejs/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [
+          "frontend-developer"
+        ],
+        "suggests": [
+          "react-nextjs"
+        ],
+        "conflicts": [],
+        "enhances": [],
+        "moc": [
+          "web-development-moc"
+        ]
+      }
+    },
+    "vector-db": {
+      "name": "vector-db",
+      "type": "capability",
+      "domain": "ai",
+      "status": "draft",
+      "version": "1.0.0",
+      "estimated_tokens": 224,
+      "path": "vector-db/SKILL.md",
+      "edges": {
+        "extends": [],
+        "requires": [
+          "ai-engineer"
+        ],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [],
+        "moc": [
+          "ai-development-moc"
         ]
       }
     }
