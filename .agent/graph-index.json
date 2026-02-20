@@ -210,9 +210,9 @@
       "name": "knowledge-graph",
       "type": "skill",
       "domain": "general",
-      "status": "draft",
-      "version": "1.0.0",
-      "estimated_tokens": 1232,
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 1291,
       "path": "knowledge-graph/SKILL.md",
       "edges": {
         "extends": [],

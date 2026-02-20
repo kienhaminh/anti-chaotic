@@ -1,15 +1,29 @@
 ---
 name: knowledge-graph
+type: skill
+domain: general
+status: stable
+version: "2.0.0"
+estimated_tokens: 8000
 description: Parse, resolve, and navigate skill knowledge graphs. Use when building graph index, resolving dependencies, detecting cycles, or traversing skill relationships.
 license: MIT
-metadata:
-  version: "2.0.0"
-  author: anti-chaotic
-  type: core
 allowed-tools: Read Edit Bash(node:*) Bash(python3:*)
 ---
 
 # Knowledge Graph
+
+Core skill for graph-based skill management and dependency resolution.
+
+## Knowledge Graph
+
+- **extends**: []
+- **requires**: []
+- **suggests**: []
+- **conflicts**: []
+- **enhances**: []
+- **moc**: []
+
+## When to Use
 
 Parse SKILL.md v2 files, build dependency graphs, and resolve skill relationships with cycle detection and path finding.
 
