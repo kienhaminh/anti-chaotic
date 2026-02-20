@@ -183,29 +183,6 @@
         ]
       }
     },
-    "react-nextjs": {
-      "name": "react-nextjs",
-      "type": "skill",
-      "domain": "web",
-      "status": "stable",
-      "version": "2.0.0",
-      "estimated_tokens": 913,
-      "path": "react-nextjs/SKILL.md",
-      "edges": {
-        "extends": [
-          "frontend-developer"
-        ],
-        "requires": [],
-        "suggests": [],
-        "conflicts": [],
-        "enhances": [
-          "mobile-developer"
-        ],
-        "moc": [
-          "web-development-moc"
-        ]
-      }
-    },
     "knowledge-graph": {
       "name": "knowledge-graph",
       "type": "skill",
@@ -603,6 +580,29 @@
         "enhances": [],
         "moc": [
           "quality-assurance-moc"
+        ]
+      }
+    },
+    "react-nextjs": {
+      "name": "react-nextjs",
+      "type": "skill",
+      "domain": "web",
+      "status": "stable",
+      "version": "2.0.0",
+      "estimated_tokens": 913,
+      "path": "react-nextjs/SKILL.md",
+      "edges": {
+        "extends": [
+          "frontend-developer"
+        ],
+        "requires": [],
+        "suggests": [],
+        "conflicts": [],
+        "enhances": [
+          "mobile-developer"
+        ],
+        "moc": [
+          "web-development-moc"
         ]
       }
     },
